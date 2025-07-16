@@ -1,5 +1,5 @@
 """
-Scraper principal para o StandVirtual.com
+Scraper principal para o StandVirtual.com - Production Version
 """
 
 import time
@@ -17,6 +17,7 @@ from fake_useragent import UserAgent
 from typing import List, Optional
 import re
 import urllib.parse
+from utils.logging_config import get_logger
 
 from models.car import Car, CarSearchParams
 from utils.config import (
@@ -37,6 +38,7 @@ class StandVirtualScraper:
         Args:
             use_selenium: Se deve usar Selenium (recomendado para sites com JS)
         """
+        self.logger = get_logger(__name__)
         self.use_selenium = use_selenium
         self.session = requests.Session()
         self.session.headers.update(DEFAULT_HEADERS)
@@ -67,28 +69,28 @@ class StandVirtualScraper:
             prefs = {"profile.managed_default_content_settings.images": 2}
             chrome_options.add_experimental_option("prefs", prefs)
             
-            # Instala e configura o ChromeDriver automaticamente
+            # Otimização: tentar chromedriver do sistema primeiro (mais rápido)
             try:
-                service = Service(ChromeDriverManager().install())
-                self.driver = webdriver.Chrome(service=service, options=chrome_options)
+                # Método 1: chromedriver do sistema (via Homebrew - mais rápido)
+                self.driver = webdriver.Chrome(options=chrome_options)
                 self.driver.set_page_load_timeout(SELENIUM_TIMEOUT)
-                
-                print("✅ Selenium configurado com sucesso")
+                self.logger.info("Selenium configurado com chromedriver do sistema")
                 
             except Exception as e:
-                print(f"⚠️ Erro com ChromeDriverManager: {e}")
-                # Fallback - tentar usar chromedriver do sistema
+                self.logger.debug(f"Chromedriver do sistema não disponível: {e}")
+                # Fallback: ChromeDriverManager (mais lento mas garante compatibilidade)
                 try:
-                    self.driver = webdriver.Chrome(options=chrome_options)
+                    service = Service(ChromeDriverManager().install())
+                    self.driver = webdriver.Chrome(service=service, options=chrome_options)
                     self.driver.set_page_load_timeout(SELENIUM_TIMEOUT)
-                    print("✅ Selenium configurado com chromedriver do sistema")
+                    self.logger.info("Selenium configurado com ChromeDriverManager")
                 except Exception as e2:
-                    print(f"⚠️ Erro com chromedriver do sistema: {e2}")
+                    self.logger.warning(f"Erro com ChromeDriverManager: {e2}")
                     raise e2
                 
         except Exception as e:
-            print(f"⚠️ Erro ao configurar Selenium: {e}")
-            print("Usando requests/BeautifulSoup como fallback...")
+            self.logger.error(f"Erro ao configurar Selenium: {e}")
+            self.logger.info("Usando requests/BeautifulSoup como fallback...")
             self.use_selenium = False
     
     def _build_search_params(self, params: CarSearchParams) -> dict:
@@ -147,7 +149,7 @@ class StandVirtualScraper:
         """
         try:
             if self.use_selenium and self.driver:
-                print(f"🌐 Carregando página com Selenium...")
+                self.logger.debug(f"Carregando página com Selenium: {url}")
                 self.driver.get(url)
                 
                 # Aguarda o carregamento da página
@@ -158,20 +160,20 @@ class StandVirtualScraper:
                     )
                     time.sleep(2)  # Aguarda um pouco mais para JavaScript carregar
                 except:
-                    print("⚠️ Timeout aguardando carregamento, continuando...")
+                    self.logger.warning("Timeout aguardando carregamento, continuando...")
                 
                 html = self.driver.page_source
                 return BeautifulSoup(html, 'html.parser')
             
             else:
                 # Fallback para requests
-                print(f"🌐 Carregando página com requests...")
+                self.logger.debug(f"Carregando página com requests: {url}")
                 response = self.session.get(url, headers={'User-Agent': self.ua.random})
                 response.raise_for_status()
                 return BeautifulSoup(response.content, 'html.parser')
                 
         except Exception as e:
-            print(f"⚠️ Erro ao obter página {url}: {e}")
+            self.logger.error(f"Erro ao obter página {url}: {e}")
             return None
     
     def _extract_json_ld_data(self, soup: BeautifulSoup) -> List[Car]:
@@ -206,7 +208,7 @@ class StandVirtualScraper:
                                 cars.append(car)
                                 
         except Exception as e:
-            print(f"⚠️ Erro ao extrair dados JSON-LD: {e}")
+            self.logger.error(f"Erro ao extrair dados JSON-LD: {e}")
         
         return cars
     
@@ -251,9 +253,8 @@ class StandVirtualScraper:
             for i, url in enumerate(all_ad_urls):
                 url_map[i] = url
             
-            print(f"🔗 URLs extraídas do HTML: {len(all_ad_urls)}")
-            for i, url in enumerate(all_ad_urls):
-                print(f"   {i}: {url}")
+            self.logger.info(f"URLs extraídas do HTML: {len(all_ad_urls)}")
+            self.logger.debug(f"URLs encontradas: {all_ad_urls[:5]}{'...' if len(all_ad_urls) > 5 else ''}")
             
             # Método 2: Fallback - procura por elementos article
             if not url_map:
@@ -280,7 +281,7 @@ class StandVirtualScraper:
                             break
                             
         except Exception as e:
-            print(f"⚠️ Erro ao extrair URLs HTML: {e}")
+            self.logger.error(f"Erro ao extrair URLs HTML: {e}")
         
         return url_map
     
@@ -368,7 +369,7 @@ class StandVirtualScraper:
             )
             
         except Exception as e:
-            print(f"⚠️ Erro ao processar item JSON-LD: {e}")
+            self.logger.error(f"Erro ao processar item JSON-LD: {e}")
             return None
     
     def _extract_selenium_data(self, driver) -> List[Car]:
@@ -402,13 +403,13 @@ class StandVirtualScraper:
                 try:
                     elements = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, selector)))
                     if elements:
-                        print(f"✅ Encontrados {len(elements)} elementos com: {selector}")
+                        self.logger.info(f"Encontrados {len(elements)} elementos com: {selector}")
                         break
                 except:
                     continue
             
             if not elements:
-                print("❌ Nenhum elemento de anúncio encontrado")
+                self.logger.warning("Nenhum elemento de anúncio encontrado")
                 return cars
             
             # Extrai dados de cada elemento
@@ -418,11 +419,11 @@ class StandVirtualScraper:
                     if car and car.preco_numerico > 0:
                         cars.append(car)
                 except Exception as e:
-                    print(f"⚠️ Erro ao extrair dados do elemento: {e}")
+                    self.logger.error(f"Erro ao extrair dados do elemento: {e}")
                     continue
                     
         except Exception as e:
-            print(f"⚠️ Erro na extração com Selenium: {e}")
+            self.logger.error(f"Erro na extração com Selenium: {e}")
         
         return cars
     
@@ -610,7 +611,7 @@ class StandVirtualScraper:
                         pass
                         
             except Exception as e:
-                print(f"⚠️ Erro ao extrair URL: {e}")
+                self.logger.error(f"Erro ao extrair URL: {e}")
             
             # Se ainda não encontrou URL, cria uma URL de busca baseada no título
             if not url and titulo != "Título não encontrado":
@@ -636,7 +637,7 @@ class StandVirtualScraper:
             return None
             
         except Exception as e:
-            print(f"⚠️ Erro ao extrair dados do elemento: {e}")
+            self.logger.error(f"Erro ao extrair dados do elemento: {e}")
             return None
     
     def _validate_url(self, url: str) -> bool:
@@ -714,11 +715,11 @@ class StandVirtualScraper:
             
         # Validação RIGOROSA apenas para URLs genéricas
         if not self._validate_url(car.url):
-            print(f"   ❌ URL genérica rejeitada: {car.url}")
+            self.logger.debug(f"URL genérica rejeitada: {car.url}")
             return None
             
         try:
-            print(f"🔍 Validando: {car.titulo[:40]}...")
+            self.logger.debug(f"Validando: {car.titulo[:40]}...")
             
             # Dados originais para comparação
             original_price = car.preco_numerico
@@ -738,7 +739,7 @@ class StandVirtualScraper:
                         current_url = self.driver.current_url
                     except Exception:
                         # Driver morreu, recria
-                        print(f"   🔄 Recreando driver Selenium...")
+                        self.logger.debug("Recreando driver Selenium...")
                         self._setup_selenium()
                         if not self.driver:
                             raise Exception("Falha ao recriar driver")
@@ -753,7 +754,7 @@ class StandVirtualScraper:
                         'standvirtual.com/carros?' in current_url or 
                         current_url.endswith('/carros') or
                         current_url.endswith('/carros/')):
-                        print(f"   ❌ Redirecionamento inválido: {current_url}")
+                        self.logger.debug(f"Redirecionamento inválido: {current_url}")
                         return None
                     
                     # 1. Extrai o TÍTULO CORRETO diretamente do h1.offer-title
@@ -764,12 +765,12 @@ class StandVirtualScraper:
                         
                         if correct_title and len(correct_title) > 5:
                             if original_title != correct_title:
-                                print(f"   📝 Título corrigido: {original_title[:30]}... → {correct_title}")
+                                self.logger.debug(f"Título corrigido: {original_title[:30]}... → {correct_title}")
                                 corrections_made += 1
                             car.titulo = correct_title
                             
                     except Exception as e:
-                        print(f"   ⚠️ Erro ao extrair título correto: {e}")
+                        self.logger.debug(f"Erro ao extrair título correto: {e}")
                     
                     # 2. Extrai dados do título da página para preço, ano e quilometragem
                     title = self.driver.title
@@ -781,7 +782,7 @@ class StandVirtualScraper:
                             new_price = float(price_str)
                             
                             if abs(new_price - original_price) > 100:  # Só mostra se diferença significativa
-                                print(f"   💰 Preço: {original_price} → {new_price}")
+                                self.logger.debug(f"Preço: {original_price} → {new_price}")
                                 corrections_made += 1
                             car.preco_numerico = new_price
                             car.preco = f"{new_price:.0f} EUR"
@@ -792,7 +793,7 @@ class StandVirtualScraper:
                             km_str = km_match.group(1).replace(' ', '')
                             new_km = f"{km_str} km"
                             if original_km and original_km != new_km:
-                                print(f"   🛣️  KM: {original_km} → {new_km}")
+                                self.logger.debug(f"KM: {original_km} → {new_km}")
                                 corrections_made += 1
                             car.quilometragem = new_km
                         
@@ -801,7 +802,7 @@ class StandVirtualScraper:
                         if year_match:
                             new_year = int(year_match.group(1))
                             if original_year and original_year != new_year:
-                                print(f"   📅 Ano: {original_year} → {new_year}")
+                                self.logger.debug(f"Ano: {original_year} → {new_year}")
                                 corrections_made += 1
                             car.ano = new_year
                     
@@ -851,7 +852,7 @@ class StandVirtualScraper:
                             car.combustivel = 'Elétrico'
                     
                     if original_fuel != car.combustivel:
-                        print(f"   ⛽ Combustível: {original_fuel} → {car.combustivel}")
+                        self.logger.debug(f"Combustível: {original_fuel} → {car.combustivel}")
                         corrections_made += 1
                     
                     # 3. Extrai outros dados técnicos usando seletores específicos que funcionam
@@ -900,12 +901,12 @@ class StandVirtualScraper:
                                                 car.segmento = 'Utilitário'
                                             
                                             if car.segmento != "N/A":
-                                                print(f"   🚗 Segmento extraído: {car.segmento}")
+                                                self.logger.debug(f"Segmento extraído: {car.segmento}")
                                                 break
                                     if car.segmento != "N/A":
                                         break
                             except Exception as e:
-                                print(f"   ⚠️ Erro extraindo segmento: {e}")
+                                self.logger.debug(f"Erro extraindo segmento: {e}")
                         
                         # Cilindrada - usa seletor .ez0zock2 que funciona
                         if not car.cilindrada or car.cilindrada == "N/A":
@@ -916,7 +917,7 @@ class StandVirtualScraper:
                                     text = elem.text.strip()
                                     if 'cm3' in text.lower() and any(char.isdigit() for char in text):
                                         car.cilindrada = text
-                                        print(f"   🔧 Cilindrada extraída: {car.cilindrada}")
+                                        self.logger.debug(f"Cilindrada extraída: {car.cilindrada}")
                                         break
                                 
                                 # Fallback: busca por aria-label ou texto direto
@@ -926,11 +927,11 @@ class StandVirtualScraper:
                                         text = elem.text.strip()
                                         if any(char.isdigit() for char in text) and len(text) < 15:
                                             car.cilindrada = text
-                                            print(f"   🔧 Cilindrada (fallback): {car.cilindrada}")
+                                            self.logger.debug(f"Cilindrada (fallback): {car.cilindrada}")
                                             break
                                             
                             except Exception as e:
-                                print(f"   ⚠️ Erro extraindo cilindrada: {e}")
+                                self.logger.debug(f"Erro extraindo cilindrada: {e}")
                         
                         # Potência - busca por aria-label que funciona
                         if not car.potencia or car.potencia == "N/A":
@@ -944,7 +945,7 @@ class StandVirtualScraper:
                                     match = re.search(r'(\d+\s*cv)', text, re.IGNORECASE)
                                     if match:
                                         car.potencia = match.group(1)
-                                        print(f"   ⚡ Potência extraída: {car.potencia}")
+                                        self.logger.debug(f"Potência extraída: {car.potencia}")
                                     
                             except:
                                 try:
@@ -954,13 +955,13 @@ class StandVirtualScraper:
                                         text = elem.text.strip()
                                         if any(char.isdigit() for char in text) and len(text) < 15 and 'cv' in text.lower():
                                             car.potencia = text
-                                            print(f"   ⚡ Potência (fallback): {car.potencia}")
+                                            self.logger.debug(f"Potência (fallback): {car.potencia}")
                                             break
                                 except Exception as e:
-                                    print(f"   ⚠️ Erro extraindo potência: {e}")
+                                    self.logger.debug(f"Erro extraindo potência: {e}")
                         
                     except Exception as e:
-                        print(f"   ⚠️ Erro geral ao extrair dados técnicos: {e}")
+                        self.logger.debug(f"Erro geral ao extrair dados técnicos: {e}")
                     
                     validated = True
                     
@@ -969,20 +970,20 @@ class StandVirtualScraper:
                         self.driver.get(original_url)
                         
                 except Exception as e:
-                    print(f"   ⚠️ Erro Selenium: {e}")
+                    self.logger.debug(f"Erro Selenium: {e}")
                     # Continua com requests como fallback
             
             # Método 2: Requests como fallback (extrai TODOS os dados técnicos)
             if not validated:
                 try:
-                    print(f"   🔄 Usando requests como fallback...")
+                    self.logger.debug("Usando requests como fallback...")
                     response = self.session.get(car.url, timeout=8)
                     if response.status_code == 200:
                         # Verifica redirecionamentos inválidos
                         if (response.url.endswith('/carros') or 
                             response.url.endswith('/carros/') or
                             'standvirtual.com/carros?' in response.url):
-                            print(f"   ❌ Redirecionamento inválido: {response.url}")
+                            self.logger.debug(f"Redirecionamento inválido: {response.url}")
                             return None
                         
                         html_content = response.text
@@ -1000,7 +1001,7 @@ class StandVirtualScraper:
                                 new_price = float(price_str)
                                 
                                 if abs(new_price - original_price) > 100:
-                                    print(f"   💰 Preço (requests): {original_price} → {new_price}")
+                                    self.logger.debug(f"Preço (requests): {original_price} → {new_price}")
                                     corrections_made += 1
                                 car.preco_numerico = new_price
                                 car.preco = f"{new_price:.0f} EUR"
@@ -1010,35 +1011,35 @@ class StandVirtualScraper:
                         validated = True
                         
                 except Exception as e:
-                    print(f"   ⚠️ Erro requests: {e}")
+                    self.logger.debug(f"Erro requests: {e}")
             
             # Se não conseguiu validar mas tem dados básicos, aceita
             if not validated and car.preco_numerico > 0:
                 validated = True
-                print(f"   📋 Mantendo dados originais")
+                self.logger.debug("Mantendo dados originais")
             
             if not validated:
-                print(f"   ❌ Falha na validação")
+                self.logger.debug("Falha na validação")
                 return None
             
             # Validações finais (menos rigorosas)
             if car.preco_numerico < 200:  # Preço muito baixo
-                print(f"   ❌ Preço suspeito: {car.preco_numerico}")
+                self.logger.debug(f"Preço suspeito: {car.preco_numerico}")
                 return None
                 
             if not car.titulo or len(car.titulo) < 5:
-                print(f"   ❌ Título muito curto: {car.titulo}")
+                self.logger.debug(f"Título muito curto: {car.titulo}")
                 return None
             
             if corrections_made > 0:
-                print(f"   ✅ Validado com {corrections_made} correções")
+                self.logger.debug(f"Validado com {corrections_made} correções")
             else:
-                print(f"   ✅ Validado (dados já corretos)")
+                self.logger.debug("Validado (dados já corretos)")
             
             return car
             
         except Exception as e:
-            print(f"   ❌ Erro geral: {e}")
+            self.logger.debug(f"Erro geral: {e}")
             return None
 
     
@@ -1064,26 +1065,26 @@ class StandVirtualScraper:
             
             # Sempre faz pesquisa inteligente se há variações
             if len(search_variations) > 1:
-                print(f"🔍 Pesquisa inteligente: buscando {len(search_variations)} variações do modelo")
+                self.logger.info(f"Pesquisa inteligente: buscando {len(search_variations)} variações do modelo")
                 
                 # Pesquisa cada variação separadamente
                 for i, variation_params in enumerate(search_variations, 1):
                     modelo_display = variation_params.modelo or 'modelo genérico'
-                    print(f"\n📋 Variação {i}/{len(search_variations)}: {modelo_display}")
+                    self.logger.debug(f"Variação {i}/{len(search_variations)}: {modelo_display}")
                     variation_cars = self._search_single_variation(variation_params)
                     
                     if variation_cars:
                         cars.extend(variation_cars)
-                        print(f"✅ {len(variation_cars)} carros encontrados nesta variação")
+                        self.logger.debug(f"{len(variation_cars)} carros encontrados nesta variação")
                     else:
-                        print(f"❌ Nenhum carro encontrado nesta variação")
+                        self.logger.debug("Nenhum carro encontrado nesta variação")
             else:
                 # Pesquisa normal para um modelo específico
-                print(f"🔍 Pesquisa simples: {params.modelo}")
+                self.logger.info(f"Pesquisa simples: {params.modelo}")
                 cars = self._search_single_variation(params)
             
         except Exception as e:
-            print(f"❌ Erro durante a pesquisa: {e}")
+            self.logger.error(f"Erro durante a pesquisa: {e}")
         
         finally:
             # Fecha o driver se foi usado
@@ -1097,10 +1098,17 @@ class StandVirtualScraper:
         # Processa resultados finais
         final_cars = self._process_final_results(cars, params)
         
-        # Adiciona tempo como atributo temporário aos carros (para passar para display_results)
+        # Log detalhado dos carros encontrados
         if final_cars:
+            self.logger.info("=== CARROS ENCONTRADOS ===")
+            for i, car in enumerate(final_cars, 1):
+                self.logger.info(f"{i:3d}. {car.titulo} → {car.preco}")
+            self.logger.info(f"=== TOTAL: {len(final_cars)} CARROS ===")
+            
             # Adiciona o tempo de extração como atributo do primeiro carro (hack para passar o tempo)
             final_cars[0]._extraction_time = extraction_time
+        else:
+            self.logger.info("=== NENHUM CARRO ENCONTRADO ===")
         
         return final_cars
     
@@ -1135,9 +1143,9 @@ class StandVirtualScraper:
                     if base_model in model_text_lower:
                         model_variations.append(model)
                 
-                print(f"🎯 Encontradas {len(model_variations)} variações para '{params.modelo}':")
+                self.logger.debug(f"Encontradas {len(model_variations)} variações para '{params.modelo}':")
                 for var in model_variations:
-                    print(f"   • {var['text']} → {var['value']}")
+                    self.logger.debug(f"  • {var['text']} → {var['value']}")
                 
                 # Cria parâmetros para TODAS as variações (incluindo o original)
                 for variation in model_variations:
@@ -1158,7 +1166,7 @@ class StandVirtualScraper:
                     variations = variations[1:]  # Remove o primeiro (original)
                     
             except Exception as e:
-                print(f"⚠️ Erro ao buscar variações: {e}")
+                self.logger.error(f"Erro ao buscar variações: {e}")
         
         return variations
     
@@ -1184,7 +1192,7 @@ class StandVirtualScraper:
         else:
             search_url = STANDVIRTUAL_SEARCH_URL
         
-        print(f"🔗 URL: {search_url}")
+        self.logger.debug(f"URL: {search_url}")
         
         page = 1
         while page <= MAX_PAGES and len(cars) < MAX_RESULTS:
@@ -1194,35 +1202,44 @@ class StandVirtualScraper:
             else:
                 page_url = search_url
             
+            self.logger.debug(f"Processando página {page}: {page_url}")
+            
             # Obtém conteúdo da página
             soup = self._get_page_content(page_url)
             if not soup:
+                self.logger.debug(f"Falha ao carregar página {page}")
                 break
+            
+            # Contador de carros antes desta página
+            cars_before = len(cars)
             
             # Primeira tentativa: dados JSON-LD
             json_cars = self._extract_json_ld_data(soup)
             if json_cars:
                 cars.extend(json_cars)
+                self.logger.debug(f"Página {page}: {len(json_cars)} carros encontrados via JSON-LD")
             
             # Segunda tentativa: Selenium se disponível e necessário
-            if self.use_selenium and self.driver and len(cars) < 5:
+            if self.use_selenium and self.driver and not json_cars:
                 selenium_cars = self._extract_selenium_data(self.driver)
                 if selenium_cars:
                     # Evita duplicatas
                     for car in selenium_cars:
                         if not any(existing.titulo == car.titulo for existing in cars):
                             cars.append(car)
+                    self.logger.debug(f"Página {page}: {len(selenium_cars)} carros encontrados via Selenium")
             
-            if len(cars) == 0:
+            # Se não encontrou carros nesta página, pode ter chegado ao fim
+            cars_found_this_page = len(cars) - cars_before
+            if cars_found_this_page == 0:
+                self.logger.debug(f"Nenhum carro encontrado na página {page}, parando busca")
                 break
             
-            # Só processa uma página se encontrou dados JSON-LD (são completos)
-            if json_cars:
-                break
+            self.logger.info(f"Página {page}: {cars_found_this_page} carros encontrados (total: {len(cars)})")
             
             page += 1
             
-            # Delay entre requisições
+            # Delay entre requisições (exceto na última página)
             if page <= MAX_PAGES:
                 time.sleep(DELAY_BETWEEN_REQUESTS)
         
@@ -1242,17 +1259,17 @@ class StandVirtualScraper:
         if not cars:
             return []
         
-        print(f"🎉 Total de {len(cars)} carros extraídos!")
+        self.logger.info(f"Total de {len(cars)} carros extraídos")
         
         # MELHORIA 1: Deduplicação APENAS por URL (não por título)
-        print(f"\n🔧 Removendo duplicatas por URL...")
+        self.logger.debug("Removendo duplicatas por URL...")
         unique_cars = []
         seen_urls = set()
         
         for car in cars:
             # Remove APENAS por URL duplicada (mesmo anúncio)
             if car.url and car.url in seen_urls:
-                print(f"   🗑️  Duplicata: mesmo anúncio → {car.titulo[:40]}...")
+                self.logger.debug(f"Duplicata: mesmo anúncio → {car.titulo[:40]}...")
                 continue
             
             # Aceita o carro se URL for única ou se não tiver URL
@@ -1260,11 +1277,11 @@ class StandVirtualScraper:
             if car.url:
                 seen_urls.add(car.url)
         
-        print(f"✅ {len(unique_cars)} carros únicos após deduplicação (só URLs)")
-        print(f"💡 Carros com mesmo nome mas características diferentes são mantidos")
+        self.logger.info(f"{len(unique_cars)} carros únicos após deduplicação (só URLs)")
+        self.logger.debug("Carros com mesmo nome mas características diferentes são mantidos")
         
         # Validação básica apenas
-        print(f"\n✅ {len(unique_cars)} carros prontos!")
+        self.logger.info(f"{len(unique_cars)} carros prontos")
         
         # Filtro básico - remove carros com dados inválidos
         valid_cars = []
@@ -1273,7 +1290,7 @@ class StandVirtualScraper:
                 car.titulo and len(car.titulo) >= 5):
                 valid_cars.append(car)
         
-        print(f"🎯 {len(valid_cars)} carros com dados válidos")
+        self.logger.info(f"{len(valid_cars)} carros com dados válidos")
         
         return valid_cars
     

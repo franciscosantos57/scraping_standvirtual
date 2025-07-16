@@ -1,0 +1,78 @@
+2025-07-16 17:13:42,824 - INFO - ==================================================
+2025-07-16 17:13:42,824 - INFO - NOVA SESSÃO DE SCRAPING INICIADA
+2025-07-16 17:13:42,824 - INFO - Timestamp: 2025-07-16 17:13:42
+2025-07-16 17:13:42,824 - INFO - ==================================================
+2025-07-16 17:13:42,824 - INFO - Iniciando scraping do StandVirtual
+2025-07-16 17:13:42,826 - INFO - Parâmetros de pesquisa: {'marca': 'BMW', 'modelo': 'Serie 5', 'ano_min': None, 'ano_max': None, 'km_max': 300000, 'preco_max': None, 'caixa': 'manual', 'combustivel': None}
+2025-07-16 17:13:42,826 - INFO - Marca otimizada: BMW → bmw
+2025-07-16 17:13:42,826 - INFO - Modelo otimizado: Serie 5 → serie-5
+2025-07-16 17:13:42,917 - WARNING - The chromedriver version (137.0.7151.119) detected in PATH at /opt/homebrew/bin/chromedriver might not be compatible with the detected chrome version (138.0.7204.101); currently, chromedriver 138.0.7204.157 is recommended for chrome 138.*, so it is advised to delete the driver in PATH and retry
+2025-07-16 17:13:43,270 - INFO - Selenium configurado com chromedriver do sistema
+2025-07-16 17:13:43,270 - INFO - Iniciando pesquisa de carros...
+2025-07-16 17:13:43,270 - INFO - Pesquisa simples: serie-5
+2025-07-16 17:13:48,239 - INFO - URLs extraídas do HTML: 32
+2025-07-16 17:13:48,240 - INFO - Página 1: 32 carros encontrados (total: 32)
+2025-07-16 17:13:53,151 - INFO - URLs extraídas do HTML: 12
+2025-07-16 17:13:53,151 - INFO - Página 2: 9 carros encontrados (total: 41)
+2025-07-16 17:13:58,231 - INFO - URLs extraídas do HTML: 3
+2025-07-16 17:13:58,237 - INFO - Encontrados 8 elementos com: article
+2025-07-16 17:13:58,587 - INFO - Total de 41 carros extraídos
+2025-07-16 17:13:58,587 - INFO - 38 carros únicos após deduplicação (só URLs)
+2025-07-16 17:13:58,587 - INFO - 38 carros prontos
+2025-07-16 17:13:58,587 - INFO - 38 carros com dados válidos
+2025-07-16 17:13:58,587 - INFO - === CARROS ENCONTRADOS ===
+2025-07-16 17:13:58,587 - INFO -   1. BMW 520 d Touring Luxury Line → 24990 EUR
+2025-07-16 17:13:58,587 - INFO -   2. BMW 520 d Pack M → 16999 EUR
+2025-07-16 17:13:58,587 - INFO -   3. BMW 520 d Touring Sport → 10499 EUR
+2025-07-16 17:13:58,587 - INFO -   4. BMW 520 d Line Luxury → 13990 EUR
+2025-07-16 17:13:58,587 - INFO -   5. BMW 535 → 9990 EUR
+2025-07-16 17:13:58,587 - INFO -   6. BMW 520 d → 20000 EUR
+2025-07-16 17:13:58,587 - INFO -   7. BMW 520 d Line Modern → 14390 EUR
+2025-07-16 17:13:58,587 - INFO -   8. BMW 520 → 14600 EUR
+2025-07-16 17:13:58,587 - INFO -   9. BMW 520 d Line Luxury → 17750 EUR
+2025-07-16 17:13:58,587 - INFO -  10. BMW 520 d Line Luxury → 14990 EUR
+2025-07-16 17:13:58,587 - INFO -  11. BMW 520 d → 15990 EUR
+2025-07-16 17:13:58,587 - INFO -  12. BMW 520 → 15950 EUR
+2025-07-16 17:13:58,587 - INFO -  13. BMW 525 d → 18990 EUR
+2025-07-16 17:13:58,587 - INFO -  14. BMW 520 d Pack M → 29950 EUR
+2025-07-16 17:13:58,587 - INFO -  15. BMW 520 d Pack M → 18950 EUR
+2025-07-16 17:13:58,587 - INFO -  16. BMW 520 → 15900 EUR
+2025-07-16 17:13:58,587 - INFO -  17. BMW 520 d Pack M → 24999 EUR
+2025-07-16 17:13:58,587 - INFO -  18. BMW 520 d Executive → 12950 EUR
+2025-07-16 17:13:58,587 - INFO -  19. BMW 520 d → 9500 EUR
+2025-07-16 17:13:58,587 - INFO -  20. BMW 520 d Pack M → 17990 EUR
+2025-07-16 17:13:58,587 - INFO -  21. BMW 525 → 16000 EUR
+2025-07-16 17:13:58,587 - INFO -  22. BMW 520 d Pack M → 22497 EUR
+2025-07-16 17:13:58,587 - INFO -  23. BMW 525 d → 16950 EUR
+2025-07-16 17:13:58,587 - INFO -  24. BMW 525 d → 12400 EUR
+2025-07-16 17:13:58,587 - INFO -  25. BMW 520 d Pack M → 15800 EUR
+2025-07-16 17:13:58,588 - INFO -  26. BMW 520 d 130g → 13500 EUR
+2025-07-16 17:13:58,588 - INFO -  27. BMW 530 d → 6490 EUR
+2025-07-16 17:13:58,588 - INFO -  28. BMW 520 d Line Sport → 29500 EUR
+2025-07-16 17:13:58,588 - INFO -  29. BMW 520 d Sport → 8990 EUR
+2025-07-16 17:13:58,588 - INFO -  30. BMW M5 Standard → 32990 EUR
+2025-07-16 17:13:58,588 - INFO -  31. BMW 520 d → 14250 EUR
+2025-07-16 17:13:58,588 - INFO -  32. BMW 520 → 11750 EUR
+2025-07-16 17:13:58,588 - INFO -  33. BMW 530 d → 16500 EUR
+2025-07-16 17:13:58,588 - INFO -  34. BMW 525 d xDrive Touring Edition Sport → 16500 EUR
+2025-07-16 17:13:58,588 - INFO -  35. BMW 525 tds → 1600 EUR
+2025-07-16 17:13:58,588 - INFO -  36. BMW 520 d → 13990 EUR
+2025-07-16 17:13:58,588 - INFO -  37. BMW 520 d Line Luxury → 14950 EUR
+2025-07-16 17:13:58,588 - INFO -  38. BMW 520 → 17850 EUR
+2025-07-16 17:13:58,588 - INFO - === TOTAL: 38 CARROS ===
+2025-07-16 17:13:58,588 - INFO - Encontrados 38 carros
+2025-07-16 17:13:58,588 - INFO - Calculando intervalo de preços para 38 carros
+2025-07-16 17:13:58,588 - INFO - Análise de outliers: Q1=13500€, Q3=17990€, IQR=4490€
+2025-07-16 17:13:58,588 - INFO - Limites: 6765€ - 24725€
+2025-07-16 17:13:58,588 - INFO - Outliers removidos (7): ['1600€', '6490€', '24990€', '24999€', '29500€', '29950€', '32990€']
+2025-07-16 17:13:58,588 - INFO - Dados válidos: 31 preços entre 8990€ - 22497€
+2025-07-16 17:13:58,588 - INFO - Intervalo final: 8990€ - 22497€ (sem 7 outliers)
+2025-07-16 17:13:58,588 - INFO - Total de carros: 38
+2025-07-16 17:13:58,588 - INFO - Carros após remoção de outliers: 31
+2025-07-16 17:13:58,588 - INFO - Outliers removidos: 7
+2025-07-16 17:13:58,588 - INFO - Tempo de extração: 0.00 segundos
+2025-07-16 17:13:58,588 - INFO - Intervalo de preços final: 8990.0€ - 22497.0€
+2025-07-16 17:13:58,588 - INFO - Scraping concluído com sucesso
+2025-07-16 17:13:58,588 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10bc81450>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc76d42929d7559f350daae32d28e2a0
+2025-07-16 17:13:58,589 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10bc81e50>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc76d42929d7559f350daae32d28e2a0
+2025-07-16 17:13:58,589 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10b8c2060>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc76d42929d7559f350daae32d28e2a0

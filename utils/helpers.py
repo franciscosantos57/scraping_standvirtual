@@ -1,5 +1,5 @@
 """
-Funções auxiliares para o projeto
+Funções auxiliares para o StandVirtual Scraper
 """
 
 import re
@@ -10,6 +10,9 @@ from datetime import datetime
 from typing import List, Tuple
 from models.car import Car
 from utils.config import RESULTS_DIR
+from utils.logging_config import get_logger
+
+logger = get_logger(__name__)
 
 
 def clean_price(price_text: str) -> tuple[str, float]:
@@ -56,38 +59,156 @@ def clean_price(price_text: str) -> tuple[str, float]:
         return price_text, 0.0
 
 
-def detect_outliers(prices: List[float]) -> Tuple[List[float], int]:
+def detect_outliers(prices):
     """
-    Detecta e remove outliers usando o método IQR (Interquartile Range)
+    Detecta outliers nos preços usando o método IQR (Interquartile Range).
     
     Args:
-        prices: Lista de preços numéricos
+        prices (list): Lista de preços numéricos
         
     Returns:
-        tuple: (preços_sem_outliers, quantidade_outliers_removidos)
+        dict: {
+            'filtered_prices': lista sem outliers,
+            'outliers': lista de outliers removidos,
+            'stats': estatísticas do processo
+        }
     """
-    if len(prices) < 4:  # Precisa de pelo menos 4 valores para calcular quartis
-        return prices, 0
+    if len(prices) < 4:
+        logger.info(f"Poucos dados para filtrar outliers ({len(prices)} preços). Mantendo todos os valores.")
+        return {
+            'filtered_prices': prices.copy(),
+            'outliers': [],
+            'stats': {
+                'total_original': len(prices),
+                'total_filtered': len(prices),
+                'outliers_removed': 0,
+                'reason': 'insufficient_data'
+            }
+        }
     
-    # Ordena os preços
+    # Calcula quartis (compatível com Python < 3.8)
     sorted_prices = sorted(prices)
+    n = len(sorted_prices)
+    q1_index = int(n * 0.25)
+    q3_index = int(n * 0.75)
     
-    # Calcula quartis
-    q1 = statistics.quantiles(sorted_prices, n=4)[0]  # Primeiro quartil (25%)
-    q3 = statistics.quantiles(sorted_prices, n=4)[2]  # Terceiro quartil (75%)
-    
-    # Calcula IQR
+    q1 = sorted_prices[q1_index]
+    q3 = sorted_prices[q3_index]
     iqr = q3 - q1
     
-    # Define limites para outliers
+    # Limites para outliers
     lower_bound = q1 - 1.5 * iqr
     upper_bound = q3 + 1.5 * iqr
     
-    # Remove outliers
-    filtered_prices = [price for price in prices if lower_bound <= price <= upper_bound]
-    outliers_removed = len(prices) - len(filtered_prices)
+    logger.info(f"Análise de outliers: Q1={q1:.0f}€, Q3={q3:.0f}€, IQR={iqr:.0f}€")
+    logger.info(f"Limites: {lower_bound:.0f}€ - {upper_bound:.0f}€")
     
-    return filtered_prices, outliers_removed
+    # Separa dados válidos de outliers
+    filtered_prices = []
+    outliers = []
+    
+    for price in prices:
+        if lower_bound <= price <= upper_bound:
+            filtered_prices.append(price)
+        else:
+            outliers.append(price)
+    
+    # Se todos os valores fossem removidos, mantém os originais
+    if not filtered_prices:
+        logger.warning("Todos os preços seriam removidos como outliers. Mantendo valores originais.")
+        return {
+            'filtered_prices': prices.copy(),
+            'outliers': [],
+            'stats': {
+                'total_original': len(prices),
+                'total_filtered': len(prices),
+                'outliers_removed': 0,
+                'reason': 'all_would_be_outliers'
+            }
+        }
+    
+    # Log dos resultados
+    if outliers:
+        logger.info(f"Outliers removidos ({len(outliers)}): {[f'{p:.0f}€' for p in sorted(outliers)]}")
+        logger.info(f"Dados válidos: {len(filtered_prices)} preços entre {min(filtered_prices):.0f}€ - {max(filtered_prices):.0f}€")
+    else:
+        logger.info("Nenhum outlier detectado. Todos os preços estão dentro do intervalo normal.")
+    
+    return {
+        'filtered_prices': filtered_prices,
+        'outliers': outliers,
+        'stats': {
+            'total_original': len(prices),
+            'total_filtered': len(filtered_prices),
+            'outliers_removed': len(outliers),
+            'reason': 'normal_filtering'
+        }
+    }
+
+
+def calculate_price_interval(cars):
+    """
+    Calcula o intervalo de preços (min-max) sem outliers.
+    
+    Args:
+        cars (list): Lista de objetos Car
+        
+    Returns:
+        dict: Dados do intervalo de preços para output JSON
+    """
+    if not cars:
+        logger.warning("Lista de carros vazia para cálculo de intervalo")
+        return {
+            'min_price': None,
+            'max_price': None,
+            'total_cars_after_outliers': 0,
+            'outliers_removed': 0,
+            'extraction_time': 0
+        }
+    
+    # Extrai preços numéricos válidos
+    prices = []
+    extraction_time = 0
+    
+    for car in cars:
+        if hasattr(car, 'preco_numerico') and car.preco_numerico and car.preco_numerico > 0:
+            prices.append(car.preco_numerico)
+        
+        # Captura tempo de extração se disponível (armazenado no primeiro carro)
+        if hasattr(car, 'extraction_time'):
+            extraction_time = car.extraction_time
+    
+    logger.info(f"Calculando intervalo de preços para {len(prices)} carros")
+    
+    if not prices:
+        logger.warning("Nenhum preço válido encontrado")
+        return {
+            'min_price': None,
+            'max_price': None,
+            'total_cars_after_outliers': 0,
+            'outliers_removed': 0,
+            'extraction_time': extraction_time
+        }
+    
+    # Remove outliers
+    outlier_result = detect_outliers(prices)
+    filtered_prices = outlier_result['filtered_prices']
+    
+    # Calcula intervalo
+    min_price = min(filtered_prices)
+    max_price = max(filtered_prices)
+    
+    result = {
+        'min_price': min_price,
+        'max_price': max_price,
+        'total_cars_after_outliers': len(filtered_prices),
+        'outliers_removed': len(outlier_result['outliers']),
+        'extraction_time': extraction_time
+    }
+    
+    logger.info(f"Intervalo final: {min_price:.0f}€ - {max_price:.0f}€ (sem {len(outlier_result['outliers'])} outliers)")
+    
+    return result
 
 
 def extract_year(date_str: str) -> int:
@@ -134,111 +255,37 @@ def clean_mileage(mileage_text: str) -> tuple[str, int]:
     return mileage_text, 0
 
 
-def display_results(cars: List[Car], max_display: int = 10):
+def display_results(cars):
     """
-    Exibe os resultados de forma formatada
+    Função obsoleta - agora apenas faz log dos resultados.
+    O output real é feito via JSON no main.py
+    """
+    logger.info(f"display_results() chamada com {len(cars)} carros (função obsoleta)")
     
-    Args:
-        cars: Lista de carros encontrados
-        max_display: Máximo de carros a exibir
-    """
     if not cars:
-        print("Nenhum resultado encontrado.")
+        logger.info("Nenhum resultado para mostrar")
         return
     
-    print(f"\n{'='*80}")
-    print(f"RESULTADOS ENCONTRADOS ({len(cars)} carros)")
-    print(f"{'='*80}")
+    # Log resumido dos carros encontrados
+    logger.info("=== RESUMO DOS CARROS ENCONTRADOS ===")
+    for i, car in enumerate(cars[:5], 1):  # Log apenas os primeiros 5
+        logger.info(f"{i}. {car.titulo} - {car.preco} ({car.ano}, {car.quilometragem})")
     
-    # Ordena por preço crescente
-    sorted_cars = sorted(cars, key=lambda x: x.preco_numerico)
+    if len(cars) > 5:
+        logger.info(f"... e mais {len(cars) - 5} carros")
     
-    for i, car in enumerate(sorted_cars[:max_display], 1):
-        print(f"\n{i}. {car.titulo}")
-        print(f"   💰 Preço: {car.preco}")
-        
-        if car.ano:
-            print(f"   📅 Ano: {car.ano}")
-        
-        if car.quilometragem and car.quilometragem != "N/A":
-            print(f"   🛣️  Quilometragem: {car.quilometragem}")
-        
-        if car.combustivel:
-            print(f"   ⛽ Combustível: {car.combustivel}")
-        
-        # URL sempre exibida e destacada
-        if car.url:
-            print(f"   🔗 LINK: {car.url}")
-        else:
-            print(f"   ⚠️  URL não disponível")
-        
-        print(f"   {'-'*60}")
-    
-    if len(cars) > max_display:
-        print(f"\n... e mais {len(cars) - max_display} resultados")
-        print(f"💡 Para ver todos os resultados e URLs, salve em CSV!")
-    
-    # Verifica se há tempo de extração (armazenado no primeiro carro)
-    extraction_time = getattr(cars[0], '_extraction_time', None) if cars else None
-    
-    # Estatísticas com remoção de outliers
-    prices = [car.preco_numerico for car in cars if car.preco_numerico > 0]
-    urls_count = len([car for car in cars if car.url])
-    
-    if prices:
-        # Remove outliers
-        filtered_prices, outliers_removed = detect_outliers(prices)
-        
-        if filtered_prices:
-            min_price = min(filtered_prices)
-            max_price = max(filtered_prices)
-            
-            print(f"\n📊 ESTATÍSTICAS (sem outliers):")
-            print(f"   💰 Intervalo de preços: {min_price:,.0f} € - {max_price:,.0f} €".replace(',', '.'))
-            print(f"   📈 Total de carros: {len(cars)}")
-            print(f"   🔗 URLs encontradas: {urls_count}/{len(cars)} carros")
-            
-            # Mostra tempo de extração se disponível
-            if extraction_time is not None:
-                print(f"   ⏱️  Tempo de extração: {extraction_time:.2f} segundos")
-                if len(cars) > 0:
-                    cars_per_second = len(cars) / extraction_time
-                    print(f"   📈 Velocidade: {cars_per_second:.1f} carros/segundo")
-            
-            if outliers_removed > 0:
-                print(f"   🚫 Outliers removidos: {outliers_removed} carros (preços muito fora do normal)")
-        else:
-            print(f"\n📊 ESTATÍSTICAS:")
-            print(f"   ⚠️  Não foi possível calcular intervalo (dados insuficientes)")
-            
-            # Mostra tempo mesmo se não há preços válidos
-            if extraction_time is not None:
-                print(f"   ⏱️  Tempo de extração: {extraction_time:.2f} segundos")
+    # Calcula estatísticas para log
+    interval = calculate_price_interval(cars)
+    logger.info(f"Estatísticas: {interval}")
 
 
-def save_to_csv(cars: List[Car], filename: str = None) -> str:
+def save_to_csv(cars):
     """
-    Salva os resultados em arquivo CSV
-    
-    Args:
-        cars: Lista de carros
-        filename: Nome do arquivo (opcional)
-    
-    Returns:
-        Nome do arquivo criado
+    Função obsoleta - funcionalidade de CSV removida.
+    Sistema agora retorna apenas JSON.
     """
-    if not filename:
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = f"{RESULTS_DIR}/standvirtual_results_{timestamp}.csv"
-    
-    # Converte carros para dicionários
-    data = [car.to_dict() for car in cars]
-    
-    if data:
-        df = pd.DataFrame(data)
-        df.to_csv(filename, index=False, encoding='utf-8')
-    
-    return filename
+    logger.warning("save_to_csv() chamada - funcionalidade removida. Sistema agora usa apenas JSON.")
+    return None
 
 
 def build_search_url(base_url: str, params: dict) -> str:

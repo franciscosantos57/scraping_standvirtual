@@ -1,149 +1,74 @@
 #!/usr/bin/env python3
 """
-StandVirtual Car Price Scraper
-Programa principal para pesquisar preços de carros no StandVirtual.com
+StandVirtual Car Price Scraper - Production Version
+Sistema de scraping que retorna apenas o intervalo de preços em JSON
 """
 
 import sys
+import json
 from scraper.standvirtual_scraper import StandVirtualScraper
 from models.car import CarSearchParams
-from utils.helpers import display_results, save_to_csv
+from utils.helpers import calculate_price_interval
 from utils.brand_model_validator import validator
+from utils.logging_config import setup_logging, get_logger
 
 
-def get_user_input():
-    """Coleta os parâmetros de pesquisa do utilizador"""
-    print("\n=== StandVirtual Car Price Scraper ===")
-    print("Insira as características do carro que pretende pesquisar:")
+def create_search_params_from_args():
+    """
+    Cria parâmetros de pesquisa a partir dos argumentos da linha de comando.
+    Exemplo: python main.py --marca bmw --modelo x5 --ano_min 2015 --preco_max 25000
+    """
+    import argparse
     
-    # Mostra estatísticas do validador
-    stats = validator.get_stats()
-    print(f"📊 Base de dados: {stats['total_brands']} marcas, {stats['total_models']} modelos")
+    parser = argparse.ArgumentParser(description='StandVirtual Car Price Scraper')
+    parser.add_argument('--marca', type=str, help='Marca do carro')
+    parser.add_argument('--modelo', type=str, help='Modelo do carro')
+    parser.add_argument('--ano_min', type=int, help='Ano mínimo')
+    parser.add_argument('--ano_max', type=int, help='Ano máximo')
+    parser.add_argument('--km_max', type=int, help='Quilometragem máxima')
+    parser.add_argument('--preco_max', type=int, help='Preço máximo')
+    parser.add_argument('--caixa', type=str, choices=['manual', 'automatica'], help='Tipo de caixa')
+    parser.add_argument('--combustivel', type=str, choices=['gasolina', 'gasoleo', 'hibrido', 'eletrico'], help='Tipo de combustível')
+    
+    args = parser.parse_args()
     
     params = CarSearchParams()
-    
-    # Marca com validação
-    while True:
-        print(f"\n📋 Marcas disponíveis: {', '.join(validator.get_all_brands()[:8])}...")
-        marca = input("\nMarca: ").strip()
-        
-        if not marca:
-            print("ℹ️ Continuando sem especificar marca...")
-            break  # Utilizador não quer especificar marca
-            
-        if validator.is_valid_brand(marca):
-            params.marca = marca
-            print(f"✅ Marca '{marca}' encontrada")
-            break
-        else:
-            print(f"❌ Marca '{marca}' não encontrada")
-            suggestions = validator.suggest_brands(marca)
-            if suggestions:
-                print(f"💡 Sugestões: {', '.join(suggestions[:5])}")
-            
-            retry = input("Tentar novamente? (s/n/sair): ").strip().lower()
-            if retry in ['sair', 'exit', 'quit', 'q']:
-                print("👋 Programa encerrado pelo utilizador.")
-                sys.exit(0)
-            elif retry not in ['s', 'sim', 'y', 'yes']:
-                print("ℹ️ Continuando sem especificar marca...")
-                break
-    
-    # Modelo com validação (só se marca foi especificada)
-    if params.marca:
-        models = validator.get_models_for_brand(params.marca)
-        print(f"\n🚗 {len(models)} modelos disponíveis para {params.marca}")
-        
-        # Mostra alguns modelos como exemplo
-        example_models = [m['text'] for m in models[:8]]
-        print(f"📋 Exemplos: {', '.join(example_models)}...")
-        
-        while True:
-            modelo = input(f"\nModelo para {params.marca} (ou Enter para qualquer): ").strip()
-            
-            if not modelo:
-                break  # Utilizador não quer especificar modelo
-                
-            if validator.is_valid_model(params.marca, modelo):
-                params.modelo = modelo
-                print(f"✅ Modelo '{modelo}' encontrado para {params.marca}")
-                break
-            else:
-                print(f"❌ Modelo '{modelo}' não encontrado para {params.marca}")
-                suggestions = validator.suggest_models(params.marca, modelo)
-                if suggestions:
-                    suggestion_names = [s['text'] for s in suggestions[:5]]
-                    print(f"💡 Sugestões: {', '.join(suggestion_names)}")
-                
-                retry = input("Tentar novamente? (s/n/sair): ").strip().lower()
-                if retry in ['sair', 'exit', 'quit', 'q']:
-                    print("👋 Programa encerrado pelo utilizador.")
-                    sys.exit(0)
-                elif retry not in ['s', 'sim', 'y', 'yes']:
-                    print("ℹ️ Continuando sem especificar modelo...")
-                    break
-    
-    # Ano mínimo
-    ano_min = input("Ano mínimo (ex: 2015): ").strip()
-    if ano_min and ano_min.isdigit():
-        params.ano_min = int(ano_min)
-    
-    # Ano máximo
-    ano_max = input("Ano máximo (ex: 2022): ").strip()
-    if ano_max and ano_max.isdigit():
-        params.ano_max = int(ano_max)
-    
-    # Quilometragem máxima
-    km_max = input("Quilometragem máxima (ex: 100000): ").strip()
-    if km_max and km_max.isdigit():
-        params.km_max = int(km_max)
-    
-    # Preço máximo
-    preco_max = input("Preço máximo (ex: 25000): ").strip()
-    if preco_max and preco_max.isdigit():
-        params.preco_max = int(preco_max)
-    
-    # Tipo de caixa
-    print("\nTipo de caixa:")
-    print("1 - Manual")
-    print("2 - Automática")
-    print("3 - Ambas")
-    caixa_choice = input("Escolha (1-3): ").strip()
-    
-    if caixa_choice == "1":
-        params.caixa = "manual"
-    elif caixa_choice == "2":
-        params.caixa = "automatica"
-    
-    # Combustível
-    print("\nTipo de combustível:")
-    print("1 - Gasolina")
-    print("2 - Gasóleo")
-    print("3 - Híbrido")
-    print("4 - Elétrico")
-    print("5 - Qualquer")
-    combustivel_choice = input("Escolha (1-5): ").strip()
-    
-    combustivel_map = {
-        "1": "gasolina",
-        "2": "gasoleo",
-        "3": "hibrido",
-        "4": "eletrico"
-    }
-    
-    if combustivel_choice in combustivel_map:
-        params.combustivel = combustivel_map[combustivel_choice]
+    if args.marca:
+        params.marca = args.marca
+    if args.modelo:
+        params.modelo = args.modelo
+    if args.ano_min:
+        params.ano_min = args.ano_min
+    if args.ano_max:
+        params.ano_max = args.ano_max
+    if args.km_max:
+        params.km_max = args.km_max
+    if args.preco_max:
+        params.preco_max = args.preco_max
+    if args.caixa:
+        params.caixa = args.caixa
+    if args.combustivel:
+        params.combustivel = args.combustivel
     
     return params
 
 
 def main():
-    """Função principal"""
+    """Função principal - versão de produção"""
     try:
-        # Obter parâmetros de pesquisa
-        search_params = get_user_input()
+        # Configurar logging
+        setup_logging()
+        logger = get_logger(__name__)
         
-        # Valida e otimiza os parâmetros usando o validador
+        logger.info("Iniciando scraping do StandVirtual")
+        
+        # Obter parâmetros de pesquisa
+        search_params = create_search_params_from_args()
+        
+        # Log dos parâmetros de pesquisa
+        logger.info(f"Parâmetros de pesquisa: {search_params.__dict__}")
+        
+        # Validar e otimizar parâmetros
         if search_params.marca or search_params.modelo:
             validation_result = validator.validate_search_params(
                 search_params.marca, 
@@ -151,50 +76,61 @@ def main():
             )
             
             if validation_result['valid']:
-                # Usa os valores otimizados do validador para a pesquisa
                 if validation_result['brand_value']:
-                    original_marca = search_params.marca
+                    logger.info(f"Marca otimizada: {search_params.marca} → {validation_result['brand_value']}")
                     search_params.marca = validation_result['brand_value']
-                    print(f"🔧 Marca otimizada: {original_marca} → {search_params.marca}")
                 
                 if validation_result['model_value']:
-                    original_modelo = search_params.modelo
+                    logger.info(f"Modelo otimizado: {search_params.modelo} → {validation_result['model_value']}")
                     search_params.modelo = validation_result['model_value']
-                    print(f"🔧 Modelo otimizado: {original_modelo} → {search_params.modelo}")
             else:
-                print("⚠️ Parâmetros de pesquisa com problemas:")
+                logger.warning("Parâmetros de pesquisa com problemas:")
                 for error in validation_result['errors']:
-                    print(f"   • {error}")
-        
-        print(f"\n🔍 A pesquisar carros com os critérios especificados...")
+                    logger.warning(f"  • {error}")
         
         # Criar o scraper
         scraper = StandVirtualScraper()
         
         # Fazer a pesquisa
+        logger.info("Iniciando pesquisa de carros...")
         results = scraper.search_cars(search_params)
         
         if not results:
-            print("❌ Nenhum carro encontrado com os critérios especificados.")
-            return
+            logger.warning("Nenhum carro encontrado com os critérios especificados")
+            output = {"min": None, "max": None}
+        else:
+            logger.info(f"Encontrados {len(results)} carros")
+            
+            # Calcular intervalo de preços (sem outliers)
+            price_interval = calculate_price_interval(results)
+            
+            # Log detalhado das estatísticas
+            logger.info(f"Total de carros: {len(results)}")
+            logger.info(f"Carros após remoção de outliers: {price_interval['total_cars_after_outliers']}")
+            logger.info(f"Outliers removidos: {price_interval['outliers_removed']}")
+            logger.info(f"Tempo de extração: {price_interval.get('extraction_time', 0):.2f} segundos")
+            logger.info(f"Intervalo de preços final: {price_interval['min_price']}€ - {price_interval['max_price']}€")
+            
+            # Output JSON minimalista
+            output = {
+                "min": price_interval['min_price'],
+                "max": price_interval['max_price']
+            }
         
-        # Mostrar resultados
-        print(f"\n✅ Encontrados {len(results)} carros:")
-        display_results(results)
+        logger.info("Scraping concluído com sucesso")
         
-        # Perguntar se quer salvar
-        save_choice = input("\n💾 Deseja salvar os resultados em CSV? (s/n): ").strip().lower()
-        if save_choice in ['s', 'sim', 'y', 'yes']:
-            filename = save_to_csv(results)
-            print(f"📁 Resultados salvos em: {filename}")
-        
-        print("\n✨ Pesquisa concluída!")
+        # Retornar apenas JSON (sem prints)
+        print(json.dumps(output, ensure_ascii=False, indent=2))
         
     except KeyboardInterrupt:
-        print("\n\n⚠️ Operação cancelada pelo utilizador.")
+        logger.error("Operação cancelada pelo utilizador")
+        output = {"min": None, "max": None}
+        print(json.dumps(output, ensure_ascii=False, indent=2))
         sys.exit(0)
     except Exception as e:
-        print(f"\n❌ Erro durante a execução: {str(e)}")
+        logger.error(f"Erro durante a execução: {str(e)}", exc_info=True)
+        output = {"min": None, "max": None}
+        print(json.dumps(output, ensure_ascii=False, indent=2))
         sys.exit(1)
 
 

@@ -32,17 +32,15 @@ class BrandModelValidator:
                 # Se tem estrutura de metadados, extrai só as marcas
                 if 'brands' in data:
                     self.brands_data = data['brands']
-                    print(f"✅ Base de dados mestre carregada: {len(self.brands_data)} marcas")
                 else:
                     # Formato antigo
                     self.brands_data = data
-                    print(f"✅ Dados de marcas carregados: {len(self.brands_data)} marcas")
             else:
-                print(f"⚠️ Arquivo {self.data_file} não encontrado, usando dados básicos")
+                # Arquivo não encontrado, usando dados básicos
                 self._load_basic_data()
                 
         except Exception as e:
-            print(f"⚠️ Erro ao carregar dados: {e}, usando dados básicos")
+            # Erro ao carregar dados, usando dados básicos  
             self._load_basic_data()
     
     def _load_basic_data(self):
