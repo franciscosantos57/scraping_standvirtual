@@ -364,11 +364,7 @@ class StandVirtualScraper:
                 ano=ano,
                 quilometragem=quilometragem,
                 combustivel=combustivel,
-                caixa="N/A",  # Será preenchido na validação
-                potencia="N/A",  # Será preenchido na validação
-                segmento="N/A",  # Será preenchido na validação
-                cilindrada="N/A",  # Será preenchido na validação
-                url=final_url    # Agora extrai a URL real
+                url=final_url
             )
             
         except Exception as e:
@@ -634,11 +630,7 @@ class StandVirtualScraper:
                     ano=ano,
                     quilometragem=quilometragem,
                     combustivel=combustivel,
-                    caixa="N/A",  # Será preenchido na validação
-                    potencia="N/A",  # Será preenchido na validação
-                    segmento="N/A",  # Será preenchido na validação
-                    cilindrada="N/A",  # Será preenchido na validação
-                    url=url    # Agora extrai a URL real
+                    url=url
                 )
             
             return None
@@ -707,7 +699,7 @@ class StandVirtualScraper:
         except Exception:
             return False
     
-    def _validate_car_data(self, car: Car) -> Car:
+    def _validate_car_data_REMOVED(self, car: Car) -> Car:
         """
         Valida e atualiza dados do carro acessando a página individual do anúncio
         
@@ -1048,109 +1040,7 @@ class StandVirtualScraper:
         except Exception as e:
             print(f"   ❌ Erro geral: {e}")
             return None
-    
-    def _extract_technical_data_fallback(self, car: Car, html_content: str, soup: BeautifulSoup):
-        """
-        Extrai dados técnicos usando requests/BeautifulSoup como fallback
-        
-        Args:
-            car: Objeto Car para atualizar
-            html_content: Conteúdo HTML da página
-            soup: BeautifulSoup object
-        """
-        try:
-            # 1. Caixa de velocidades
-            if not car.caixa or car.caixa == "N/A":
-                if 'automática' in html_content.lower() or 'automatic' in html_content.lower():
-                    car.caixa = 'Automática'
-                    print(f"   ⚙️  Caixa (fallback): {car.caixa}")
-                elif 'manual' in html_content.lower():
-                    car.caixa = 'Manual'
-                    print(f"   ⚙️  Caixa (fallback): {car.caixa}")
-            
-            # 2. Segmento - busca no HTML
-            if not car.segmento or car.segmento == "N/A":
-                segmento_keywords = [
-                    'Cabrio', 'Carrinha', 'Citadino', 'Coupé', 'Monovolume', 
-                    'Pequeno citadino', 'Sedan', 'SUV', 'TT', 'Utilitário',
-                    # Variantes e sinónimos
-                    'Station', 'Hatchback', 'MPV', 'Van', 'Pick-up', 'Spyder'
-                ]
-                
-                for keyword in segmento_keywords:
-                    if keyword.lower() in html_content.lower():
-                        # Mapeamento para segmentos portugueses
-                        if keyword == 'Cabrio' or keyword == 'Spyder':
-                            car.segmento = 'Cabrio'
-                        elif keyword == 'Carrinha' or keyword == 'Station':
-                            car.segmento = 'Carrinha'
-                        elif keyword == 'Pequeno citadino':
-                            car.segmento = 'Pequeno citadino'
-                        elif keyword == 'Citadino' or keyword == 'Hatchback':
-                            car.segmento = 'Citadino'
-                        elif keyword == 'Coupé':
-                            car.segmento = 'Coupé'
-                        elif keyword == 'Monovolume' or keyword == 'MPV':
-                            car.segmento = 'Monovolume'
-                        elif keyword == 'Sedan':
-                            car.segmento = 'Sedan'
-                        elif keyword == 'SUV' or keyword == 'TT':
-                            car.segmento = 'SUV / TT'
-                        elif keyword == 'Utilitário' or keyword == 'Van' or keyword == 'Pick-up':
-                            car.segmento = 'Utilitário'
-                        
-                        print(f"   🚗 Segmento (fallback): {car.segmento}")
-                        break
-            
-            # 3. Cilindrada - busca por padrões regex
-            if not car.cilindrada or car.cilindrada == "N/A":
-                cilindrada_patterns = [
-                    r'(\d{1,2}\s?\d{3}\s?cm3)',      # 1 598 cm3
-                    r'(\d{1,2}\.\d{3}\s?cm3)',       # 1.598 cm3
-                    r'(\d{1,2},\d{3}\s?cm3)',        # 1,598 cm3
-                    r'(\d{3,4}\s?cm3)',              # 1598 cm3
-                ]
-                
-                for pattern in cilindrada_patterns:
-                    match = re.search(pattern, html_content, re.IGNORECASE)
-                    if match:
-                        car.cilindrada = match.group(1)
-                        print(f"   🔧 Cilindrada (fallback): {car.cilindrada}")
-                        break
-            
-            # 4. Potência - busca por padrões regex
-            if not car.potencia or car.potencia == "N/A":
-                potencia_patterns = [
-                    r'(\d{2,4}\s?cv)',               # 150 cv
-                    r'(\d{2,4}\s?CV)',               # 150 CV
-                    r'(\d{2,4}\s?hp)',               # 150 hp
-                    r'(\d{2,4}\s?HP)',               # 150 HP
-                ]
-                
-                for pattern in potencia_patterns:
-                    match = re.search(pattern, html_content)
-                    if match:
-                        potencia_text = match.group(1).lower()
-                        # Converte HP para CV se necessário
-                        if 'hp' in potencia_text:
-                            hp_value = int(re.search(r'\d+', potencia_text).group())
-                            cv_value = int(hp_value * 0.986)  # Conversão HP para CV
-                            car.potencia = f"{cv_value} cv"
-                        else:
-                            car.potencia = potencia_text
-                        print(f"   ⚡ Potência (fallback): {car.potencia}")
-                        break
-            
-            # 5. Título correto do h1.offer-title se disponível
-            offer_title = soup.select_one('h1.offer-title')
-            if offer_title and offer_title.get_text(strip=True):
-                new_title = offer_title.get_text(strip=True)
-                if new_title != car.titulo:
-                    print(f"   📝 Título corrigido (fallback): {car.titulo[:30]}... → {new_title}")
-                    car.titulo = new_title
-                    
-        except Exception as e:
-            print(f"   ⚠️ Erro na extração de dados técnicos (fallback): {e}")
+
     
     def search_cars(self, params: CarSearchParams) -> List[Car]:
         """
@@ -1162,6 +1052,10 @@ class StandVirtualScraper:
         Returns:
             Lista de carros encontrados
         """
+        import time
+        
+        # Inicia contagem do tempo
+        start_time = time.time()
         cars = []
         
         try:
@@ -1196,7 +1090,19 @@ class StandVirtualScraper:
             if self.use_selenium and self.driver:
                 self.driver.quit()
         
-        return self._process_final_results(cars, params)
+        # Calcula tempo total
+        end_time = time.time()
+        extraction_time = end_time - start_time
+        
+        # Processa resultados finais
+        final_cars = self._process_final_results(cars, params)
+        
+        # Adiciona tempo como atributo temporário aos carros (para passar para display_results)
+        if final_cars:
+            # Adiciona o tempo de extração como atributo do primeiro carro (hack para passar o tempo)
+            final_cars[0]._extraction_time = extraction_time
+        
+        return final_cars
     
     def _get_model_variations(self, params: CarSearchParams) -> List[CarSearchParams]:
         """
@@ -1357,22 +1263,19 @@ class StandVirtualScraper:
         print(f"✅ {len(unique_cars)} carros únicos após deduplicação (só URLs)")
         print(f"💡 Carros com mesmo nome mas características diferentes são mantidos")
         
-        # MELHORIA 2: Validação RIGOROSA de TODOS os carros
-        print(f"\n🔍 Validando TODOS os carros rigorosamente...")
-        validated_cars = []
+        # Validação básica apenas
+        print(f"\n✅ {len(unique_cars)} carros prontos!")
         
-        for i, car in enumerate(unique_cars):
-            print(f"   [{i+1}/{len(unique_cars)}]", end=" ")
-            validated_car = self._validate_car_data(car)
-            if validated_car:
-                validated_cars.append(validated_car)
-            else:
-                print(f"   ❌ Carro rejeitado: {car.titulo[:40]}...")
+        # Filtro básico - remove carros com dados inválidos
+        valid_cars = []
+        for car in unique_cars:
+            if (car.preco_numerico > 200 and 
+                car.titulo and len(car.titulo) >= 5):
+                valid_cars.append(car)
         
-        print(f"\n✅ Validação concluída! {len(validated_cars)} carros válidos")
-        print(f"🎯 TODOS os carros têm URLs válidas e dados verificados")
+        print(f"🎯 {len(valid_cars)} carros com dados válidos")
         
-        return validated_cars
+        return valid_cars
     
     def __del__(self):
         """Destructor para limpar recursos"""

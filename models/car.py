@@ -25,17 +25,13 @@ class CarSearchParams:
 
 @dataclass
 class Car:
-    """Representação de um carro encontrado"""
+    """Representação de um carro encontrado - apenas características básicas"""
     titulo: str
     preco: str
     preco_numerico: float
     ano: Optional[int] = None
     quilometragem: Optional[str] = None
     combustivel: Optional[str] = None
-    caixa: Optional[str] = None
-    potencia: Optional[str] = None
-    segmento: Optional[str] = None
-    cilindrada: Optional[str] = None
     url: Optional[str] = None
     imagem: Optional[str] = None
     
@@ -43,16 +39,12 @@ class Car:
         return f"{self.titulo} - {self.preco}"
     
     def to_dict(self):
-        """Converte o carro para dicionário - apenas um preço para CSV"""
+        """Converte o carro para dicionário - apenas características básicas"""
         return {
             'Título': self.titulo,
-            'Preço': self.preco,  # Apenas um preço no CSV
+            'Preço': self.preco,
             'Ano': self.ano,
             'Quilometragem': self.quilometragem,
             'Combustível': self.combustivel,
-            'Caixa': self.caixa,
-            'Segmento': self.segmento,
-            'Cilindrada': self.cilindrada,
-            'Potência': self.potencia,
             'URL': self.url
         } 
