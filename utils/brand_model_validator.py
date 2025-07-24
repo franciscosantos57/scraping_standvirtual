@@ -10,7 +10,7 @@ from typing import List, Dict, Optional
 class BrandModelValidator:
     """Validador de marcas e modelos baseado nos dados extraídos do StandVirtual"""
     
-    def __init__(self, data_file: str = "data/json/standvirtual_master_database.json"):
+    def __init__(self, data_file: str = "data/json/standvirtual_database.json"):
         """
         Inicializa o validador
         
@@ -141,6 +141,73 @@ class BrandModelValidator:
         
         return suggestions
     
+    def get_submodels_for_model(self, brand: str, model: str) -> List[Dict[str, str]]:
+        """
+        Retorna lista de submodelos para uma marca e modelo específicos
+        
+        Args:
+            brand: Nome da marca
+            model: Nome ou value do modelo
+            
+        Returns:
+            Lista de dicionários com 'value' e 'text' dos submodelos
+        """
+        if not self.is_valid_brand(brand):
+            return []
+        
+        models = self.get_models_for_brand(brand)
+        
+        # Procura o modelo pelo value ou text
+        for model_data in models:
+            if (model_data.get('value', '').lower() == model.lower() or 
+                model_data.get('text', '').lower() == model.lower()):
+                return model_data.get('submodels', [])
+        
+        return []
+    
+    def is_valid_submodel(self, brand: str, model: str, submodel: str) -> bool:
+        """
+        Verifica se um submodelo é válido para uma marca e modelo
+        
+        Args:
+            brand: Nome da marca
+            model: Nome do modelo
+            submodel: Nome do submodelo
+            
+        Returns:
+            True se o submodelo é válido
+        """
+        submodels = self.get_submodels_for_model(brand, model)
+        submodel_names = [s['text'].lower() for s in submodels]
+        submodel_values = [s['value'].lower() for s in submodels]
+        
+        submodel_lower = submodel.lower()
+        return submodel_lower in submodel_names or submodel_lower in submodel_values
+    
+    def suggest_submodels(self, brand: str, model: str, partial_submodel: str) -> List[Dict[str, str]]:
+        """
+        Sugere submodelos baseados em texto parcial
+        
+        Args:
+            brand: Nome da marca
+            model: Nome do modelo
+            partial_submodel: Texto parcial do submodelo
+            
+        Returns:
+            Lista de submodelos que correspondem
+        """
+        partial_lower = partial_submodel.lower()
+        suggestions = []
+        
+        submodels = self.get_submodels_for_model(brand, model)
+        
+        for submodel in submodels:
+            if (partial_lower in submodel['text'].lower() or 
+                partial_lower in submodel['value'].lower()):
+                suggestions.append(submodel)
+        
+        return suggestions
+
     def suggest_models(self, brand: str, partial_model: str) -> List[Dict[str, str]]:
         """
         Sugere modelos baseados em texto parcial
@@ -198,13 +265,34 @@ class BrandModelValidator:
         
         return None
     
-    def validate_search_params(self, brand: str = None, model: str = None) -> Dict[str, str]:
+    def get_submodel_value(self, brand: str, model: str, submodel: str) -> Optional[str]:
+        """
+        Retorna o valor do submodelo para usar em URLs/parâmetros
+        
+        Args:
+            brand: Nome da marca
+            model: Nome do modelo
+            submodel: Nome do submodelo
+            
+        Returns:
+            Valor do submodelo ou None se inválido
+        """
+        submodels = self.get_submodels_for_model(brand, model)
+        
+        for s in submodels:
+            if s['text'].lower() == submodel.lower():
+                return s['value']
+        
+        return None
+
+    def validate_search_params(self, brand: str = None, model: str = None, submodel: str = None) -> Dict[str, str]:
         """
         Valida e corrige parâmetros de pesquisa
         
         Args:
             brand: Nome da marca
             model: Nome do modelo
+            submodel: Nome do submodelo
             
         Returns:
             Dicionário com parâmetros validados e sugestões
@@ -213,8 +301,10 @@ class BrandModelValidator:
             'valid': True,
             'brand': brand,
             'model': model,
+            'submodel': submodel,
             'brand_value': None,
             'model_value': None,
+            'submodel_value': None,
             'suggestions': {},
             'errors': []
         }
@@ -244,6 +334,19 @@ class BrandModelValidator:
                 suggestions = self.suggest_models(brand, model)
                 if suggestions:
                     result['suggestions']['models'] = [m['text'] for m in suggestions[:5]]
+        
+        # Valida submodelo
+        if submodel and brand and model and self.is_valid_brand(brand) and self.is_valid_model(brand, model):
+            if self.is_valid_submodel(brand, model, submodel):
+                result['submodel_value'] = self.get_submodel_value(brand, model, submodel)
+            else:
+                result['valid'] = False
+                result['errors'].append(f"Submodelo '{submodel}' não encontrado para {brand} {model}")
+                
+                # Sugere submodelos similares
+                suggestions = self.suggest_submodels(brand, model, submodel)
+                if suggestions:
+                    result['suggestions']['submodels'] = [s['text'] for s in suggestions[:5]]
         
         return result
     

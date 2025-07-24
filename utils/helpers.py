@@ -148,30 +148,34 @@ def detect_outliers(prices):
 
 def calculate_price_interval(cars):
     """
-    Calcula o intervalo de preços (min-max) sem outliers.
+    Calcula o intervalo de preços (min-max) sem outliers e retorna formato completo.
     
     Args:
         cars (list): Lista de objetos Car
         
     Returns:
-        dict: Dados do intervalo de preços para output JSON
+        dict: Dados completos para output JSON no novo formato
     """
     if not cars:
         logger.warning("Lista de carros vazia para cálculo de intervalo")
         return {
-            'min_price': None,
-            'max_price': None,
-            'total_cars_after_outliers': 0,
-            'outliers_removed': 0,
-            'extraction_time': 0
+            'preco_intervalo': {
+                'min': None,
+                'max': None
+            },
+            'media_aproximada': None,
+            'viaturas_consideradas': 0,
+            'anuncios_usados_para_calculo': []
         }
     
-    # Extrai preços numéricos válidos
+    # Extrai carros com preços válidos
+    valid_cars = []
     prices = []
     extraction_time = 0
     
     for car in cars:
         if hasattr(car, 'preco_numerico') and car.preco_numerico and car.preco_numerico > 0:
+            valid_cars.append(car)
             prices.append(car.preco_numerico)
         
         # Captura tempo de extração se disponível (armazenado no primeiro carro)
@@ -183,30 +187,59 @@ def calculate_price_interval(cars):
     if not prices:
         logger.warning("Nenhum preço válido encontrado")
         return {
-            'min_price': None,
-            'max_price': None,
-            'total_cars_after_outliers': 0,
-            'outliers_removed': 0,
-            'extraction_time': extraction_time
+            'preco_intervalo': {
+                'min': None,
+                'max': None
+            },
+            'media_aproximada': None,
+            'viaturas_consideradas': 0,
+            'anuncios_usados_para_calculo': []
         }
     
     # Remove outliers
     outlier_result = detect_outliers(prices)
     filtered_prices = outlier_result['filtered_prices']
     
-    # Calcula intervalo
+    # Filtra carros que não são outliers
+    filtered_cars = []
+    for car in valid_cars:
+        if car.preco_numerico in filtered_prices:
+            filtered_cars.append(car)
+    
+    # Calcula estatísticas
     min_price = min(filtered_prices)
     max_price = max(filtered_prices)
+    media_aproximada = round(sum(filtered_prices) / len(filtered_prices))
+    
+    # Converte carros para formato JSON - apenas características básicas extraídas
+    anuncios_json = []
+    for car in filtered_cars:
+        anuncio = {
+            'titulo': getattr(car, 'titulo', None),
+            'preco': getattr(car, 'preco', None),
+            'ano': getattr(car, 'ano', None),
+            'quilometragem': getattr(car, 'quilometragem', None),
+            'combustivel': getattr(car, 'combustivel', None),
+            'url': getattr(car, 'url', None),
+            'imagem': getattr(car, 'imagem', None)
+        }
+        
+        # Remove campos que são None para manter o JSON limpo
+        anuncio_limpo = {k: v for k, v in anuncio.items() if v is not None}
+        anuncios_json.append(anuncio_limpo)
     
     result = {
-        'min_price': min_price,
-        'max_price': max_price,
-        'total_cars_after_outliers': len(filtered_prices),
-        'outliers_removed': len(outlier_result['outliers']),
-        'extraction_time': extraction_time
+        'preco_intervalo': {
+            'min': int(min_price),
+            'max': int(max_price)
+        },
+        'media_aproximada': int(media_aproximada),
+        'viaturas_consideradas': len(filtered_cars),
+        'anuncios_usados_para_calculo': anuncios_json
     }
     
-    logger.info(f"Intervalo final: {min_price:.0f}€ - {max_price:.0f}€ (sem {len(outlier_result['outliers'])} outliers)")
+    logger.info(f"Intervalo final: {min_price:.0f}€ - {max_price:.0f}€ (média: {media_aproximada:.0f}€)")
+    logger.info(f"Carros considerados: {len(filtered_cars)} (removidos {len(outlier_result['outliers'])} outliers)")
     
     return result
 
@@ -277,15 +310,6 @@ def display_results(cars):
     # Calcula estatísticas para log
     interval = calculate_price_interval(cars)
     logger.info(f"Estatísticas: {interval}")
-
-
-def save_to_csv(cars):
-    """
-    Função obsoleta - funcionalidade de CSV removida.
-    Sistema agora retorna apenas JSON.
-    """
-    logger.warning("save_to_csv() chamada - funcionalidade removida. Sistema agora usa apenas JSON.")
-    return None
 
 
 def build_search_url(base_url: str, params: dict) -> str:

@@ -5,4 +5,5 @@ webdriver-manager>=4.0.1
 pandas>=2.2.0
 python-dotenv>=1.0.0
 lxml>=4.9.3
-fake-useragent>=1.4.0 
+fake-useragent>=1.4.0
+openai>=0.28.0 

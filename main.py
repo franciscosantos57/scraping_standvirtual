@@ -23,6 +23,7 @@ def create_search_params_from_args():
     parser = argparse.ArgumentParser(description='StandVirtual Car Price Scraper')
     parser.add_argument('--marca', type=str, help='Marca do carro')
     parser.add_argument('--modelo', type=str, help='Modelo do carro')
+    parser.add_argument('--submodelo', type=str, help='Submodelo do carro (ex: IS 200, 320i, etc)')
     parser.add_argument('--ano_min', type=int, help='Ano mínimo')
     parser.add_argument('--ano_max', type=int, help='Ano máximo')
     parser.add_argument('--km_max', type=int, help='Quilometragem máxima')
@@ -37,6 +38,8 @@ def create_search_params_from_args():
         params.marca = args.marca
     if args.modelo:
         params.modelo = args.modelo
+    if args.submodelo:
+        params.submodelo = args.submodelo
     if args.ano_min:
         params.ano_min = args.ano_min
     if args.ano_max:
@@ -68,11 +71,12 @@ def main():
         # Log dos parâmetros de pesquisa
         logger.info(f"Parâmetros de pesquisa: {search_params.__dict__}")
         
-        # Validar e otimizar parâmetros
-        if search_params.marca or search_params.modelo:
+        # Validação restritiva - apenas valores exatos da base de dados
+        if search_params.marca or search_params.modelo or search_params.submodelo:
             validation_result = validator.validate_search_params(
                 search_params.marca, 
-                search_params.modelo
+                search_params.modelo,
+                search_params.submodelo
             )
             
             if validation_result['valid']:
@@ -83,10 +87,32 @@ def main():
                 if validation_result['model_value']:
                     logger.info(f"Modelo otimizado: {search_params.modelo} → {validation_result['model_value']}")
                     search_params.modelo = validation_result['model_value']
+                
+                if validation_result['submodel_value']:
+                    logger.info(f"Submodelo otimizado: {search_params.submodelo} → {validation_result['submodel_value']}")
+                    search_params.submodelo = validation_result['submodel_value']
             else:
-                logger.warning("Parâmetros de pesquisa com problemas:")
+                logger.error("Parâmetros de pesquisa inválidos - valores não encontrados na base de dados:")
                 for error in validation_result['errors']:
-                    logger.warning(f"  • {error}")
+                    logger.error(f"  • {error}")
+                
+                # Mostra sugestões se disponíveis
+                if validation_result.get('suggestions'):
+                    logger.info("Sugestões:")
+                    for key, suggestions in validation_result['suggestions'].items():
+                        logger.info(f"  {key}: {', '.join(suggestions[:3])}")
+                
+                output = {
+                    "preco_intervalo": {
+                        "min": None,
+                        "max": None
+                    },
+                    "media_aproximada": None,
+                    "viaturas_consideradas": 0,
+                    "anuncios_usados_para_calculo": []
+                }
+                print(json.dumps(output, ensure_ascii=False, indent=2))
+                sys.exit(1)
         
         # Criar o scraper
         scraper = StandVirtualScraper()
@@ -97,25 +123,28 @@ def main():
         
         if not results:
             logger.warning("Nenhum carro encontrado com os critérios especificados")
-            output = {"min": None, "max": None}
+            output = {
+                "preco_intervalo": {
+                    "min": None,
+                    "max": None
+                },
+                "media_aproximada": None,
+                "viaturas_consideradas": 0,
+                "anuncios_usados_para_calculo": []
+            }
         else:
             logger.info(f"Encontrados {len(results)} carros")
             
-            # Calcular intervalo de preços (sem outliers)
-            price_interval = calculate_price_interval(results)
+            # Calcular dados completos (sem outliers)
+            output = calculate_price_interval(results)
             
             # Log detalhado das estatísticas
             logger.info(f"Total de carros: {len(results)}")
-            logger.info(f"Carros após remoção de outliers: {price_interval['total_cars_after_outliers']}")
-            logger.info(f"Outliers removidos: {price_interval['outliers_removed']}")
-            logger.info(f"Tempo de extração: {price_interval.get('extraction_time', 0):.2f} segundos")
-            logger.info(f"Intervalo de preços final: {price_interval['min_price']}€ - {price_interval['max_price']}€")
+            logger.info(f"Carros considerados: {output['viaturas_consideradas']}")
+            logger.info(f"Média aproximada: {output['media_aproximada']}€")
             
-            # Output JSON minimalista
-            output = {
-                "min": price_interval['min_price'],
-                "max": price_interval['max_price']
-            }
+            if output['preco_intervalo']['min'] and output['preco_intervalo']['max']:
+                logger.info(f"Intervalo de preços: {output['preco_intervalo']['min']}€ - {output['preco_intervalo']['max']}€")
         
         logger.info("Scraping concluído com sucesso")
         
@@ -124,12 +153,28 @@ def main():
         
     except KeyboardInterrupt:
         logger.error("Operação cancelada pelo utilizador")
-        output = {"min": None, "max": None}
+        output = {
+            "preco_intervalo": {
+                "min": None,
+                "max": None
+            },
+            "media_aproximada": None,
+            "viaturas_consideradas": 0,
+            "anuncios_usados_para_calculo": []
+        }
         print(json.dumps(output, ensure_ascii=False, indent=2))
         sys.exit(0)
     except Exception as e:
         logger.error(f"Erro durante a execução: {str(e)}", exc_info=True)
-        output = {"min": None, "max": None}
+        output = {
+            "preco_intervalo": {
+                "min": None,
+                "max": None
+            },
+            "media_aproximada": None,
+            "viaturas_consideradas": 0,
+            "anuncios_usados_para_calculo": []
+        }
         print(json.dumps(output, ensure_ascii=False, indent=2))
         sys.exit(1)
 

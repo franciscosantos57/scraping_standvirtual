@@ -11,6 +11,7 @@ class CarSearchParams:
     """Parâmetros para pesquisa de carros"""
     marca: Optional[str] = None
     modelo: Optional[str] = None
+    submodelo: Optional[str] = None  # Novo campo para submodelos
     ano_min: Optional[int] = None
     ano_max: Optional[int] = None
     km_max: Optional[int] = None

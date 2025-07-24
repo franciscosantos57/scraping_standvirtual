@@ -113,6 +113,10 @@ class StandVirtualScraper:
         if params.modelo:
             search_params['search[filter_enum_model]'] = params.modelo.lower()
         
+        # Submodelo - Usa o parâmetro engine_code baseado no exemplo fornecido
+        if params.submodelo:
+            search_params['search[filter_enum_engine_code]'] = params.submodelo.lower()
+        
         # Ano
         if params.ano_min:
             search_params['search[filter_float_first_registration_year:from]'] = params.ano_min
@@ -1060,28 +1064,10 @@ class StandVirtualScraper:
         cars = []
         
         try:
-            # NOVA FUNCIONALIDADE: Pesquisa inteligente por variações
-            search_variations = self._get_model_variations(params)
-            
-            # Sempre faz pesquisa inteligente se há variações
-            if len(search_variations) > 1:
-                self.logger.info(f"Pesquisa inteligente: buscando {len(search_variations)} variações do modelo")
-                
-                # Pesquisa cada variação separadamente
-                for i, variation_params in enumerate(search_variations, 1):
-                    modelo_display = variation_params.modelo or 'modelo genérico'
-                    self.logger.debug(f"Variação {i}/{len(search_variations)}: {modelo_display}")
-                    variation_cars = self._search_single_variation(variation_params)
-                    
-                    if variation_cars:
-                        cars.extend(variation_cars)
-                        self.logger.debug(f"{len(variation_cars)} carros encontrados nesta variação")
-                    else:
-                        self.logger.debug("Nenhum carro encontrado nesta variação")
-            else:
-                # Pesquisa normal para um modelo específico
-                self.logger.info(f"Pesquisa simples: {params.modelo}")
-                cars = self._search_single_variation(params)
+            # Pesquisa direta sem variações inteligentes
+            modelo_display = params.modelo or 'pesquisa geral'
+            self.logger.info(f"Pesquisa específica: {modelo_display}")
+            cars = self._search_single_variation(params)
             
         except Exception as e:
             self.logger.error(f"Erro durante a pesquisa: {e}")
@@ -1111,64 +1097,7 @@ class StandVirtualScraper:
             self.logger.info("=== NENHUM CARRO ENCONTRADO ===")
         
         return final_cars
-    
-    def _get_model_variations(self, params: CarSearchParams) -> List[CarSearchParams]:
-        """
-        Obtém todas as variações de um modelo para pesquisa inteligente
-        
-        Args:
-            params: Parâmetros originais
-            
-        Returns:
-            Lista de parâmetros para cada variação
-        """
-        variations = [params]  # Sempre inclui a pesquisa original
-        
-        # Se especificou marca e modelo, busca variações
-        if params.marca and params.modelo:
-            try:
-                from utils.brand_model_validator import validator
-                
-                # Busca todas as variações do modelo (corrige case sensitivity)
-                marca_original = params.marca.title()  # Audi, BMW, etc.
-                all_models = validator.get_models_for_brand(marca_original)
-                base_model = params.modelo.lower()
-                
-                # Encontra variações que contêm o modelo base
-                model_variations = []
-                for model in all_models:
-                    model_text_lower = model['text'].lower()
-                    
-                    # Se contém o modelo base, é uma variação (inclui também o modelo exato)
-                    if base_model in model_text_lower:
-                        model_variations.append(model)
-                
-                self.logger.debug(f"Encontradas {len(model_variations)} variações para '{params.modelo}':")
-                for var in model_variations:
-                    self.logger.debug(f"  • {var['text']} → {var['value']}")
-                
-                # Cria parâmetros para TODAS as variações (incluindo o original)
-                for variation in model_variations:
-                    var_params = CarSearchParams()
-                    var_params.marca = params.marca
-                    var_params.modelo = variation['value']  # Usa o valor correto
-                    var_params.ano_min = params.ano_min
-                    var_params.ano_max = params.ano_max
-                    var_params.km_max = params.km_max
-                    var_params.preco_max = params.preco_max
-                    var_params.caixa = params.caixa
-                    var_params.combustivel = params.combustivel
-                    
-                    variations.append(var_params)
-                
-                # Remove o primeiro (original) se há mais de uma variação
-                if len(variations) > 1:
-                    variations = variations[1:]  # Remove o primeiro (original)
-                    
-            except Exception as e:
-                self.logger.error(f"Erro ao buscar variações: {e}")
-        
-        return variations
+
     
     def _search_single_variation(self, params: CarSearchParams) -> List[Car]:
         """

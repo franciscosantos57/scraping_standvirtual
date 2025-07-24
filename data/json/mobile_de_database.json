@@ -1,0 +1,8348 @@
+{
+  "metadata": {
+    "creation_date": "2025-07-20",
+    "source": "Mobile.de API",
+    "description": "All models from all brands extracted from mobile.de",
+    "version": "1.0",
+    "total_brands": 168,
+    "total_models": 2400
+  },
+  "brands": {
+    "Abarth": {
+      "brand_value": "abarth",
+      "brand_text": "Abarth",
+      "models": [
+        {
+          "text": "124 Spider"
+        },
+        {
+          "text": "500"
+        },
+        {
+          "text": "500C"
+        },
+        {
+          "text": "595"
+        },
+        {
+          "text": "595 Competizione"
+        },
+        {
+          "text": "595 Turismo"
+        },
+        {
+          "text": "595C"
+        },
+        {
+          "text": "600e"
+        },
+        {
+          "text": "695"
+        },
+        {
+          "text": "695C"
+        },
+        {
+          "text": "Grande Punto"
+        },
+        {
+          "text": "Punto Evo"
+        }
+      ],
+      "model_count": 12
+    },
+    "AC": {
+      "brand_value": "ac",
+      "brand_text": "AC",
+      "models": [],
+      "model_count": 0
+    },
+    "Acura": {
+      "brand_value": "acura",
+      "brand_text": "Acura",
+      "models": [
+        {
+          "text": "MDX"
+        },
+        {
+          "text": "NSX"
+        },
+        {
+          "text": "RL"
+        },
+        {
+          "text": "RSX"
+        },
+        {
+          "text": "TL"
+        },
+        {
+          "text": "TSX"
+        }
+      ],
+      "model_count": 6
+    },
+    "Aiways": {
+      "brand_value": "aiways",
+      "brand_text": "Aiways",
+      "models": [
+        {
+          "text": "U5"
+        }
+      ],
+      "model_count": 1
+    },
+    "Aixam": {
+      "brand_value": "aixam",
+      "brand_text": "Aixam",
+      "models": [
+        {
+          "text": "City"
+        },
+        {
+          "text": "Coupé"
+        },
+        {
+          "text": "Cross"
+        },
+        {
+          "text": "MinAuto"
+        },
+        {
+          "text": "Roadline"
+        },
+        {
+          "text": "Scouty R"
+        }
+      ],
+      "model_count": 6
+    },
+    "Alfa Romeo": {
+      "brand_value": "alfa-romeo",
+      "brand_text": "Alfa Romeo",
+      "models": [
+        {
+          "text": "4C"
+        },
+        {
+          "text": "8C"
+        },
+        {
+          "text": "145"
+        },
+        {
+          "text": "146"
+        },
+        {
+          "text": "147"
+        },
+        {
+          "text": "155"
+        },
+        {
+          "text": "156"
+        },
+        {
+          "text": "159"
+        },
+        {
+          "text": "164"
+        },
+        {
+          "text": "166"
+        },
+        {
+          "text": "33"
+        },
+        {
+          "text": "75"
+        },
+        {
+          "text": "90"
+        },
+        {
+          "text": "Alfasud"
+        },
+        {
+          "text": "Alfetta"
+        },
+        {
+          "text": "Brera"
+        },
+        {
+          "text": "Crosswagon"
+        },
+        {
+          "text": "GT"
+        },
+        {
+          "text": "GTV"
+        },
+        {
+          "text": "Giulia"
+        },
+        {
+          "text": "Giulietta"
+        },
+        {
+          "text": "Junior"
+        },
+        {
+          "text": "MiTo"
+        },
+        {
+          "text": "Spider"
+        },
+        {
+          "text": "Sprint"
+        },
+        {
+          "text": "Stelvio"
+        },
+        {
+          "text": "Tonale"
+        }
+      ],
+      "model_count": 27
+    },
+    "Alpina": {
+      "brand_value": "alpina",
+      "brand_text": "ALPINA",
+      "models": [
+        {
+          "text": "B10"
+        },
+        {
+          "text": "B12"
+        },
+        {
+          "text": "B3"
+        },
+        {
+          "text": "B4"
+        },
+        {
+          "text": "B5"
+        },
+        {
+          "text": "B6"
+        },
+        {
+          "text": "B7"
+        },
+        {
+          "text": "B8"
+        },
+        {
+          "text": "D10"
+        },
+        {
+          "text": "D3"
+        },
+        {
+          "text": "D3 S"
+        },
+        {
+          "text": "D4"
+        },
+        {
+          "text": "D4 S"
+        },
+        {
+          "text": "D5"
+        },
+        {
+          "text": "Roadster S"
+        },
+        {
+          "text": "XB7"
+        },
+        {
+          "text": "XD3"
+        },
+        {
+          "text": "XD4"
+        }
+      ],
+      "model_count": 18
+    },
+    "Alpine": {
+      "brand_value": "alpine",
+      "brand_text": "Alpine",
+      "models": [
+        {
+          "text": "A110"
+        },
+        {
+          "text": "A290"
+        }
+      ],
+      "model_count": 2
+    },
+    "Alvis": {
+      "brand_value": "alvis",
+      "brand_text": "Alvis",
+      "models": [],
+      "model_count": 0
+    },
+    "Ariel": {
+      "brand_value": "ariel",
+      "brand_text": "Ariel",
+      "models": [
+        {
+          "text": "Atom"
+        }
+      ],
+      "model_count": 1
+    },
+    "Artega": {
+      "brand_value": "artega",
+      "brand_text": "Artega",
+      "models": [
+        {
+          "text": "GT"
+        }
+      ],
+      "model_count": 1
+    },
+    "Asia Motors": {
+      "brand_value": "asia-motors",
+      "brand_text": "Asia Motors",
+      "models": [
+        {
+          "text": "Rocsta"
+        }
+      ],
+      "model_count": 1
+    },
+    "Aston Martin": {
+      "brand_value": "aston-martin",
+      "brand_text": "Aston Martin",
+      "models": [
+        {
+          "text": "AR1"
+        },
+        {
+          "text": "Cygnet"
+        },
+        {
+          "text": "DB"
+        },
+        {
+          "text": "DB11"
+        },
+        {
+          "text": "DB12"
+        },
+        {
+          "text": "DB7"
+        },
+        {
+          "text": "DB9"
+        },
+        {
+          "text": "DBS"
+        },
+        {
+          "text": "DBX"
+        },
+        {
+          "text": "Lagonda"
+        },
+        {
+          "text": "Rapide"
+        },
+        {
+          "text": "V12 Vantage"
+        },
+        {
+          "text": "V8 Vantage"
+        },
+        {
+          "text": "Vanquish"
+        },
+        {
+          "text": "Virage"
+        }
+      ],
+      "model_count": 15
+    },
+    "Audi": {
+      "brand_value": "audi",
+      "brand_text": "Audi",
+      "models": [
+        {
+          "text": "100"
+        },
+        {
+          "text": "200"
+        },
+        {
+          "text": "80"
+        },
+        {
+          "text": "90"
+        },
+        {
+          "text": "A1"
+        },
+        {
+          "text": "A2"
+        },
+        {
+          "text": "A3"
+        },
+        {
+          "text": "A4"
+        },
+        {
+          "text": "A4 Allroad"
+        },
+        {
+          "text": "A5"
+        },
+        {
+          "text": "A6"
+        },
+        {
+          "text": "A6 Allroad"
+        },
+        {
+          "text": "A6 e-tron"
+        },
+        {
+          "text": "A7"
+        },
+        {
+          "text": "A8"
+        },
+        {
+          "text": "Cabriolet"
+        },
+        {
+          "text": "Coupé"
+        },
+        {
+          "text": "Q2"
+        },
+        {
+          "text": "Q3"
+        },
+        {
+          "text": "Q4"
+        },
+        {
+          "text": "Q4 e-tron"
+        },
+        {
+          "text": "Q5"
+        },
+        {
+          "text": "Q6 e-tron"
+        },
+        {
+          "text": "Q7"
+        },
+        {
+          "text": "Q8"
+        },
+        {
+          "text": "Q8 e-tron"
+        },
+        {
+          "text": "quattro"
+        },
+        {
+          "text": "R8"
+        },
+        {
+          "text": "RS e-tron GT"
+        },
+        {
+          "text": "RS2"
+        },
+        {
+          "text": "RS3"
+        },
+        {
+          "text": "RS4"
+        },
+        {
+          "text": "RS5"
+        },
+        {
+          "text": "RS6"
+        },
+        {
+          "text": "RS7"
+        },
+        {
+          "text": "RSQ3"
+        },
+        {
+          "text": "RSQ8"
+        },
+        {
+          "text": "S1"
+        },
+        {
+          "text": "S2"
+        },
+        {
+          "text": "S3"
+        },
+        {
+          "text": "S4"
+        },
+        {
+          "text": "S5"
+        },
+        {
+          "text": "S6"
+        },
+        {
+          "text": "S6 e-tron"
+        },
+        {
+          "text": "S7"
+        },
+        {
+          "text": "S8"
+        },
+        {
+          "text": "SQ2"
+        },
+        {
+          "text": "SQ5"
+        },
+        {
+          "text": "SQ6 e-tron"
+        },
+        {
+          "text": "SQ7"
+        },
+        {
+          "text": "SQ8"
+        },
+        {
+          "text": "SQ8 e-tron"
+        },
+        {
+          "text": "TT"
+        },
+        {
+          "text": "TT RS"
+        },
+        {
+          "text": "TTS"
+        },
+        {
+          "text": "V8"
+        },
+        {
+          "text": "e-tron"
+        },
+        {
+          "text": "e-tron GT"
+        }
+      ],
+      "model_count": 58
+    },
+    "Austin": {
+      "brand_value": "austin",
+      "brand_text": "Austin",
+      "models": [],
+      "model_count": 0
+    },
+    "Austin Healey": {
+      "brand_value": "austin-healey",
+      "brand_text": "Austin Healey",
+      "models": [],
+      "model_count": 0
+    },
+    "Auto Union": {
+      "brand_value": "auto-union",
+      "brand_text": "Auto Union",
+      "models": [],
+      "model_count": 0
+    },
+    "BAIC": {
+      "brand_value": "baic",
+      "brand_text": "BAIC",
+      "models": [
+        {
+          "text": "BJ20"
+        },
+        {
+          "text": "BJ30"
+        },
+        {
+          "text": "BJ40"
+        },
+        {
+          "text": "BJ60"
+        },
+        {
+          "text": "Beijing X35"
+        },
+        {
+          "text": "Beijing X55"
+        },
+        {
+          "text": "Senova D20"
+        },
+        {
+          "text": "Senova X25"
+        },
+        {
+          "text": "Senova X35"
+        },
+        {
+          "text": "Senova X55"
+        },
+        {
+          "text": "Senova X65"
+        },
+        {
+          "text": "X55"
+        },
+        {
+          "text": "Beijing X75"
+        }
+      ],
+      "model_count": 13
+    },
+    "Barkas": {
+      "brand_value": "barkas",
+      "brand_text": "Barkas",
+      "models": [
+        {
+          "text": "B1000"
+        }
+      ],
+      "model_count": 1
+    },
+    "Bentley": {
+      "brand_value": "bentley",
+      "brand_text": "Bentley",
+      "models": [
+        {
+          "text": "Arnage"
+        },
+        {
+          "text": "Azure"
+        },
+        {
+          "text": "Bentayga"
+        },
+        {
+          "text": "Brooklands"
+        },
+        {
+          "text": "Continental"
+        },
+        {
+          "text": "Continental Flying Spur"
+        },
+        {
+          "text": "Continental GT"
+        },
+        {
+          "text": "Continental GTC"
+        },
+        {
+          "text": "Continental Supersports"
+        },
+        {
+          "text": "Eight"
+        },
+        {
+          "text": "Flying Spur"
+        },
+        {
+          "text": "Mulsanne"
+        },
+        {
+          "text": "S2"
+        },
+        {
+          "text": "Turbo R"
+        },
+        {
+          "text": "Turbo RT"
+        },
+        {
+          "text": "Turbo S"
+        }
+      ],
+      "model_count": 16
+    },
+    "Bizzarrini": {
+      "brand_value": "bizzarrini",
+      "brand_text": "Bizzarrini",
+      "models": [],
+      "model_count": 0
+    },
+    "BMW": {
+      "brand_value": "bmw",
+      "brand_text": "BMW",
+      "models": [
+        {
+          "text": "114"
+        },
+        {
+          "text": "116"
+        },
+        {
+          "text": "118"
+        },
+        {
+          "text": "120"
+        },
+        {
+          "text": "123"
+        },
+        {
+          "text": "125"
+        },
+        {
+          "text": "128"
+        },
+        {
+          "text": "130"
+        },
+        {
+          "text": "135"
+        },
+        {
+          "text": "1er M Coupé"
+        },
+        {
+          "text": "2er Gran Coupé"
+        },
+        {
+          "text": "2002"
+        },
+        {
+          "text": "214 Active Tourer"
+        },
+        {
+          "text": "214 Gran Tourer"
+        },
+        {
+          "text": "216"
+        },
+        {
+          "text": "216 Active Tourer"
+        },
+        {
+          "text": "216 Gran Coupé"
+        },
+        {
+          "text": "216 Gran Tourer"
+        },
+        {
+          "text": "218"
+        },
+        {
+          "text": "218 Active Tourer"
+        },
+        {
+          "text": "218 Gran Coupé"
+        },
+        {
+          "text": "218 Gran Tourer"
+        },
+        {
+          "text": "220"
+        },
+        {
+          "text": "220 Active Tourer"
+        },
+        {
+          "text": "220 Gran Coupé"
+        },
+        {
+          "text": "220 Gran Tourer"
+        },
+        {
+          "text": "223 Active Tourer"
+        },
+        {
+          "text": "225"
+        },
+        {
+          "text": "225 Active Tourer"
+        },
+        {
+          "text": "228"
+        },
+        {
+          "text": "230"
+        },
+        {
+          "text": "315"
+        },
+        {
+          "text": "316"
+        },
+        {
+          "text": "318"
+        },
+        {
+          "text": "318 Gran Turismo"
+        },
+        {
+          "text": "320"
+        },
+        {
+          "text": "320 Gran Turismo"
+        },
+        {
+          "text": "323"
+        },
+        {
+          "text": "324"
+        },
+        {
+          "text": "325"
+        },
+        {
+          "text": "325 Gran Turismo"
+        },
+        {
+          "text": "328"
+        },
+        {
+          "text": "328 Gran Turismo"
+        },
+        {
+          "text": "330"
+        },
+        {
+          "text": "330 Gran Turismo"
+        },
+        {
+          "text": "335"
+        },
+        {
+          "text": "335 Gran Turismo"
+        },
+        {
+          "text": "340"
+        },
+        {
+          "text": "340 Gran Turismo"
+        },
+        {
+          "text": "418"
+        },
+        {
+          "text": "418 Gran Coupé"
+        },
+        {
+          "text": "420"
+        },
+        {
+          "text": "420 Gran Coupé"
+        },
+        {
+          "text": "425"
+        },
+        {
+          "text": "425 Gran Coupé"
+        },
+        {
+          "text": "428"
+        },
+        {
+          "text": "428 Gran Coupé"
+        },
+        {
+          "text": "430"
+        },
+        {
+          "text": "430 Gran Coupé"
+        },
+        {
+          "text": "435"
+        },
+        {
+          "text": "435 Gran Coupé"
+        },
+        {
+          "text": "440"
+        },
+        {
+          "text": "440 Gran Coupé"
+        },
+        {
+          "text": "518"
+        },
+        {
+          "text": "520"
+        },
+        {
+          "text": "520 Gran Turismo"
+        },
+        {
+          "text": "523"
+        },
+        {
+          "text": "524"
+        },
+        {
+          "text": "525"
+        },
+        {
+          "text": "528"
+        },
+        {
+          "text": "530"
+        },
+        {
+          "text": "530 Gran Turismo"
+        },
+        {
+          "text": "535"
+        },
+        {
+          "text": "535 Gran Turismo"
+        },
+        {
+          "text": "540"
+        },
+        {
+          "text": "545"
+        },
+        {
+          "text": "550"
+        },
+        {
+          "text": "550 Gran Turismo"
+        },
+        {
+          "text": "620 Gran Turismo"
+        },
+        {
+          "text": "628"
+        },
+        {
+          "text": "630"
+        },
+        {
+          "text": "630 Gran Turismo"
+        },
+        {
+          "text": "633"
+        },
+        {
+          "text": "635"
+        },
+        {
+          "text": "640"
+        },
+        {
+          "text": "640 Gran Coupé"
+        },
+        {
+          "text": "640 Gran Turismo"
+        },
+        {
+          "text": "645"
+        },
+        {
+          "text": "650"
+        },
+        {
+          "text": "650 Gran Coupé"
+        },
+        {
+          "text": "725"
+        },
+        {
+          "text": "728"
+        },
+        {
+          "text": "730"
+        },
+        {
+          "text": "732"
+        },
+        {
+          "text": "735"
+        },
+        {
+          "text": "740"
+        },
+        {
+          "text": "745"
+        },
+        {
+          "text": "750"
+        },
+        {
+          "text": "760"
+        },
+        {
+          "text": "840"
+        },
+        {
+          "text": "850"
+        },
+        {
+          "text": "ActiveHybrid 3"
+        },
+        {
+          "text": "ActiveHybrid 5"
+        },
+        {
+          "text": "ActiveHybrid 7"
+        },
+        {
+          "text": "ActiveHybrid X6"
+        },
+        {
+          "text": "M135"
+        },
+        {
+          "text": "M140i"
+        },
+        {
+          "text": "M2"
+        },
+        {
+          "text": "M235"
+        },
+        {
+          "text": "M240i"
+        },
+        {
+          "text": "M3"
+        },
+        {
+          "text": "M340d"
+        },
+        {
+          "text": "M340i"
+        },
+        {
+          "text": "M4"
+        },
+        {
+          "text": "M440"
+        },
+        {
+          "text": "M5"
+        },
+        {
+          "text": "M550"
+        },
+        {
+          "text": "M6"
+        },
+        {
+          "text": "M760"
+        },
+        {
+          "text": "M8"
+        },
+        {
+          "text": "M850"
+        },
+        {
+          "text": "X1"
+        },
+        {
+          "text": "X2"
+        },
+        {
+          "text": "X3"
+        },
+        {
+          "text": "X3 M"
+        },
+        {
+          "text": "X3 M40"
+        },
+        {
+          "text": "X3 M50"
+        },
+        {
+          "text": "X4"
+        },
+        {
+          "text": "X4 M"
+        },
+        {
+          "text": "X4 M40"
+        },
+        {
+          "text": "X5"
+        },
+        {
+          "text": "X5 M"
+        },
+        {
+          "text": "X5 M50"
+        },
+        {
+          "text": "X5 M60"
+        },
+        {
+          "text": "X6"
+        },
+        {
+          "text": "X6 M"
+        },
+        {
+          "text": "X6 M50"
+        },
+        {
+          "text": "X6 M60"
+        },
+        {
+          "text": "X7"
+        },
+        {
+          "text": "X7 M50"
+        },
+        {
+          "text": "X7 M60"
+        },
+        {
+          "text": "XM"
+        },
+        {
+          "text": "Z1"
+        },
+        {
+          "text": "Z3"
+        },
+        {
+          "text": "Z3 M"
+        },
+        {
+          "text": "Z4"
+        },
+        {
+          "text": "Z4 M"
+        },
+        {
+          "text": "Z4 M40i"
+        },
+        {
+          "text": "Z8"
+        },
+        {
+          "text": "i3"
+        },
+        {
+          "text": "i4"
+        },
+        {
+          "text": "i5"
+        },
+        {
+          "text": "i7"
+        },
+        {
+          "text": "i8"
+        },
+        {
+          "text": "iX"
+        },
+        {
+          "text": "iX1"
+        },
+        {
+          "text": "iX2"
+        },
+        {
+          "text": "iX3"
+        }
+      ],
+      "model_count": 158
+    },
+    "Borgward": {
+      "brand_value": "borgward",
+      "brand_text": "Borgward",
+      "models": [],
+      "model_count": 0
+    },
+    "Brilliance": {
+      "brand_value": "brilliance",
+      "brand_text": "Brilliance",
+      "models": [
+        {
+          "text": "BC3"
+        },
+        {
+          "text": "BS2"
+        },
+        {
+          "text": "BS4"
+        },
+        {
+          "text": "BS6"
+        }
+      ],
+      "model_count": 4
+    },
+    "Bugatti": {
+      "brand_value": "bugatti",
+      "brand_text": "Bugatti",
+      "models": [
+        {
+          "text": "Chiron"
+        },
+        {
+          "text": "EB 110"
+        },
+        {
+          "text": "Veyron"
+        }
+      ],
+      "model_count": 3
+    },
+    "Buick": {
+      "brand_value": "buick",
+      "brand_text": "Buick",
+      "models": [
+        {
+          "text": "Century"
+        },
+        {
+          "text": "Electra"
+        },
+        {
+          "text": "Enclave"
+        },
+        {
+          "text": "La Crosse"
+        },
+        {
+          "text": "Le Sabre"
+        },
+        {
+          "text": "Park Avenue"
+        },
+        {
+          "text": "Regal"
+        },
+        {
+          "text": "Riviera"
+        },
+        {
+          "text": "Roadmaster"
+        },
+        {
+          "text": "Skylark"
+        }
+      ],
+      "model_count": 10
+    },
+    "BYD": {
+      "brand_value": "byd",
+      "brand_text": "BYD",
+      "models": [
+        {
+          "text": "ATTO 2"
+        },
+        {
+          "text": "ATTO 3"
+        },
+        {
+          "text": "DOLPHIN"
+        },
+        {
+          "text": "ETP 3"
+        },
+        {
+          "text": "HAN"
+        },
+        {
+          "text": "SEAL"
+        },
+        {
+          "text": "SEALION 7"
+        },
+        {
+          "text": "SEAL U"
+        },
+        {
+          "text": "TANG"
+        }
+      ],
+      "model_count": 9
+    },
+    "Cadillac": {
+      "brand_value": "cadillac",
+      "brand_text": "Cadillac",
+      "models": [
+        {
+          "text": "ATS"
+        },
+        {
+          "text": "Allante"
+        },
+        {
+          "text": "BLS"
+        },
+        {
+          "text": "CT5"
+        },
+        {
+          "text": "CT6"
+        },
+        {
+          "text": "CTS"
+        },
+        {
+          "text": "Deville"
+        },
+        {
+          "text": "Eldorado"
+        },
+        {
+          "text": "Escalade"
+        },
+        {
+          "text": "Fleetwood"
+        },
+        {
+          "text": "SRX"
+        },
+        {
+          "text": "STS"
+        },
+        {
+          "text": "Seville"
+        },
+        {
+          "text": "XLR"
+        },
+        {
+          "text": "XT4"
+        },
+        {
+          "text": "XT5"
+        },
+        {
+          "text": "XT6"
+        }
+      ],
+      "model_count": 17
+    },
+    "Casalini": {
+      "brand_value": "casalini",
+      "brand_text": "Casalini",
+      "models": [],
+      "model_count": 0
+    },
+    "Caterham": {
+      "brand_value": "caterham",
+      "brand_text": "Caterham",
+      "models": [],
+      "model_count": 0
+    },
+    "Cenntro": {
+      "brand_value": "cenntro",
+      "brand_text": "Cenntro",
+      "models": [],
+      "model_count": 0
+    },
+    "Chatenet": {
+      "brand_value": "chatenet",
+      "brand_text": "Chatenet",
+      "models": [],
+      "model_count": 0
+    },
+    "Chevrolet": {
+      "brand_value": "chevrolet",
+      "brand_text": "Chevrolet",
+      "models": [
+        {
+          "text": "2500"
+        },
+        {
+          "text": "Alero"
+        },
+        {
+          "text": "Astro"
+        },
+        {
+          "text": "Avalanche"
+        },
+        {
+          "text": "Aveo"
+        },
+        {
+          "text": "Beretta"
+        },
+        {
+          "text": "Blazer"
+        },
+        {
+          "text": "C1500"
+        },
+        {
+          "text": "Camaro"
+        },
+        {
+          "text": "Caprice"
+        },
+        {
+          "text": "Captiva"
+        },
+        {
+          "text": "Cavalier"
+        },
+        {
+          "text": "Chevelle"
+        },
+        {
+          "text": "Chevy Van"
+        },
+        {
+          "text": "Citation"
+        },
+        {
+          "text": "Colorado"
+        },
+        {
+          "text": "Corsica"
+        },
+        {
+          "text": "Cruze"
+        },
+        {
+          "text": "El Camino"
+        },
+        {
+          "text": "Epica"
+        },
+        {
+          "text": "Evanda"
+        },
+        {
+          "text": "Express"
+        },
+        {
+          "text": "G"
+        },
+        {
+          "text": "HHR"
+        },
+        {
+          "text": "Impala"
+        },
+        {
+          "text": "K1500"
+        },
+        {
+          "text": "K30"
+        },
+        {
+          "text": "Kalos"
+        },
+        {
+          "text": "Lacetti"
+        },
+        {
+          "text": "Lumina"
+        },
+        {
+          "text": "Malibu"
+        },
+        {
+          "text": "Matiz"
+        },
+        {
+          "text": "Niva"
+        },
+        {
+          "text": "Nubira"
+        },
+        {
+          "text": "Orlando"
+        },
+        {
+          "text": "Rezzo"
+        },
+        {
+          "text": "S-10"
+        },
+        {
+          "text": "SSR"
+        },
+        {
+          "text": "Silverado"
+        },
+        {
+          "text": "Spark"
+        },
+        {
+          "text": "Suburban"
+        },
+        {
+          "text": "Tahoe"
+        },
+        {
+          "text": "Trailblazer"
+        },
+        {
+          "text": "Trans Sport"
+        },
+        {
+          "text": "Traverse"
+        },
+        {
+          "text": "Trax"
+        },
+        {
+          "text": "Venture"
+        },
+        {
+          "text": "Volt"
+        }
+      ],
+      "model_count": 48
+    },
+    "Chrysler": {
+      "brand_value": "chrysler",
+      "brand_text": "Chrysler",
+      "models": [
+        {
+          "text": "200"
+        },
+        {
+          "text": "300 M"
+        },
+        {
+          "text": "300C"
+        },
+        {
+          "text": "Aspen"
+        },
+        {
+          "text": "Crossfire"
+        },
+        {
+          "text": "Daytona"
+        },
+        {
+          "text": "ES"
+        },
+        {
+          "text": "GS"
+        },
+        {
+          "text": "GTS"
+        },
+        {
+          "text": "Grand Voyager"
+        },
+        {
+          "text": "Imperial"
+        },
+        {
+          "text": "Le Baron"
+        },
+        {
+          "text": "Neon"
+        },
+        {
+          "text": "New Yorker"
+        },
+        {
+          "text": "PT Cruiser"
+        },
+        {
+          "text": "Pacifica"
+        },
+        {
+          "text": "Saratoga"
+        },
+        {
+          "text": "Sebring"
+        },
+        {
+          "text": "Stratus"
+        },
+        {
+          "text": "Valiant"
+        },
+        {
+          "text": "Viper"
+        },
+        {
+          "text": "Vision"
+        },
+        {
+          "text": "Voyager"
+        }
+      ],
+      "model_count": 23
+    },
+    "Citroën": {
+      "brand_value": "citroen",
+      "brand_text": "Citroën",
+      "models": [
+        {
+          "text": "2 CV"
+        },
+        {
+          "text": "AMI"
+        },
+        {
+          "text": "AX"
+        },
+        {
+          "text": "BX"
+        },
+        {
+          "text": "Berlingo"
+        },
+        {
+          "text": "C-Crosser"
+        },
+        {
+          "text": "C-Elysée"
+        },
+        {
+          "text": "C-Zero"
+        },
+        {
+          "text": "C1"
+        },
+        {
+          "text": "C2"
+        },
+        {
+          "text": "C3"
+        },
+        {
+          "text": "C3 Aircross"
+        },
+        {
+          "text": "C3 Picasso"
+        },
+        {
+          "text": "C4"
+        },
+        {
+          "text": "C4 Aircross"
+        },
+        {
+          "text": "C4 Cactus"
+        },
+        {
+          "text": "C4 Picasso"
+        },
+        {
+          "text": "C4 SpaceTourer"
+        },
+        {
+          "text": "C4 X"
+        },
+        {
+          "text": "C5"
+        },
+        {
+          "text": "C5 Aircross"
+        },
+        {
+          "text": "C5 X"
+        },
+        {
+          "text": "C6"
+        },
+        {
+          "text": "C8"
+        },
+        {
+          "text": "CX"
+        },
+        {
+          "text": "DS"
+        },
+        {
+          "text": "DS3"
+        },
+        {
+          "text": "DS4"
+        },
+        {
+          "text": "DS4 Crossback"
+        },
+        {
+          "text": "DS5"
+        },
+        {
+          "text": "E-MEHARI"
+        },
+        {
+          "text": "Evasion"
+        },
+        {
+          "text": "GSA"
+        },
+        {
+          "text": "Grand C4 Picasso / SpaceTourer"
+        },
+        {
+          "text": "Jumper"
+        },
+        {
+          "text": "Jumpy"
+        },
+        {
+          "text": "Nemo"
+        },
+        {
+          "text": "SAXO"
+        },
+        {
+          "text": "SM"
+        },
+        {
+          "text": "SpaceTourer"
+        },
+        {
+          "text": "Visa"
+        },
+        {
+          "text": "XM"
+        },
+        {
+          "text": "Xantia"
+        },
+        {
+          "text": "Xsara"
+        },
+        {
+          "text": "Xsara Picasso"
+        },
+        {
+          "text": "ZX"
+        },
+        {
+          "text": "ë-Berlingo"
+        },
+        {
+          "text": "ë-C3"
+        },
+        {
+          "text": "ë-C3 Aircross"
+        },
+        {
+          "text": "ë-C4"
+        },
+        {
+          "text": "ë-C4 X"
+        },
+        {
+          "text": "ë-Spacetourer"
+        }
+      ],
+      "model_count": 52
+    },
+    "Cobra": {
+      "brand_value": "cobra",
+      "brand_text": "Cobra",
+      "models": [],
+      "model_count": 0
+    },
+    "Corvette": {
+      "brand_value": "corvette",
+      "brand_text": "Corvette",
+      "models": [
+        {
+          "text": "C1"
+        },
+        {
+          "text": "C2"
+        },
+        {
+          "text": "C3"
+        },
+        {
+          "text": "C4"
+        },
+        {
+          "text": "C5"
+        },
+        {
+          "text": "C6"
+        },
+        {
+          "text": "C7"
+        },
+        {
+          "text": "C8"
+        },
+        {
+          "text": "Z06"
+        },
+        {
+          "text": "ZR 1"
+        }
+      ],
+      "model_count": 10
+    },
+    "Cupra": {
+      "brand_value": "cupra",
+      "brand_text": "Cupra",
+      "models": [
+        {
+          "text": "Arona"
+        },
+        {
+          "text": "Ateca"
+        },
+        {
+          "text": "Born"
+        },
+        {
+          "text": "Formentor"
+        },
+        {
+          "text": "Ibiza"
+        },
+        {
+          "text": "Leon"
+        },
+        {
+          "text": "Tavascan"
+        },
+        {
+          "text": "Terramar"
+        }
+      ],
+      "model_count": 8
+    },
+    "Dacia": {
+      "brand_value": "dacia",
+      "brand_text": "Dacia",
+      "models": [
+        {
+          "text": "Bigster"
+        },
+        {
+          "text": "Dokker"
+        },
+        {
+          "text": "Duster"
+        },
+        {
+          "text": "Jogger"
+        },
+        {
+          "text": "Lodgy"
+        },
+        {
+          "text": "Logan"
+        },
+        {
+          "text": "Logan Pick-Up"
+        },
+        {
+          "text": "Pick Up"
+        },
+        {
+          "text": "Sandero"
+        },
+        {
+          "text": "Spring"
+        }
+      ],
+      "model_count": 10
+    },
+    "Daewoo": {
+      "brand_value": "daewoo",
+      "brand_text": "Daewoo",
+      "models": [
+        {
+          "text": "Espero"
+        },
+        {
+          "text": "Evanda"
+        },
+        {
+          "text": "Kalos"
+        },
+        {
+          "text": "Korando"
+        },
+        {
+          "text": "Lacetti"
+        },
+        {
+          "text": "Lanos"
+        },
+        {
+          "text": "Leganza"
+        },
+        {
+          "text": "Matiz"
+        },
+        {
+          "text": "Musso"
+        },
+        {
+          "text": "Nexia"
+        },
+        {
+          "text": "Nubira"
+        },
+        {
+          "text": "Rezzo"
+        },
+        {
+          "text": "Tacuma"
+        }
+      ],
+      "model_count": 13
+    },
+    "Daihatsu": {
+      "brand_value": "daihatsu",
+      "brand_text": "Daihatsu",
+      "models": [
+        {
+          "text": "Applause"
+        },
+        {
+          "text": "Charade"
+        },
+        {
+          "text": "Charmant"
+        },
+        {
+          "text": "Copen"
+        },
+        {
+          "text": "Cuore"
+        },
+        {
+          "text": "Feroza/Sportrak"
+        },
+        {
+          "text": "Freeclimber"
+        },
+        {
+          "text": "Gran Move"
+        },
+        {
+          "text": "Hijet"
+        },
+        {
+          "text": "MATERIA"
+        },
+        {
+          "text": "Move"
+        },
+        {
+          "text": "Rocky/Fourtrak"
+        },
+        {
+          "text": "Sirion"
+        },
+        {
+          "text": "TREVIS"
+        },
+        {
+          "text": "Terios"
+        },
+        {
+          "text": "YRV"
+        }
+      ],
+      "model_count": 16
+    },
+    "Datsun": {
+      "brand_value": "datsun",
+      "brand_text": "Datsun",
+      "models": [
+        {
+          "text": "240Z"
+        }
+      ],
+      "model_count": 1
+    },
+    "Delahaye": {
+      "brand_value": "delahaye",
+      "brand_text": "Delahaye",
+      "models": [],
+      "model_count": 0
+    },
+    "DeLorean": {
+      "brand_value": "delorean",
+      "brand_text": "DeLorean",
+      "models": [
+        {
+          "text": "DMC-12"
+        }
+      ],
+      "model_count": 1
+    },
+    "DeTomaso": {
+      "brand_value": "detomaso",
+      "brand_text": "DeTomaso",
+      "models": [
+        {
+          "text": "Guarà"
+        },
+        {
+          "text": "Pantera"
+        }
+      ],
+      "model_count": 2
+    },
+    "DFSK": {
+      "brand_value": "dfsk",
+      "brand_text": "DFSK",
+      "models": [
+        {
+          "text": "EC31"
+        },
+        {
+          "text": "EC35"
+        },
+        {
+          "text": "Fengon"
+        },
+        {
+          "text": "Fengon 5"
+        },
+        {
+          "text": "Fengon 500"
+        },
+        {
+          "text": "Fengon 580"
+        },
+        {
+          "text": "Fengon 600"
+        },
+        {
+          "text": "Fengon 7"
+        },
+        {
+          "text": "Fengon E5"
+        },
+        {
+          "text": "Forthing 4"
+        },
+        {
+          "text": "Forthing 5"
+        },
+        {
+          "text": "Forthing 9"
+        },
+        {
+          "text": "Glory"
+        },
+        {
+          "text": "K01"
+        },
+        {
+          "text": "Rich 6"
+        },
+        {
+          "text": "Seres 3"
+        },
+        {
+          "text": "Seres 5"
+        }
+      ],
+      "model_count": 17
+    },
+    "Dodge": {
+      "brand_value": "dodge",
+      "brand_text": "Dodge",
+      "models": [
+        {
+          "text": "Avenger"
+        },
+        {
+          "text": "Caliber"
+        },
+        {
+          "text": "Challenger"
+        },
+        {
+          "text": "Charger"
+        },
+        {
+          "text": "Coronet"
+        },
+        {
+          "text": "Dakota"
+        },
+        {
+          "text": "Dart"
+        },
+        {
+          "text": "Demon"
+        },
+        {
+          "text": "Durango"
+        },
+        {
+          "text": "Grand Caravan"
+        },
+        {
+          "text": "Hornet"
+        },
+        {
+          "text": "Journey"
+        },
+        {
+          "text": "Magnum"
+        },
+        {
+          "text": "Neon"
+        },
+        {
+          "text": "Nitro"
+        },
+        {
+          "text": "RAM"
+        },
+        {
+          "text": "Stealth"
+        },
+        {
+          "text": "Viper"
+        }
+      ],
+      "model_count": 18
+    },
+    "Donkervoort": {
+      "brand_value": "donkervoort",
+      "brand_text": "Donkervoort",
+      "models": [
+        {
+          "text": "D8"
+        },
+        {
+          "text": "S7"
+        },
+        {
+          "text": "S8"
+        }
+      ],
+      "model_count": 3
+    },
+    "DS Automobiles": {
+      "brand_value": "ds",
+      "brand_text": "DS Automobiles",
+      "models": [
+        {
+          "text": "DS3"
+        },
+        {
+          "text": "DS3 Crossback"
+        },
+        {
+          "text": "DS4"
+        },
+        {
+          "text": "DS4 Crossback"
+        },
+        {
+          "text": "DS5"
+        },
+        {
+          "text": "DS7 (Crossback)"
+        },
+        {
+          "text": "DS9"
+        },
+        {
+          "text": "Nº8"
+        }
+      ],
+      "model_count": 8
+    },
+    "e.GO": {
+      "brand_value": "e-go",
+      "brand_text": "e.GO",
+      "models": [
+        {
+          "text": "Life"
+        },
+        {
+          "text": "e.wave X"
+        }
+      ],
+      "model_count": 2
+    },
+    "Elaris": {
+      "brand_value": "elaris",
+      "brand_text": "Elaris",
+      "models": [],
+      "model_count": 0
+    },
+    "Estrima": {
+      "brand_value": "estrima",
+      "brand_text": "Estrima",
+      "models": [],
+      "model_count": 0
+    },
+    "Facel Vega": {
+      "brand_value": "facel-vega",
+      "brand_text": "Facel Vega",
+      "models": [],
+      "model_count": 0
+    },
+    "Ferrari": {
+      "brand_value": "ferrari",
+      "brand_text": "Ferrari",
+      "models": [
+        {
+          "text": "208"
+        },
+        {
+          "text": "246"
+        },
+        {
+          "text": "250"
+        },
+        {
+          "text": "275"
+        },
+        {
+          "text": "288"
+        },
+        {
+          "text": "296 GTB"
+        },
+        {
+          "text": "296 GTS"
+        },
+        {
+          "text": "308"
+        },
+        {
+          "text": "328"
+        },
+        {
+          "text": "330"
+        },
+        {
+          "text": "348"
+        },
+        {
+          "text": "360"
+        },
+        {
+          "text": "365"
+        },
+        {
+          "text": "400"
+        },
+        {
+          "text": "412"
+        },
+        {
+          "text": "456"
+        },
+        {
+          "text": "458"
+        },
+        {
+          "text": "488 GTB"
+        },
+        {
+          "text": "488 Pista"
+        },
+        {
+          "text": "488 Spider"
+        },
+        {
+          "text": "512"
+        },
+        {
+          "text": "550"
+        },
+        {
+          "text": "575"
+        },
+        {
+          "text": "599 GTB"
+        },
+        {
+          "text": "599 GTO"
+        },
+        {
+          "text": "599 SA Aperta"
+        },
+        {
+          "text": "612"
+        },
+        {
+          "text": "750"
+        },
+        {
+          "text": "812"
+        },
+        {
+          "text": "California"
+        },
+        {
+          "text": "Daytona"
+        },
+        {
+          "text": "Dino GT4"
+        },
+        {
+          "text": "Enzo Ferrari"
+        },
+        {
+          "text": "F12"
+        },
+        {
+          "text": "F355"
+        },
+        {
+          "text": "F40"
+        },
+        {
+          "text": "F430"
+        },
+        {
+          "text": "F50"
+        },
+        {
+          "text": "F8"
+        },
+        {
+          "text": "FF"
+        },
+        {
+          "text": "GTC4Lusso"
+        },
+        {
+          "text": "LaFerrari"
+        },
+        {
+          "text": "Mondial"
+        },
+        {
+          "text": "Monza"
+        },
+        {
+          "text": "Portofino"
+        },
+        {
+          "text": "Purosangue"
+        },
+        {
+          "text": "Roma"
+        },
+        {
+          "text": "SF90"
+        },
+        {
+          "text": "Superamerica"
+        },
+        {
+          "text": "Testarossa"
+        }
+      ],
+      "model_count": 50
+    },
+    "Fiat": {
+      "brand_value": "fiat",
+      "brand_text": "Fiat",
+      "models": [
+        {
+          "text": "124"
+        },
+        {
+          "text": "124 Spider"
+        },
+        {
+          "text": "126"
+        },
+        {
+          "text": "127"
+        },
+        {
+          "text": "130"
+        },
+        {
+          "text": "131"
+        },
+        {
+          "text": "500"
+        },
+        {
+          "text": "500C"
+        },
+        {
+          "text": "500L"
+        },
+        {
+          "text": "500L Cross"
+        },
+        {
+          "text": "500L Living"
+        },
+        {
+          "text": "500L Trekking"
+        },
+        {
+          "text": "500L Urban"
+        },
+        {
+          "text": "500L Wagon"
+        },
+        {
+          "text": "500S"
+        },
+        {
+          "text": "500X"
+        },
+        {
+          "text": "500e"
+        },
+        {
+          "text": "600"
+        },
+        {
+          "text": "600e"
+        },
+        {
+          "text": "Albea"
+        },
+        {
+          "text": "Barchetta"
+        },
+        {
+          "text": "Brava"
+        },
+        {
+          "text": "Bravo"
+        },
+        {
+          "text": "Cinquecento"
+        },
+        {
+          "text": "Coupe"
+        },
+        {
+          "text": "Croma"
+        },
+        {
+          "text": "Dino"
+        },
+        {
+          "text": "Doblo"
+        },
+        {
+          "text": "Ducato"
+        },
+        {
+          "text": "Fiorino"
+        },
+        {
+          "text": "Freemont"
+        },
+        {
+          "text": "Fullback"
+        },
+        {
+          "text": "Grande Panda"
+        },
+        {
+          "text": "Grande Punto"
+        },
+        {
+          "text": "Idea"
+        },
+        {
+          "text": "Linea"
+        },
+        {
+          "text": "Marea"
+        },
+        {
+          "text": "Marengo"
+        },
+        {
+          "text": "Multipla"
+        },
+        {
+          "text": "New Panda"
+        },
+        {
+          "text": "Palio"
+        },
+        {
+          "text": "Panda"
+        },
+        {
+          "text": "Punto"
+        },
+        {
+          "text": "Punto Evo"
+        },
+        {
+          "text": "Qubo"
+        },
+        {
+          "text": "Regata"
+        },
+        {
+          "text": "Ritmo"
+        },
+        {
+          "text": "Scudo"
+        },
+        {
+          "text": "Sedici"
+        },
+        {
+          "text": "Seicento"
+        },
+        {
+          "text": "Siena"
+        },
+        {
+          "text": "Spider Europa"
+        },
+        {
+          "text": "Stilo"
+        },
+        {
+          "text": "Strada"
+        },
+        {
+          "text": "Talento"
+        },
+        {
+          "text": "Tempra"
+        },
+        {
+          "text": "Tipo"
+        },
+        {
+          "text": "Topolino"
+        },
+        {
+          "text": "Ulysse"
+        },
+        {
+          "text": "Uno"
+        },
+        {
+          "text": "X 1/9"
+        }
+      ],
+      "model_count": 61
+    },
+    "Fisker": {
+      "brand_value": "fisker",
+      "brand_text": "Fisker",
+      "models": [
+        {
+          "text": "Karma"
+        },
+        {
+          "text": "Ocean"
+        }
+      ],
+      "model_count": 2
+    },
+    "Ford": {
+      "brand_value": "ford",
+      "brand_text": "Ford",
+      "models": [
+        {
+          "text": "Aerostar"
+        },
+        {
+          "text": "B-Max"
+        },
+        {
+          "text": "Bronco"
+        },
+        {
+          "text": "Bronco Sport"
+        },
+        {
+          "text": "C-Max"
+        },
+        {
+          "text": "Capri"
+        },
+        {
+          "text": "Cougar"
+        },
+        {
+          "text": "Courier"
+        },
+        {
+          "text": "Crown"
+        },
+        {
+          "text": "EcoSport"
+        },
+        {
+          "text": "Econoline"
+        },
+        {
+          "text": "Econovan"
+        },
+        {
+          "text": "Edge"
+        },
+        {
+          "text": "Escape"
+        },
+        {
+          "text": "Escort"
+        },
+        {
+          "text": "Excursion"
+        },
+        {
+          "text": "Expedition"
+        },
+        {
+          "text": "Explorer"
+        },
+        {
+          "text": "Express"
+        },
+        {
+          "text": "F 100"
+        },
+        {
+          "text": "F 150"
+        },
+        {
+          "text": "F 250"
+        },
+        {
+          "text": "F 350"
+        },
+        {
+          "text": "Fairlane"
+        },
+        {
+          "text": "Falcon"
+        },
+        {
+          "text": "Fiesta"
+        },
+        {
+          "text": "Flex"
+        },
+        {
+          "text": "Focus"
+        },
+        {
+          "text": "Fusion"
+        },
+        {
+          "text": "GT"
+        },
+        {
+          "text": "Galaxy"
+        },
+        {
+          "text": "Granada"
+        },
+        {
+          "text": "Grand C-Max"
+        },
+        {
+          "text": "Grand Tourneo"
+        },
+        {
+          "text": "Ka/Ka+"
+        },
+        {
+          "text": "Kuga"
+        },
+        {
+          "text": "Maverick"
+        },
+        {
+          "text": "Mercury"
+        },
+        {
+          "text": "Mondeo"
+        },
+        {
+          "text": "Mustang"
+        },
+        {
+          "text": "Mustang Mach-E"
+        },
+        {
+          "text": "Orion"
+        },
+        {
+          "text": "Probe"
+        },
+        {
+          "text": "Puma"
+        },
+        {
+          "text": "Puma Gen-E"
+        },
+        {
+          "text": "Ranger"
+        },
+        {
+          "text": "Raptor"
+        },
+        {
+          "text": "S-Max"
+        },
+        {
+          "text": "Scorpio"
+        },
+        {
+          "text": "Sierra"
+        },
+        {
+          "text": "Sportka"
+        },
+        {
+          "text": "Streetka"
+        },
+        {
+          "text": "Taunus"
+        },
+        {
+          "text": "Taurus"
+        },
+        {
+          "text": "Thunderbird"
+        },
+        {
+          "text": "Tourneo"
+        },
+        {
+          "text": "Tourneo Connect"
+        },
+        {
+          "text": "Tourneo Courier"
+        },
+        {
+          "text": "Tourneo Custom"
+        },
+        {
+          "text": "Transit"
+        },
+        {
+          "text": "Transit Connect"
+        },
+        {
+          "text": "Transit Courier"
+        },
+        {
+          "text": "Transit Custom"
+        },
+        {
+          "text": "Windstar"
+        }
+      ],
+      "model_count": 64
+    },
+    "GAC Gonow": {
+      "brand_value": "gac-gonow",
+      "brand_text": "GAC Gonow",
+      "models": [],
+      "model_count": 0
+    },
+    "Gemballa": {
+      "brand_value": "gemballa",
+      "brand_text": "Gemballa",
+      "models": [],
+      "model_count": 0
+    },
+    "Genesis": {
+      "brand_value": "genesis",
+      "brand_text": "Genesis",
+      "models": [
+        {
+          "text": "G70"
+        },
+        {
+          "text": "G80"
+        },
+        {
+          "text": "G90"
+        },
+        {
+          "text": "GV60"
+        },
+        {
+          "text": "GV70"
+        },
+        {
+          "text": "GV80"
+        }
+      ],
+      "model_count": 6
+    },
+    "GMC": {
+      "brand_value": "gmc",
+      "brand_text": "GMC",
+      "models": [
+        {
+          "text": "Acadia"
+        },
+        {
+          "text": "Envoy"
+        },
+        {
+          "text": "Safari"
+        },
+        {
+          "text": "Savana"
+        },
+        {
+          "text": "Sierra"
+        },
+        {
+          "text": "Sonoma"
+        },
+        {
+          "text": "Syclone"
+        },
+        {
+          "text": "Terrain"
+        },
+        {
+          "text": "Typhoon"
+        },
+        {
+          "text": "Vandura"
+        },
+        {
+          "text": "Yukon"
+        }
+      ],
+      "model_count": 11
+    },
+    "Grecav": {
+      "brand_value": "grecav",
+      "brand_text": "Grecav",
+      "models": [
+        {
+          "text": "Sonique"
+        }
+      ],
+      "model_count": 1
+    },
+    "GWM": {
+      "brand_value": "gwm",
+      "brand_text": "GWM",
+      "models": [
+        {
+          "text": "Ora 03"
+        },
+        {
+          "text": "Ora 07"
+        },
+        {
+          "text": "Wey 03"
+        },
+        {
+          "text": "Wey 05"
+        }
+      ],
+      "model_count": 4
+    },
+    "Hamann": {
+      "brand_value": "hamann",
+      "brand_text": "Hamann",
+      "models": [],
+      "model_count": 0
+    },
+    "Heinkel": {
+      "brand_value": "heinkel",
+      "brand_text": "Heinkel",
+      "models": [],
+      "model_count": 0
+    },
+    "Holden": {
+      "brand_value": "holden",
+      "brand_text": "Holden",
+      "models": [],
+      "model_count": 0
+    },
+    "Honda": {
+      "brand_value": "honda",
+      "brand_text": "Honda",
+      "models": [
+        {
+          "text": "Accord"
+        },
+        {
+          "text": "Aerodeck"
+        },
+        {
+          "text": "CR-V"
+        },
+        {
+          "text": "CR-Z"
+        },
+        {
+          "text": "CRX"
+        },
+        {
+          "text": "City"
+        },
+        {
+          "text": "Civic"
+        },
+        {
+          "text": "Clarity"
+        },
+        {
+          "text": "Concerto"
+        },
+        {
+          "text": "Element"
+        },
+        {
+          "text": "FR-V"
+        },
+        {
+          "text": "HR-V"
+        },
+        {
+          "text": "Insight"
+        },
+        {
+          "text": "Integra"
+        },
+        {
+          "text": "Jazz"
+        },
+        {
+          "text": "Legend"
+        },
+        {
+          "text": "Logo"
+        },
+        {
+          "text": "NSX"
+        },
+        {
+          "text": "Odyssey"
+        },
+        {
+          "text": "Pilot"
+        },
+        {
+          "text": "Prelude"
+        },
+        {
+          "text": "Ridgeline"
+        },
+        {
+          "text": "S2000"
+        },
+        {
+          "text": "Shuttle"
+        },
+        {
+          "text": "Stream"
+        },
+        {
+          "text": "ZR-V"
+        },
+        {
+          "text": "e"
+        },
+        {
+          "text": "e:Ny1"
+        }
+      ],
+      "model_count": 28
+    },
+    "Hongqi": {
+      "brand_value": "hongqi",
+      "brand_text": "Hongqi",
+      "models": [
+        {
+          "text": "E-HS9"
+        },
+        {
+          "text": "H9"
+        },
+        {
+          "text": "HS5"
+        }
+      ],
+      "model_count": 3
+    },
+    "Horch": {
+      "brand_value": "horch",
+      "brand_text": "Horch",
+      "models": [],
+      "model_count": 0
+    },
+    "Hummer": {
+      "brand_value": "hummer",
+      "brand_text": "Hummer",
+      "models": [
+        {
+          "text": "H1"
+        },
+        {
+          "text": "H2"
+        },
+        {
+          "text": "H3"
+        }
+      ],
+      "model_count": 3
+    },
+    "Hyundai": {
+      "brand_value": "hyundai",
+      "brand_text": "Hyundai",
+      "models": [
+        {
+          "text": "Accent"
+        },
+        {
+          "text": "Atos"
+        },
+        {
+          "text": "Azera"
+        },
+        {
+          "text": "BAYON"
+        },
+        {
+          "text": "Coupe"
+        },
+        {
+          "text": "Elantra"
+        },
+        {
+          "text": "Excel"
+        },
+        {
+          "text": "Galloper"
+        },
+        {
+          "text": "Genesis"
+        },
+        {
+          "text": "Getz"
+        },
+        {
+          "text": "Grand Santa Fe"
+        },
+        {
+          "text": "Grandeur"
+        },
+        {
+          "text": "H 100"
+        },
+        {
+          "text": "H 200"
+        },
+        {
+          "text": "H-1"
+        },
+        {
+          "text": "H-1 Starex"
+        },
+        {
+          "text": "H350"
+        },
+        {
+          "text": "INSTER"
+        },
+        {
+          "text": "IONIQ"
+        },
+        {
+          "text": "IONIQ 5"
+        },
+        {
+          "text": "IONIQ 6"
+        },
+        {
+          "text": "IONIQ 9"
+        },
+        {
+          "text": "KONA Elektro"
+        },
+        {
+          "text": "KONA"
+        },
+        {
+          "text": "Lantra"
+        },
+        {
+          "text": "Matrix"
+        },
+        {
+          "text": "NEXO"
+        },
+        {
+          "text": "Pony"
+        },
+        {
+          "text": "S-Coupe"
+        },
+        {
+          "text": "SANTA FE"
+        },
+        {
+          "text": "Santamo"
+        },
+        {
+          "text": "SONATA"
+        },
+        {
+          "text": "STARIA"
+        },
+        {
+          "text": "Terracan"
+        },
+        {
+          "text": "Trajet"
+        },
+        {
+          "text": "TUCSON"
+        },
+        {
+          "text": "Veloster"
+        },
+        {
+          "text": "Veracruz"
+        },
+        {
+          "text": "XG 30"
+        },
+        {
+          "text": "XG 350"
+        },
+        {
+          "text": "i10"
+        },
+        {
+          "text": "i20"
+        },
+        {
+          "text": "i30"
+        },
+        {
+          "text": "i40"
+        },
+        {
+          "text": "ix20"
+        },
+        {
+          "text": "ix35"
+        },
+        {
+          "text": "ix55"
+        }
+      ],
+      "model_count": 47
+    },
+    "INEOS": {
+      "brand_value": "ineos",
+      "brand_text": "INEOS",
+      "models": [
+        {
+          "text": "Grenadier"
+        }
+      ],
+      "model_count": 1
+    },
+    "Infiniti": {
+      "brand_value": "infiniti",
+      "brand_text": "Infiniti",
+      "models": [
+        {
+          "text": "EX30"
+        },
+        {
+          "text": "EX35"
+        },
+        {
+          "text": "EX37"
+        },
+        {
+          "text": "FX"
+        },
+        {
+          "text": "G35"
+        },
+        {
+          "text": "G37"
+        },
+        {
+          "text": "M30"
+        },
+        {
+          "text": "M35"
+        },
+        {
+          "text": "M37"
+        },
+        {
+          "text": "Q30"
+        },
+        {
+          "text": "Q45"
+        },
+        {
+          "text": "Q50"
+        },
+        {
+          "text": "Q60"
+        },
+        {
+          "text": "Q70"
+        },
+        {
+          "text": "QX30"
+        },
+        {
+          "text": "QX50"
+        },
+        {
+          "text": "QX56"
+        },
+        {
+          "text": "QX60"
+        },
+        {
+          "text": "QX70"
+        },
+        {
+          "text": "QX80"
+        }
+      ],
+      "model_count": 20
+    },
+    "Invicta": {
+      "brand_value": "invicta",
+      "brand_text": "Invicta",
+      "models": [],
+      "model_count": 0
+    },
+    "Isuzu": {
+      "brand_value": "isuzu",
+      "brand_text": "Isuzu",
+      "models": [
+        {
+          "text": "Campo"
+        },
+        {
+          "text": "D-Max"
+        },
+        {
+          "text": "Gemini"
+        },
+        {
+          "text": "Midi"
+        },
+        {
+          "text": "PICK UP"
+        },
+        {
+          "text": "Trooper"
+        }
+      ],
+      "model_count": 6
+    },
+    "Iveco": {
+      "brand_value": "iveco",
+      "brand_text": "Iveco",
+      "models": [
+        {
+          "text": "Massif"
+        }
+      ],
+      "model_count": 1
+    },
+    "JAC": {
+      "brand_value": "jac",
+      "brand_text": "JAC",
+      "models": [
+        {
+          "text": "8 Pro"
+        }
+      ],
+      "model_count": 1
+    },
+    "Jaguar": {
+      "brand_value": "jaguar",
+      "brand_text": "Jaguar",
+      "models": [
+        {
+          "text": "Daimler"
+        },
+        {
+          "text": "E-Pace"
+        },
+        {
+          "text": "E-Type"
+        },
+        {
+          "text": "F-Pace"
+        },
+        {
+          "text": "F-Type"
+        },
+        {
+          "text": "I-Pace"
+        },
+        {
+          "text": "MK II"
+        },
+        {
+          "text": "S-Type"
+        },
+        {
+          "text": "X-Type"
+        },
+        {
+          "text": "XE"
+        },
+        {
+          "text": "XF"
+        },
+        {
+          "text": "XJ"
+        },
+        {
+          "text": "XJ12"
+        },
+        {
+          "text": "XJ40"
+        },
+        {
+          "text": "XJ6"
+        },
+        {
+          "text": "XJ8"
+        },
+        {
+          "text": "XJR"
+        },
+        {
+          "text": "XJS"
+        },
+        {
+          "text": "XJSC"
+        },
+        {
+          "text": "XK"
+        },
+        {
+          "text": "XK8"
+        },
+        {
+          "text": "XKR"
+        }
+      ],
+      "model_count": 22
+    },
+    "Jeep": {
+      "brand_value": "jeep",
+      "brand_text": "Jeep",
+      "models": [
+        {
+          "text": "Avenger"
+        },
+        {
+          "text": "CJ"
+        },
+        {
+          "text": "Cherokee"
+        },
+        {
+          "text": "Comanche"
+        },
+        {
+          "text": "Commander"
+        },
+        {
+          "text": "Compass"
+        },
+        {
+          "text": "Gladiator"
+        },
+        {
+          "text": "Grand Cherokee"
+        },
+        {
+          "text": "Patriot"
+        },
+        {
+          "text": "Renegade"
+        },
+        {
+          "text": "Wagoneer"
+        },
+        {
+          "text": "Willys"
+        },
+        {
+          "text": "Wrangler"
+        }
+      ],
+      "model_count": 13
+    },
+    "Jiayuan": {
+      "brand_value": "jiayuan",
+      "brand_text": "Jiayuan",
+      "models": [
+        {
+          "text": "City Spirit"
+        }
+      ],
+      "model_count": 1
+    },
+    "KGM": {
+      "brand_value": "kgm",
+      "brand_text": "KGM",
+      "models": [
+        {
+          "text": "Actyon"
+        },
+        {
+          "text": "Korando"
+        },
+        {
+          "text": "Musso"
+        },
+        {
+          "text": "Musso Grand"
+        },
+        {
+          "text": "Rexton"
+        },
+        {
+          "text": "Tivoli"
+        },
+        {
+          "text": "Torres"
+        },
+        {
+          "text": "Torres EVX"
+        }
+      ],
+      "model_count": 8
+    },
+    "Kia": {
+      "brand_value": "kia",
+      "brand_text": "Kia",
+      "models": [
+        {
+          "text": "Besta"
+        },
+        {
+          "text": "Borrego"
+        },
+        {
+          "text": "Carens"
+        },
+        {
+          "text": "Carnival"
+        },
+        {
+          "text": "Cerato"
+        },
+        {
+          "text": "Clarus"
+        },
+        {
+          "text": "EV3"
+        },
+        {
+          "text": "EV6"
+        },
+        {
+          "text": "EV9"
+        },
+        {
+          "text": "Elan"
+        },
+        {
+          "text": "Joice"
+        },
+        {
+          "text": "K2500"
+        },
+        {
+          "text": "K2700"
+        },
+        {
+          "text": "Leo"
+        },
+        {
+          "text": "Magentis"
+        },
+        {
+          "text": "Mentor"
+        },
+        {
+          "text": "Mini"
+        },
+        {
+          "text": "Niro"
+        },
+        {
+          "text": "Niro EV"
+        },
+        {
+          "text": "Opirus"
+        },
+        {
+          "text": "Optima"
+        },
+        {
+          "text": "Picanto"
+        },
+        {
+          "text": "Pregio"
+        },
+        {
+          "text": "Pride"
+        },
+        {
+          "text": "Retona"
+        },
+        {
+          "text": "Rio"
+        },
+        {
+          "text": "Roadster"
+        },
+        {
+          "text": "Rocsta"
+        },
+        {
+          "text": "Sephia"
+        },
+        {
+          "text": "Shuma"
+        },
+        {
+          "text": "Sorento"
+        },
+        {
+          "text": "Soul"
+        },
+        {
+          "text": "Sportage"
+        },
+        {
+          "text": "Stinger"
+        },
+        {
+          "text": "Stonic"
+        },
+        {
+          "text": "Venga"
+        },
+        {
+          "text": "XCeed"
+        },
+        {
+          "text": "cee'd / Ceed"
+        },
+        {
+          "text": "cee'd Sportswagon"
+        },
+        {
+          "text": "pro cee'd / ProCeed"
+        }
+      ],
+      "model_count": 40
+    },
+    "Koenigsegg": {
+      "brand_value": "koenigsegg",
+      "brand_text": "Koenigsegg",
+      "models": [
+        {
+          "text": "Agera"
+        },
+        {
+          "text": "CCR"
+        },
+        {
+          "text": "CCXR"
+        }
+      ],
+      "model_count": 3
+    },
+    "KTM": {
+      "brand_value": "ktm",
+      "brand_text": "KTM",
+      "models": [
+        {
+          "text": "X-BOW"
+        }
+      ],
+      "model_count": 1
+    },
+    "Lada": {
+      "brand_value": "lada",
+      "brand_text": "Lada",
+      "models": [
+        {
+          "text": "110"
+        },
+        {
+          "text": "111"
+        },
+        {
+          "text": "112"
+        },
+        {
+          "text": "1200"
+        },
+        {
+          "text": "2107"
+        },
+        {
+          "text": "2110"
+        },
+        {
+          "text": "2111"
+        },
+        {
+          "text": "2112"
+        },
+        {
+          "text": "Aleko"
+        },
+        {
+          "text": "Forma"
+        },
+        {
+          "text": "Granta"
+        },
+        {
+          "text": "Kalina"
+        },
+        {
+          "text": "Niva"
+        },
+        {
+          "text": "Nova"
+        },
+        {
+          "text": "Priora"
+        },
+        {
+          "text": "Samara"
+        },
+        {
+          "text": "Taiga"
+        },
+        {
+          "text": "Urban"
+        },
+        {
+          "text": "Vesta"
+        },
+        {
+          "text": "X-Ray"
+        }
+      ],
+      "model_count": 20
+    },
+    "Lamborghini": {
+      "brand_value": "lamborghini",
+      "brand_text": "Lamborghini",
+      "models": [
+        {
+          "text": "Aventador"
+        },
+        {
+          "text": "Countach"
+        },
+        {
+          "text": "Diablo"
+        },
+        {
+          "text": "Espada"
+        },
+        {
+          "text": "Gallardo"
+        },
+        {
+          "text": "Huracán"
+        },
+        {
+          "text": "Jalpa"
+        },
+        {
+          "text": "LM"
+        },
+        {
+          "text": "Miura"
+        },
+        {
+          "text": "Murciélago"
+        },
+        {
+          "text": "Revuelto"
+        },
+        {
+          "text": "Urraco"
+        },
+        {
+          "text": "Urus"
+        }
+      ],
+      "model_count": 13
+    },
+    "Lancia": {
+      "brand_value": "lancia",
+      "brand_text": "Lancia",
+      "models": [
+        {
+          "text": "Beta"
+        },
+        {
+          "text": "Dedra"
+        },
+        {
+          "text": "Delta"
+        },
+        {
+          "text": "Flaminia"
+        },
+        {
+          "text": "Flavia"
+        },
+        {
+          "text": "Fulvia"
+        },
+        {
+          "text": "Gamma"
+        },
+        {
+          "text": "Kappa"
+        },
+        {
+          "text": "Lybra"
+        },
+        {
+          "text": "MUSA"
+        },
+        {
+          "text": "Phedra"
+        },
+        {
+          "text": "Prisma"
+        },
+        {
+          "text": "Stratos"
+        },
+        {
+          "text": "Thema"
+        },
+        {
+          "text": "Thesis"
+        },
+        {
+          "text": "Voyager"
+        },
+        {
+          "text": "Ypsilon"
+        },
+        {
+          "text": "Zeta"
+        }
+      ],
+      "model_count": 18
+    },
+    "Land Rover": {
+      "brand_value": "land-rover",
+      "brand_text": "Land Rover",
+      "models": [
+        {
+          "text": "Defender"
+        },
+        {
+          "text": "Discovery"
+        },
+        {
+          "text": "Discovery Sport"
+        },
+        {
+          "text": "Freelander"
+        },
+        {
+          "text": "Range Rover"
+        },
+        {
+          "text": "Range Rover Evoque"
+        },
+        {
+          "text": "Range Rover Sport"
+        },
+        {
+          "text": "Range Rover Velar"
+        },
+        {
+          "text": "Serie I"
+        },
+        {
+          "text": "Serie II"
+        },
+        {
+          "text": "Serie III"
+        }
+      ],
+      "model_count": 11
+    },
+    "Landwind": {
+      "brand_value": "landwind",
+      "brand_text": "Landwind",
+      "models": [
+        {
+          "text": "CV-9"
+        },
+        {
+          "text": "S"
+        },
+        {
+          "text": "SC2"
+        },
+        {
+          "text": "SC4"
+        }
+      ],
+      "model_count": 4
+    },
+    "Leapmotor": {
+      "brand_value": "leapmotor",
+      "brand_text": "Leapmotor",
+      "models": [
+        {
+          "text": "C10"
+        },
+        {
+          "text": "T03"
+        }
+      ],
+      "model_count": 2
+    },
+    "LEVC": {
+      "brand_value": "levc",
+      "brand_text": "LEVC",
+      "models": [],
+      "model_count": 0
+    },
+    "Lexus": {
+      "brand_value": "lexus",
+      "brand_text": "Lexus",
+      "models": [
+        {
+          "text": "CT 200h"
+        },
+        {
+          "text": "ES 300"
+        },
+        {
+          "text": "ES 330"
+        },
+        {
+          "text": "ES 350"
+        },
+        {
+          "text": "GS 250"
+        },
+        {
+          "text": "GS 300"
+        },
+        {
+          "text": "GS 350"
+        },
+        {
+          "text": "GS 430"
+        },
+        {
+          "text": "GS 450"
+        },
+        {
+          "text": "GS 460"
+        },
+        {
+          "text": "GS F"
+        },
+        {
+          "text": "GX 460"
+        },
+        {
+          "text": "GX 470"
+        },
+        {
+          "text": "GX 550"
+        },
+        {
+          "text": "IS 200"
+        },
+        {
+          "text": "IS 220"
+        },
+        {
+          "text": "IS 250"
+        },
+        {
+          "text": "IS 300"
+        },
+        {
+          "text": "IS 350"
+        },
+        {
+          "text": "IS-F"
+        },
+        {
+          "text": "LBX"
+        },
+        {
+          "text": "LC 500"
+        },
+        {
+          "text": "LC 500h"
+        },
+        {
+          "text": "LFA"
+        },
+        {
+          "text": "LM"
+        },
+        {
+          "text": "LS 400"
+        },
+        {
+          "text": "LS 430"
+        },
+        {
+          "text": "LS 460"
+        },
+        {
+          "text": "LS 500"
+        },
+        {
+          "text": "LS 600"
+        },
+        {
+          "text": "LX 450"
+        },
+        {
+          "text": "LX 470"
+        },
+        {
+          "text": "LX 500"
+        },
+        {
+          "text": "LX 570"
+        },
+        {
+          "text": "LX 600"
+        },
+        {
+          "text": "NX 200"
+        },
+        {
+          "text": "NX 300"
+        },
+        {
+          "text": "NX 350h"
+        },
+        {
+          "text": "NX 450h"
+        },
+        {
+          "text": "RC 200"
+        },
+        {
+          "text": "RC 300"
+        },
+        {
+          "text": "RC 350"
+        },
+        {
+          "text": "RC F"
+        },
+        {
+          "text": "RX 200"
+        },
+        {
+          "text": "RX 300"
+        },
+        {
+          "text": "RX 330"
+        },
+        {
+          "text": "RX 350"
+        },
+        {
+          "text": "RX 400"
+        },
+        {
+          "text": "RX 450"
+        },
+        {
+          "text": "RX 500"
+        },
+        {
+          "text": "RZ"
+        },
+        {
+          "text": "SC 400"
+        },
+        {
+          "text": "SC 430"
+        },
+        {
+          "text": "UX"
+        }
+      ],
+      "model_count": 54
+    },
+    "Ligier": {
+      "brand_value": "ligier",
+      "brand_text": "Ligier",
+      "models": [
+        {
+          "text": "Ambra"
+        },
+        {
+          "text": "Be Sun"
+        },
+        {
+          "text": "JS 50"
+        },
+        {
+          "text": "JS 50 L"
+        },
+        {
+          "text": "JS 60"
+        },
+        {
+          "text": "JS RC"
+        },
+        {
+          "text": "Myli"
+        },
+        {
+          "text": "Nova"
+        },
+        {
+          "text": "Optima"
+        },
+        {
+          "text": "X - Too"
+        }
+      ],
+      "model_count": 10
+    },
+    "Lincoln": {
+      "brand_value": "lincoln",
+      "brand_text": "Lincoln",
+      "models": [
+        {
+          "text": "Aviator"
+        },
+        {
+          "text": "Continental"
+        },
+        {
+          "text": "LS"
+        },
+        {
+          "text": "Mark"
+        },
+        {
+          "text": "Navigator"
+        },
+        {
+          "text": "Town Car"
+        }
+      ],
+      "model_count": 6
+    },
+    "Lotus": {
+      "brand_value": "lotus",
+      "brand_text": "Lotus",
+      "models": [
+        {
+          "text": "340 R"
+        },
+        {
+          "text": "Cortina"
+        },
+        {
+          "text": "Elan"
+        },
+        {
+          "text": "Eletre"
+        },
+        {
+          "text": "Elise"
+        },
+        {
+          "text": "Elite"
+        },
+        {
+          "text": "Emeya"
+        },
+        {
+          "text": "Emira"
+        },
+        {
+          "text": "Esprit"
+        },
+        {
+          "text": "Europa"
+        },
+        {
+          "text": "Evora"
+        },
+        {
+          "text": "Excel"
+        },
+        {
+          "text": "Exige"
+        },
+        {
+          "text": "Super Seven"
+        }
+      ],
+      "model_count": 14
+    },
+    "Lucid": {
+      "brand_value": "lucid",
+      "brand_text": "Lucid",
+      "models": [
+        {
+          "text": "Air"
+        }
+      ],
+      "model_count": 1
+    },
+    "Lynk&Co": {
+      "brand_value": "lync-and-co",
+      "brand_text": "Lynk&Co",
+      "models": [
+        {
+          "text": "01"
+        },
+        {
+          "text": "02"
+        },
+        {
+          "text": "08"
+        }
+      ],
+      "model_count": 3
+    },
+    "Mahindra": {
+      "brand_value": "mahindra",
+      "brand_text": "Mahindra",
+      "models": [],
+      "model_count": 0
+    },
+    "MAN": {
+      "brand_value": "man",
+      "brand_text": "MAN",
+      "models": [
+        {
+          "text": "TGE"
+        }
+      ],
+      "model_count": 1
+    },
+    "Maserati": {
+      "brand_value": "maserati",
+      "brand_text": "Maserati",
+      "models": [
+        {
+          "text": "222"
+        },
+        {
+          "text": "224"
+        },
+        {
+          "text": "228"
+        },
+        {
+          "text": "3200"
+        },
+        {
+          "text": "418"
+        },
+        {
+          "text": "420"
+        },
+        {
+          "text": "4200"
+        },
+        {
+          "text": "422"
+        },
+        {
+          "text": "424"
+        },
+        {
+          "text": "430"
+        },
+        {
+          "text": "Biturbo"
+        },
+        {
+          "text": "Ghibli"
+        },
+        {
+          "text": "GranCabrio"
+        },
+        {
+          "text": "Gransport"
+        },
+        {
+          "text": "Granturismo"
+        },
+        {
+          "text": "Grecale"
+        },
+        {
+          "text": "Indy"
+        },
+        {
+          "text": "Karif"
+        },
+        {
+          "text": "Levante"
+        },
+        {
+          "text": "MC12"
+        },
+        {
+          "text": "MC20"
+        },
+        {
+          "text": "Merak"
+        },
+        {
+          "text": "Quattroporte"
+        },
+        {
+          "text": "Shamal"
+        },
+        {
+          "text": "Spyder"
+        }
+      ],
+      "model_count": 25
+    },
+    "Maxus": {
+      "brand_value": "maxus",
+      "brand_text": "Maxus",
+      "models": [
+        {
+          "text": "Deliver 9"
+        },
+        {
+          "text": "Euniq 5"
+        },
+        {
+          "text": "Euniq 6"
+        },
+        {
+          "text": "Mifa 9"
+        },
+        {
+          "text": "T90"
+        },
+        {
+          "text": "eDeliver 3"
+        },
+        {
+          "text": "eDeliver 9"
+        }
+      ],
+      "model_count": 7
+    },
+    "Maybach": {
+      "brand_value": "maybach",
+      "brand_text": "Maybach",
+      "models": [
+        {
+          "text": "57"
+        },
+        {
+          "text": "62"
+        },
+        {
+          "text": "Pullman"
+        },
+        {
+          "text": "S650"
+        }
+      ],
+      "model_count": 4
+    },
+    "Mazda": {
+      "brand_value": "mazda",
+      "brand_text": "Mazda",
+      "models": [
+        {
+          "text": "121"
+        },
+        {
+          "text": "2"
+        },
+        {
+          "text": "2 Hybrid"
+        },
+        {
+          "text": "3"
+        },
+        {
+          "text": "323"
+        },
+        {
+          "text": "5"
+        },
+        {
+          "text": "6"
+        },
+        {
+          "text": "626"
+        },
+        {
+          "text": "6e"
+        },
+        {
+          "text": "929"
+        },
+        {
+          "text": "B series"
+        },
+        {
+          "text": "BT-50"
+        },
+        {
+          "text": "Bongo"
+        },
+        {
+          "text": "CX-3"
+        },
+        {
+          "text": "CX-30"
+        },
+        {
+          "text": "CX-5"
+        },
+        {
+          "text": "CX-60"
+        },
+        {
+          "text": "CX-7"
+        },
+        {
+          "text": "CX-80"
+        },
+        {
+          "text": "CX-9"
+        },
+        {
+          "text": "Demio"
+        },
+        {
+          "text": "E series"
+        },
+        {
+          "text": "MPV"
+        },
+        {
+          "text": "MX-3"
+        },
+        {
+          "text": "MX-30"
+        },
+        {
+          "text": "MX-5"
+        },
+        {
+          "text": "MX-6"
+        },
+        {
+          "text": "Millenia"
+        },
+        {
+          "text": "Premacy"
+        },
+        {
+          "text": "Protege"
+        },
+        {
+          "text": "RX-6"
+        },
+        {
+          "text": "RX-7"
+        },
+        {
+          "text": "RX-8"
+        },
+        {
+          "text": "Tribute"
+        },
+        {
+          "text": "Xedos"
+        }
+      ],
+      "model_count": 35
+    },
+    "McLaren": {
+      "brand_value": "mclaren",
+      "brand_text": "McLaren",
+      "models": [
+        {
+          "text": "540C"
+        },
+        {
+          "text": "570GT"
+        },
+        {
+          "text": "570S"
+        },
+        {
+          "text": "600LT"
+        },
+        {
+          "text": "620R"
+        },
+        {
+          "text": "650S"
+        },
+        {
+          "text": "650S Coupé"
+        },
+        {
+          "text": "650S Spider"
+        },
+        {
+          "text": "675LT"
+        },
+        {
+          "text": "675LT Spider"
+        },
+        {
+          "text": "720S"
+        },
+        {
+          "text": "750S"
+        },
+        {
+          "text": "765"
+        },
+        {
+          "text": "765LT"
+        },
+        {
+          "text": "Artura"
+        },
+        {
+          "text": "Elva"
+        },
+        {
+          "text": "GT"
+        },
+        {
+          "text": "MP4-12C"
+        },
+        {
+          "text": "P1"
+        },
+        {
+          "text": "Senna GTR"
+        },
+        {
+          "text": "Speedtail"
+        }
+      ],
+      "model_count": 21
+    },
+    "Mercedes-Benz": {
+      "brand_value": "mercedes-benz",
+      "brand_text": "Mercedes-Benz",
+      "models": [
+        {
+          "text": "190"
+        },
+        {
+          "text": "200"
+        },
+        {
+          "text": "220"
+        },
+        {
+          "text": "230"
+        },
+        {
+          "text": "240"
+        },
+        {
+          "text": "250"
+        },
+        {
+          "text": "260"
+        },
+        {
+          "text": "270"
+        },
+        {
+          "text": "280"
+        },
+        {
+          "text": "290"
+        },
+        {
+          "text": "300"
+        },
+        {
+          "text": "320"
+        },
+        {
+          "text": "350"
+        },
+        {
+          "text": "380"
+        },
+        {
+          "text": "400"
+        },
+        {
+          "text": "416"
+        },
+        {
+          "text": "420"
+        },
+        {
+          "text": "450"
+        },
+        {
+          "text": "500"
+        },
+        {
+          "text": "560"
+        },
+        {
+          "text": "600"
+        },
+        {
+          "text": "A 140"
+        },
+        {
+          "text": "A 150"
+        },
+        {
+          "text": "A 160"
+        },
+        {
+          "text": "A 170"
+        },
+        {
+          "text": "A 180"
+        },
+        {
+          "text": "A 190"
+        },
+        {
+          "text": "A 200"
+        },
+        {
+          "text": "A 210"
+        },
+        {
+          "text": "A 220"
+        },
+        {
+          "text": "A 250"
+        },
+        {
+          "text": "A 35 AMG"
+        },
+        {
+          "text": "A 45 AMG"
+        },
+        {
+          "text": "AMG GT"
+        },
+        {
+          "text": "AMG GT C"
+        },
+        {
+          "text": "AMG GT R"
+        },
+        {
+          "text": "AMG GT S"
+        },
+        {
+          "text": "B 150"
+        },
+        {
+          "text": "B 160"
+        },
+        {
+          "text": "B 170"
+        },
+        {
+          "text": "B 180"
+        },
+        {
+          "text": "B 200"
+        },
+        {
+          "text": "B 220"
+        },
+        {
+          "text": "B 250"
+        },
+        {
+          "text": "B Electric Drive"
+        },
+        {
+          "text": "C 160"
+        },
+        {
+          "text": "C 180"
+        },
+        {
+          "text": "C 200"
+        },
+        {
+          "text": "C 220"
+        },
+        {
+          "text": "C 230"
+        },
+        {
+          "text": "C 240"
+        },
+        {
+          "text": "C 250"
+        },
+        {
+          "text": "C 270"
+        },
+        {
+          "text": "C 280"
+        },
+        {
+          "text": "C 30 AMG"
+        },
+        {
+          "text": "C 300"
+        },
+        {
+          "text": "C 32 AMG"
+        },
+        {
+          "text": "C 320"
+        },
+        {
+          "text": "C 350"
+        },
+        {
+          "text": "C 36 AMG"
+        },
+        {
+          "text": "C 400"
+        },
+        {
+          "text": "C 43 AMG"
+        },
+        {
+          "text": "C 450 AMG"
+        },
+        {
+          "text": "C 55 AMG"
+        },
+        {
+          "text": "C 63 AMG"
+        },
+        {
+          "text": "CE 200"
+        },
+        {
+          "text": "CE 220"
+        },
+        {
+          "text": "CE 230"
+        },
+        {
+          "text": "CE 280"
+        },
+        {
+          "text": "CE 300"
+        },
+        {
+          "text": "CE 320"
+        },
+        {
+          "text": "CL 160"
+        },
+        {
+          "text": "CL 180"
+        },
+        {
+          "text": "CL 200"
+        },
+        {
+          "text": "CL 220"
+        },
+        {
+          "text": "CL 230"
+        },
+        {
+          "text": "CL 320"
+        },
+        {
+          "text": "CL 420"
+        },
+        {
+          "text": "CL 500"
+        },
+        {
+          "text": "CL 55 AMG"
+        },
+        {
+          "text": "CL 600"
+        },
+        {
+          "text": "CL 63 AMG"
+        },
+        {
+          "text": "CL 65 AMG"
+        },
+        {
+          "text": "CLA 180"
+        },
+        {
+          "text": "CLA 180 Shooting Brake"
+        },
+        {
+          "text": "CLA 200"
+        },
+        {
+          "text": "CLA 200 Shooting Brake"
+        },
+        {
+          "text": "CLA 220"
+        },
+        {
+          "text": "CLA 220 Shooting Brake"
+        },
+        {
+          "text": "CLA 250"
+        },
+        {
+          "text": "CLA 250 Shooting Brake"
+        },
+        {
+          "text": "CLA 35 AMG"
+        },
+        {
+          "text": "CLA 35 AMG Shooting Brake"
+        },
+        {
+          "text": "CLA 350"
+        },
+        {
+          "text": "CLA 45 AMG"
+        },
+        {
+          "text": "CLA 45 AMG Shooting Brake"
+        },
+        {
+          "text": "CLA Shooting Brake"
+        },
+        {
+          "text": "CLC 160"
+        },
+        {
+          "text": "CLC 180"
+        },
+        {
+          "text": "CLC 200"
+        },
+        {
+          "text": "CLC 220"
+        },
+        {
+          "text": "CLC 230"
+        },
+        {
+          "text": "CLC 250"
+        },
+        {
+          "text": "CLC 350"
+        },
+        {
+          "text": "CLE 180"
+        },
+        {
+          "text": "CLE 200"
+        },
+        {
+          "text": "CLE 220"
+        },
+        {
+          "text": "CLE 300"
+        },
+        {
+          "text": "CLE 450"
+        },
+        {
+          "text": "CLE 53 AMG"
+        },
+        {
+          "text": "CLK 200"
+        },
+        {
+          "text": "CLK 220"
+        },
+        {
+          "text": "CLK 230"
+        },
+        {
+          "text": "CLK 240"
+        },
+        {
+          "text": "CLK 270"
+        },
+        {
+          "text": "CLK 280"
+        },
+        {
+          "text": "CLK 320"
+        },
+        {
+          "text": "CLK 350"
+        },
+        {
+          "text": "CLK 430"
+        },
+        {
+          "text": "CLK 500"
+        },
+        {
+          "text": "CLK 55 AMG"
+        },
+        {
+          "text": "CLK 63 AMG"
+        },
+        {
+          "text": "CLS 220"
+        },
+        {
+          "text": "CLS 220 Shooting Brake"
+        },
+        {
+          "text": "CLS 250"
+        },
+        {
+          "text": "CLS 250 Shooting Brake"
+        },
+        {
+          "text": "CLS 280"
+        },
+        {
+          "text": "CLS 300"
+        },
+        {
+          "text": "CLS 320"
+        },
+        {
+          "text": "CLS 350"
+        },
+        {
+          "text": "CLS 350 Shooting Brake"
+        },
+        {
+          "text": "CLS 400"
+        },
+        {
+          "text": "CLS 400 Shooting Brake"
+        },
+        {
+          "text": "CLS 450"
+        },
+        {
+          "text": "CLS 500"
+        },
+        {
+          "text": "CLS 500 Shooting Brake"
+        },
+        {
+          "text": "CLS 53 AMG"
+        },
+        {
+          "text": "CLS 55 AMG"
+        },
+        {
+          "text": "CLS 63 AMG"
+        },
+        {
+          "text": "CLS 63 AMG Shooting Brake"
+        },
+        {
+          "text": "CLS Shooting Brake"
+        },
+        {
+          "text": "Citan"
+        },
+        {
+          "text": "E 200"
+        },
+        {
+          "text": "E 220"
+        },
+        {
+          "text": "E 230"
+        },
+        {
+          "text": "E 240"
+        },
+        {
+          "text": "E 250"
+        },
+        {
+          "text": "E 260"
+        },
+        {
+          "text": "E 270"
+        },
+        {
+          "text": "E 280"
+        },
+        {
+          "text": "E 290"
+        },
+        {
+          "text": "E 300"
+        },
+        {
+          "text": "E 320"
+        },
+        {
+          "text": "E 350"
+        },
+        {
+          "text": "E 36 AMG"
+        },
+        {
+          "text": "E 400"
+        },
+        {
+          "text": "E 420"
+        },
+        {
+          "text": "E 43 AMG"
+        },
+        {
+          "text": "E 430"
+        },
+        {
+          "text": "E 450"
+        },
+        {
+          "text": "E 50"
+        },
+        {
+          "text": "E 500"
+        },
+        {
+          "text": "E 53 AMG"
+        },
+        {
+          "text": "E 55 AMG"
+        },
+        {
+          "text": "E 60 AMG"
+        },
+        {
+          "text": "E 63 AMG"
+        },
+        {
+          "text": "EQA"
+        },
+        {
+          "text": "EQB"
+        },
+        {
+          "text": "EQC"
+        },
+        {
+          "text": "EQE"
+        },
+        {
+          "text": "EQE SUV"
+        },
+        {
+          "text": "EQS"
+        },
+        {
+          "text": "EQS SUV"
+        },
+        {
+          "text": "EQT"
+        },
+        {
+          "text": "EQV"
+        },
+        {
+          "text": "G 230"
+        },
+        {
+          "text": "G 240"
+        },
+        {
+          "text": "G 250"
+        },
+        {
+          "text": "G 270"
+        },
+        {
+          "text": "G 280"
+        },
+        {
+          "text": "G 290"
+        },
+        {
+          "text": "G 300"
+        },
+        {
+          "text": "G 320"
+        },
+        {
+          "text": "G 350"
+        },
+        {
+          "text": "G 400"
+        },
+        {
+          "text": "G 450"
+        },
+        {
+          "text": "G 500"
+        },
+        {
+          "text": "G 55 AMG"
+        },
+        {
+          "text": "G 580"
+        },
+        {
+          "text": "G 63 AMG"
+        },
+        {
+          "text": "G 65 AMG"
+        },
+        {
+          "text": "GL 320"
+        },
+        {
+          "text": "GL 350"
+        },
+        {
+          "text": "GL 400"
+        },
+        {
+          "text": "GL 420"
+        },
+        {
+          "text": "GL 450"
+        },
+        {
+          "text": "GL 500"
+        },
+        {
+          "text": "GL 55 AMG"
+        },
+        {
+          "text": "GL 63 AMG"
+        },
+        {
+          "text": "GLA 180"
+        },
+        {
+          "text": "GLA 200"
+        },
+        {
+          "text": "GLA 220"
+        },
+        {
+          "text": "GLA 250"
+        },
+        {
+          "text": "GLA 35 AMG"
+        },
+        {
+          "text": "GLA 45 AMG"
+        },
+        {
+          "text": "GLB 180"
+        },
+        {
+          "text": "GLB 200"
+        },
+        {
+          "text": "GLB 220"
+        },
+        {
+          "text": "GLB 250"
+        },
+        {
+          "text": "GLB 35 AMG"
+        },
+        {
+          "text": "GLC 200"
+        },
+        {
+          "text": "GLC 220"
+        },
+        {
+          "text": "GLC 250"
+        },
+        {
+          "text": "GLC 300"
+        },
+        {
+          "text": "GLC 350"
+        },
+        {
+          "text": "GLC 400"
+        },
+        {
+          "text": "GLC 43 AMG"
+        },
+        {
+          "text": "GLC 450"
+        },
+        {
+          "text": "GLC 63 AMG"
+        },
+        {
+          "text": "GLE 250"
+        },
+        {
+          "text": "GLE 300"
+        },
+        {
+          "text": "GLE 350"
+        },
+        {
+          "text": "GLE 400"
+        },
+        {
+          "text": "GLE 43 AMG"
+        },
+        {
+          "text": "GLE 450"
+        },
+        {
+          "text": "GLE 500"
+        },
+        {
+          "text": "GLE 53 AMG"
+        },
+        {
+          "text": "GLE 580"
+        },
+        {
+          "text": "GLE 63 AMG"
+        },
+        {
+          "text": "GLK 200"
+        },
+        {
+          "text": "GLK 220"
+        },
+        {
+          "text": "GLK 250"
+        },
+        {
+          "text": "GLK 280"
+        },
+        {
+          "text": "GLK 300"
+        },
+        {
+          "text": "GLK 320"
+        },
+        {
+          "text": "GLK 350"
+        },
+        {
+          "text": "GLS 350"
+        },
+        {
+          "text": "GLS 400"
+        },
+        {
+          "text": "GLS 450"
+        },
+        {
+          "text": "GLS 500"
+        },
+        {
+          "text": "GLS 580"
+        },
+        {
+          "text": "GLS 600"
+        },
+        {
+          "text": "GLS 63"
+        },
+        {
+          "text": "MB 100"
+        },
+        {
+          "text": "ML 230"
+        },
+        {
+          "text": "ML 250"
+        },
+        {
+          "text": "ML 270"
+        },
+        {
+          "text": "ML 280"
+        },
+        {
+          "text": "ML 300"
+        },
+        {
+          "text": "ML 320"
+        },
+        {
+          "text": "ML 350"
+        },
+        {
+          "text": "ML 400"
+        },
+        {
+          "text": "ML 420"
+        },
+        {
+          "text": "ML 430"
+        },
+        {
+          "text": "ML 450"
+        },
+        {
+          "text": "ML 500"
+        },
+        {
+          "text": "ML 55 AMG"
+        },
+        {
+          "text": "ML 63 AMG"
+        },
+        {
+          "text": "R 280"
+        },
+        {
+          "text": "R 300"
+        },
+        {
+          "text": "R 320"
+        },
+        {
+          "text": "R 350"
+        },
+        {
+          "text": "R 500"
+        },
+        {
+          "text": "R 63 AMG"
+        },
+        {
+          "text": "S 250"
+        },
+        {
+          "text": "S 260"
+        },
+        {
+          "text": "S 280"
+        },
+        {
+          "text": "S 300"
+        },
+        {
+          "text": "S 320"
+        },
+        {
+          "text": "S 350"
+        },
+        {
+          "text": "S 400"
+        },
+        {
+          "text": "S 420"
+        },
+        {
+          "text": "S 430"
+        },
+        {
+          "text": "S 450"
+        },
+        {
+          "text": "S 500"
+        },
+        {
+          "text": "S 55"
+        },
+        {
+          "text": "S 550"
+        },
+        {
+          "text": "S 560"
+        },
+        {
+          "text": "S 580"
+        },
+        {
+          "text": "S 600"
+        },
+        {
+          "text": "S 63 AMG"
+        },
+        {
+          "text": "S 65 AMG"
+        },
+        {
+          "text": "S 650"
+        },
+        {
+          "text": "S 680"
+        },
+        {
+          "text": "SL 230"
+        },
+        {
+          "text": "SL 250"
+        },
+        {
+          "text": "SL 280"
+        },
+        {
+          "text": "SL 300"
+        },
+        {
+          "text": "SL 320"
+        },
+        {
+          "text": "SL 350"
+        },
+        {
+          "text": "SL 380"
+        },
+        {
+          "text": "SL 400"
+        },
+        {
+          "text": "SL 420"
+        },
+        {
+          "text": "SL 43 AMG"
+        },
+        {
+          "text": "SL 450"
+        },
+        {
+          "text": "SL 500"
+        },
+        {
+          "text": "SL 55 AMG"
+        },
+        {
+          "text": "SL 560"
+        },
+        {
+          "text": "SL 60 AMG"
+        },
+        {
+          "text": "SL 600"
+        },
+        {
+          "text": "SL 63 AMG"
+        },
+        {
+          "text": "SL 65 AMG"
+        },
+        {
+          "text": "SL 680"
+        },
+        {
+          "text": "SL 70 AMG"
+        },
+        {
+          "text": "SL 73 AMG"
+        },
+        {
+          "text": "SLC 180"
+        },
+        {
+          "text": "SLC 200"
+        },
+        {
+          "text": "SLC 250"
+        },
+        {
+          "text": "SLC 280"
+        },
+        {
+          "text": "SLC 300"
+        },
+        {
+          "text": "SLC 43 AMG"
+        },
+        {
+          "text": "SLK 200"
+        },
+        {
+          "text": "SLK 230"
+        },
+        {
+          "text": "SLK 250"
+        },
+        {
+          "text": "SLK 280"
+        },
+        {
+          "text": "SLK 300"
+        },
+        {
+          "text": "SLK 32 AMG"
+        },
+        {
+          "text": "SLK 320"
+        },
+        {
+          "text": "SLK 350"
+        },
+        {
+          "text": "SLK 55 AMG"
+        },
+        {
+          "text": "SLR"
+        },
+        {
+          "text": "SLS AMG"
+        },
+        {
+          "text": "Sprinter"
+        },
+        {
+          "text": "T-Class"
+        },
+        {
+          "text": "V 200"
+        },
+        {
+          "text": "V 220"
+        },
+        {
+          "text": "V 230"
+        },
+        {
+          "text": "V 250"
+        },
+        {
+          "text": "V 280"
+        },
+        {
+          "text": "V 300"
+        },
+        {
+          "text": "Vaneo"
+        },
+        {
+          "text": "Vario"
+        },
+        {
+          "text": "Viano"
+        },
+        {
+          "text": "Vito"
+        },
+        {
+          "text": "X 220"
+        },
+        {
+          "text": "X 250"
+        },
+        {
+          "text": "X 350"
+        },
+        {
+          "text": "eCitan"
+        },
+        {
+          "text": "eSprinter"
+        },
+        {
+          "text": "eVito"
+        }
+      ],
+      "model_count": 340
+    },
+    "Messerschmitt": {
+      "brand_value": "messerschmitt",
+      "brand_text": "Messerschmitt",
+      "models": [],
+      "model_count": 0
+    },
+    "MG": {
+      "brand_value": "mg",
+      "brand_text": "MG",
+      "models": [
+        {
+          "text": "Cyberster"
+        },
+        {
+          "text": "EHS"
+        },
+        {
+          "text": "HS"
+        },
+        {
+          "text": "MG3"
+        },
+        {
+          "text": "MG4"
+        },
+        {
+          "text": "MG5"
+        },
+        {
+          "text": "MGA"
+        },
+        {
+          "text": "MGB"
+        },
+        {
+          "text": "MGF"
+        },
+        {
+          "text": "Marvel R"
+        },
+        {
+          "text": "Midget"
+        },
+        {
+          "text": "Montego"
+        },
+        {
+          "text": "S5"
+        },
+        {
+          "text": "TD"
+        },
+        {
+          "text": "TF"
+        },
+        {
+          "text": "ZR"
+        },
+        {
+          "text": "ZS"
+        },
+        {
+          "text": "ZT"
+        }
+      ],
+      "model_count": 18
+    },
+    "Microcar": {
+      "brand_value": "microcar",
+      "brand_text": "Microcar",
+      "models": [
+        {
+          "text": "DUÈ"
+        },
+        {
+          "text": "Flex"
+        },
+        {
+          "text": "M.Go"
+        },
+        {
+          "text": "M-8"
+        },
+        {
+          "text": "MC1"
+        },
+        {
+          "text": "MC2"
+        },
+        {
+          "text": "Virgo"
+        }
+      ],
+      "model_count": 7
+    },
+    "Microlino": {
+      "brand_value": "microlino",
+      "brand_text": "Microlino",
+      "models": [
+        {
+          "text": "Competizione"
+        },
+        {
+          "text": "Dolce"
+        },
+        {
+          "text": "Pioneer"
+        }
+      ],
+      "model_count": 3
+    },
+    "MINI": {
+      "brand_value": "mini",
+      "brand_text": "MINI",
+      "models": [
+        {
+          "text": "1000"
+        },
+        {
+          "text": "1300"
+        },
+        {
+          "text": "Aceman"
+        },
+        {
+          "text": "Clubvan"
+        },
+        {
+          "text": "Cooper"
+        },
+        {
+          "text": "Cooper SE"
+        },
+        {
+          "text": "Cooper Cabrio"
+        },
+        {
+          "text": "Cooper Clubman"
+        },
+        {
+          "text": "Cooper Countryman"
+        },
+        {
+          "text": "Cooper Coupé"
+        },
+        {
+          "text": "Cooper D"
+        },
+        {
+          "text": "Cooper D Cabrio"
+        },
+        {
+          "text": "Cooper D Clubman"
+        },
+        {
+          "text": "Cooper D Countryman"
+        },
+        {
+          "text": "Cooper D Paceman"
+        },
+        {
+          "text": "Cooper Paceman"
+        },
+        {
+          "text": "Cooper Roadster"
+        },
+        {
+          "text": "Cooper S"
+        },
+        {
+          "text": "Cooper SD"
+        },
+        {
+          "text": "Cooper SD Cabrio"
+        },
+        {
+          "text": "Cooper SD Clubman"
+        },
+        {
+          "text": "Cooper SD Countryman"
+        },
+        {
+          "text": "Cooper SD Coupé"
+        },
+        {
+          "text": "Cooper SD Paceman"
+        },
+        {
+          "text": "Cooper SD Roadster"
+        },
+        {
+          "text": "Cooper S Cabrio"
+        },
+        {
+          "text": "Cooper S Clubman"
+        },
+        {
+          "text": "Cooper S Countryman"
+        },
+        {
+          "text": "Cooper S Coupé"
+        },
+        {
+          "text": "Cooper S Paceman"
+        },
+        {
+          "text": "Cooper S Roadster"
+        },
+        {
+          "text": "Cooper C"
+        },
+        {
+          "text": "Cooper C Countryman"
+        },
+        {
+          "text": "Cooper E"
+        },
+        {
+          "text": "Cooper E Countryman"
+        },
+        {
+          "text": "Cooper SE Countryman"
+        },
+        {
+          "text": "John Cooper Works"
+        },
+        {
+          "text": "John Cooper Works Cabrio"
+        },
+        {
+          "text": "John Cooper Works Clubman"
+        },
+        {
+          "text": "John Cooper Works Countryman"
+        },
+        {
+          "text": "John Cooper Works Coupé"
+        },
+        {
+          "text": "John Cooper Works Paceman"
+        },
+        {
+          "text": "John Cooper Works Roadster"
+        },
+        {
+          "text": "ONE"
+        },
+        {
+          "text": "One Cabrio"
+        },
+        {
+          "text": "One Clubman"
+        },
+        {
+          "text": "One Countryman"
+        },
+        {
+          "text": "One D"
+        },
+        {
+          "text": "One D Clubman"
+        },
+        {
+          "text": "One D Countryman"
+        },
+        {
+          "text": "One First"
+        }
+      ],
+      "model_count": 51
+    },
+    "Mitsubishi": {
+      "brand_value": "mitsubishi",
+      "brand_text": "Mitsubishi",
+      "models": [
+        {
+          "text": "3000 GT"
+        },
+        {
+          "text": "ASX"
+        },
+        {
+          "text": "Canter"
+        },
+        {
+          "text": "Carisma"
+        },
+        {
+          "text": "Colt"
+        },
+        {
+          "text": "Cordia"
+        },
+        {
+          "text": "Cosmos"
+        },
+        {
+          "text": "Diamante"
+        },
+        {
+          "text": "Eclipse"
+        },
+        {
+          "text": "Eclipse Cross"
+        },
+        {
+          "text": "Galant"
+        },
+        {
+          "text": "Galloper"
+        },
+        {
+          "text": "Grandis"
+        },
+        {
+          "text": "L200"
+        },
+        {
+          "text": "L300"
+        },
+        {
+          "text": "L400"
+        },
+        {
+          "text": "Lancer"
+        },
+        {
+          "text": "Mirage"
+        },
+        {
+          "text": "Montero"
+        },
+        {
+          "text": "Outlander"
+        },
+        {
+          "text": "Pajero"
+        },
+        {
+          "text": "Pajero Pinin"
+        },
+        {
+          "text": "Pick-up"
+        },
+        {
+          "text": "Plug-in Hybrid Outlander"
+        },
+        {
+          "text": "Santamo"
+        },
+        {
+          "text": "Sapporo"
+        },
+        {
+          "text": "Sigma"
+        },
+        {
+          "text": "Space Gear"
+        },
+        {
+          "text": "Space Runner"
+        },
+        {
+          "text": "Space Star"
+        },
+        {
+          "text": "Space Wagon"
+        },
+        {
+          "text": "Starion"
+        },
+        {
+          "text": "Tredia"
+        },
+        {
+          "text": "i-MiEV"
+        }
+      ],
+      "model_count": 34
+    },
+    "Morgan": {
+      "brand_value": "morgan",
+      "brand_text": "Morgan",
+      "models": [
+        {
+          "text": "3 Wheeler"
+        },
+        {
+          "text": "4/4"
+        },
+        {
+          "text": "Aero 8"
+        },
+        {
+          "text": "Plus 4"
+        },
+        {
+          "text": "Plus 6"
+        },
+        {
+          "text": "Plus 8"
+        },
+        {
+          "text": "Roadster"
+        }
+      ],
+      "model_count": 7
+    },
+    "NIO": {
+      "brand_value": "nio",
+      "brand_text": "NIO",
+      "models": [
+        {
+          "text": "EL6"
+        },
+        {
+          "text": "EL8"
+        },
+        {
+          "text": "EL7"
+        },
+        {
+          "text": "ET5"
+        },
+        {
+          "text": "ET7"
+        }
+      ],
+      "model_count": 5
+    },
+    "Nissan": {
+      "brand_value": "nissan",
+      "brand_text": "Nissan",
+      "models": [
+        {
+          "text": "100 NX"
+        },
+        {
+          "text": "200 SX"
+        },
+        {
+          "text": "240 SX"
+        },
+        {
+          "text": "280 ZX"
+        },
+        {
+          "text": "300 ZX"
+        },
+        {
+          "text": "350Z"
+        },
+        {
+          "text": "370Z"
+        },
+        {
+          "text": "Almera"
+        },
+        {
+          "text": "Almera Tino"
+        },
+        {
+          "text": "Altima"
+        },
+        {
+          "text": "Ariya"
+        },
+        {
+          "text": "Armada"
+        },
+        {
+          "text": "Bluebird"
+        },
+        {
+          "text": "Cabstar"
+        },
+        {
+          "text": "Cargo"
+        },
+        {
+          "text": "Cherry"
+        },
+        {
+          "text": "Cube"
+        },
+        {
+          "text": "Evalia"
+        },
+        {
+          "text": "Frontier"
+        },
+        {
+          "text": "GT-R"
+        },
+        {
+          "text": "Interstar"
+        },
+        {
+          "text": "Juke"
+        },
+        {
+          "text": "King Cab"
+        },
+        {
+          "text": "Kubistar"
+        },
+        {
+          "text": "Laurel"
+        },
+        {
+          "text": "Leaf"
+        },
+        {
+          "text": "Maxima"
+        },
+        {
+          "text": "Micra"
+        },
+        {
+          "text": "Murano"
+        },
+        {
+          "text": "NP 300"
+        },
+        {
+          "text": "NV200"
+        },
+        {
+          "text": "NV250"
+        },
+        {
+          "text": "NV300"
+        },
+        {
+          "text": "NV400"
+        },
+        {
+          "text": "Navara"
+        },
+        {
+          "text": "Note"
+        },
+        {
+          "text": "Pathfinder"
+        },
+        {
+          "text": "Patrol"
+        },
+        {
+          "text": "PickUp"
+        },
+        {
+          "text": "Pixo"
+        },
+        {
+          "text": "Prairie"
+        },
+        {
+          "text": "Primastar"
+        },
+        {
+          "text": "Primera"
+        },
+        {
+          "text": "Pulsar"
+        },
+        {
+          "text": "Qashqai"
+        },
+        {
+          "text": "Qashqai+2"
+        },
+        {
+          "text": "Quest"
+        },
+        {
+          "text": "Sentra"
+        },
+        {
+          "text": "Serena"
+        },
+        {
+          "text": "Silvia"
+        },
+        {
+          "text": "Skyline"
+        },
+        {
+          "text": "Sunny"
+        },
+        {
+          "text": "Terrano"
+        },
+        {
+          "text": "Tiida"
+        },
+        {
+          "text": "Titan"
+        },
+        {
+          "text": "Townstar"
+        },
+        {
+          "text": "Trade"
+        },
+        {
+          "text": "Urvan"
+        },
+        {
+          "text": "Vanette"
+        },
+        {
+          "text": "X-Trail"
+        },
+        {
+          "text": "e-NV200"
+        }
+      ],
+      "model_count": 61
+    },
+    "NSU": {
+      "brand_value": "nsu",
+      "brand_text": "NSU",
+      "models": [],
+      "model_count": 0
+    },
+    "Oldsmobile": {
+      "brand_value": "oldsmobile",
+      "brand_text": "Oldsmobile",
+      "models": [
+        {
+          "text": "Bravada"
+        },
+        {
+          "text": "Custom Cruiser"
+        },
+        {
+          "text": "Cutlass"
+        },
+        {
+          "text": "Delta 88"
+        },
+        {
+          "text": "Silhouette"
+        },
+        {
+          "text": "Supreme"
+        },
+        {
+          "text": "Toronado"
+        }
+      ],
+      "model_count": 7
+    },
+    "Opel": {
+      "brand_value": "opel",
+      "brand_text": "Opel",
+      "models": [
+        {
+          "text": "Adam"
+        },
+        {
+          "text": "Agila"
+        },
+        {
+          "text": "Ampera"
+        },
+        {
+          "text": "Ampera-e"
+        },
+        {
+          "text": "Antara"
+        },
+        {
+          "text": "Arena"
+        },
+        {
+          "text": "Ascona"
+        },
+        {
+          "text": "Astra"
+        },
+        {
+          "text": "Astra Electric"
+        },
+        {
+          "text": "Calibra"
+        },
+        {
+          "text": "Campo"
+        },
+        {
+          "text": "Cascada"
+        },
+        {
+          "text": "Cavalier"
+        },
+        {
+          "text": "Combo"
+        },
+        {
+          "text": "Combo Electric"
+        },
+        {
+          "text": "Combo Life"
+        },
+        {
+          "text": "Commodore"
+        },
+        {
+          "text": "Corsa"
+        },
+        {
+          "text": "Crossland (X)"
+        },
+        {
+          "text": "Diplomat"
+        },
+        {
+          "text": "Frontera"
+        },
+        {
+          "text": "GT"
+        },
+        {
+          "text": "Grandland (X)"
+        },
+        {
+          "text": "Insignia"
+        },
+        {
+          "text": "Insignia CT"
+        },
+        {
+          "text": "Kadett"
+        },
+        {
+          "text": "Karl"
+        },
+        {
+          "text": "Manta"
+        },
+        {
+          "text": "Meriva"
+        },
+        {
+          "text": "Mokka"
+        },
+        {
+          "text": "Mokka X"
+        },
+        {
+          "text": "Mokka-e"
+        },
+        {
+          "text": "Monterey"
+        },
+        {
+          "text": "Monza"
+        },
+        {
+          "text": "Movano"
+        },
+        {
+          "text": "Nova"
+        },
+        {
+          "text": "Omega"
+        },
+        {
+          "text": "Pick Up Sportscap"
+        },
+        {
+          "text": "Rekord"
+        },
+        {
+          "text": "Rocks-e"
+        },
+        {
+          "text": "Senator"
+        },
+        {
+          "text": "Signum"
+        },
+        {
+          "text": "Sintra"
+        },
+        {
+          "text": "Speedster"
+        },
+        {
+          "text": "Tigra"
+        },
+        {
+          "text": "Vectra"
+        },
+        {
+          "text": "Vivaro"
+        },
+        {
+          "text": "Zafira"
+        },
+        {
+          "text": "Zafira Electric"
+        },
+        {
+          "text": "Zafira Life"
+        },
+        {
+          "text": "Zafira Tourer"
+        }
+      ],
+      "model_count": 51
+    },
+    "ORA": {
+      "brand_value": "ora",
+      "brand_text": "ORA",
+      "models": [
+        {
+          "text": "Funky Cat"
+        }
+      ],
+      "model_count": 1
+    },
+    "Packard": {
+      "brand_value": "packard",
+      "brand_text": "Packard",
+      "models": [],
+      "model_count": 0
+    },
+    "Pagani": {
+      "brand_value": "pagani",
+      "brand_text": "Pagani",
+      "models": [
+        {
+          "text": "Huayra"
+        },
+        {
+          "text": "Zonda"
+        }
+      ],
+      "model_count": 2
+    },
+    "Peugeot": {
+      "brand_value": "peugeot",
+      "brand_text": "Peugeot",
+      "models": [
+        {
+          "text": "1007"
+        },
+        {
+          "text": "104"
+        },
+        {
+          "text": "106"
+        },
+        {
+          "text": "107"
+        },
+        {
+          "text": "108"
+        },
+        {
+          "text": "2008"
+        },
+        {
+          "text": "204"
+        },
+        {
+          "text": "205"
+        },
+        {
+          "text": "206"
+        },
+        {
+          "text": "207"
+        },
+        {
+          "text": "208"
+        },
+        {
+          "text": "3008"
+        },
+        {
+          "text": "301"
+        },
+        {
+          "text": "304"
+        },
+        {
+          "text": "305"
+        },
+        {
+          "text": "306"
+        },
+        {
+          "text": "307"
+        },
+        {
+          "text": "308"
+        },
+        {
+          "text": "309"
+        },
+        {
+          "text": "4007"
+        },
+        {
+          "text": "4008"
+        },
+        {
+          "text": "404"
+        },
+        {
+          "text": "405"
+        },
+        {
+          "text": "406"
+        },
+        {
+          "text": "407"
+        },
+        {
+          "text": "408"
+        },
+        {
+          "text": "5008"
+        },
+        {
+          "text": "504"
+        },
+        {
+          "text": "505"
+        },
+        {
+          "text": "508"
+        },
+        {
+          "text": "604"
+        },
+        {
+          "text": "605"
+        },
+        {
+          "text": "607"
+        },
+        {
+          "text": "806"
+        },
+        {
+          "text": "807"
+        },
+        {
+          "text": "Bipper"
+        },
+        {
+          "text": "Bipper Tepee"
+        },
+        {
+          "text": "Boxer"
+        },
+        {
+          "text": "Expert"
+        },
+        {
+          "text": "Expert Tepee"
+        },
+        {
+          "text": "J5"
+        },
+        {
+          "text": "Partner"
+        },
+        {
+          "text": "Partner Tepee"
+        },
+        {
+          "text": "RCZ"
+        },
+        {
+          "text": "Rifter"
+        },
+        {
+          "text": "TePee"
+        },
+        {
+          "text": "Traveller"
+        },
+        {
+          "text": "e-208"
+        },
+        {
+          "text": "e-Rifter"
+        },
+        {
+          "text": "e-Traveller"
+        },
+        {
+          "text": "iOn"
+        }
+      ],
+      "model_count": 51
+    },
+    "Piaggio": {
+      "brand_value": "piaggio",
+      "brand_text": "Piaggio",
+      "models": [
+        {
+          "text": "APE"
+        },
+        {
+          "text": "APE TM"
+        },
+        {
+          "text": "Porter"
+        }
+      ],
+      "model_count": 3
+    },
+    "Plymouth": {
+      "brand_value": "plymouth",
+      "brand_text": "Plymouth",
+      "models": [
+        {
+          "text": "Prowler"
+        }
+      ],
+      "model_count": 1
+    },
+    "Polestar": {
+      "brand_value": "polestar",
+      "brand_text": "Polestar",
+      "models": [
+        {
+          "text": "1"
+        },
+        {
+          "text": "2"
+        },
+        {
+          "text": "3"
+        },
+        {
+          "text": "4"
+        }
+      ],
+      "model_count": 4
+    },
+    "Pontiac": {
+      "brand_value": "pontiac",
+      "brand_text": "Pontiac",
+      "models": [
+        {
+          "text": "6000"
+        },
+        {
+          "text": "Bonneville"
+        },
+        {
+          "text": "Fiero"
+        },
+        {
+          "text": "Firebird"
+        },
+        {
+          "text": "G6"
+        },
+        {
+          "text": "GTO"
+        },
+        {
+          "text": "Grand-Am"
+        },
+        {
+          "text": "Grand-Prix"
+        },
+        {
+          "text": "Montana"
+        },
+        {
+          "text": "Solstice"
+        },
+        {
+          "text": "Sunbird"
+        },
+        {
+          "text": "Sunfire"
+        },
+        {
+          "text": "Targa"
+        },
+        {
+          "text": "Trans Am"
+        },
+        {
+          "text": "Trans Sport"
+        },
+        {
+          "text": "Vibe"
+        }
+      ],
+      "model_count": 16
+    },
+    "Porsche": {
+      "brand_value": "porsche",
+      "brand_text": "Porsche",
+      "models": [
+        {
+          "text": "356"
+        },
+        {
+          "text": "911"
+        },
+        {
+          "text": "912"
+        },
+        {
+          "text": "914"
+        },
+        {
+          "text": "918"
+        },
+        {
+          "text": "924"
+        },
+        {
+          "text": "928"
+        },
+        {
+          "text": "930"
+        },
+        {
+          "text": "944"
+        },
+        {
+          "text": "959"
+        },
+        {
+          "text": "962"
+        },
+        {
+          "text": "964"
+        },
+        {
+          "text": "968"
+        },
+        {
+          "text": "991"
+        },
+        {
+          "text": "992"
+        },
+        {
+          "text": "993"
+        },
+        {
+          "text": "996"
+        },
+        {
+          "text": "997"
+        },
+        {
+          "text": "Boxster"
+        },
+        {
+          "text": "Carrera GT"
+        },
+        {
+          "text": "Cayenne"
+        },
+        {
+          "text": "Cayman"
+        },
+        {
+          "text": "Macan"
+        },
+        {
+          "text": "Panamera"
+        },
+        {
+          "text": "Taycan"
+        }
+      ],
+      "model_count": 25
+    },
+    "Proton": {
+      "brand_value": "proton",
+      "brand_text": "Proton",
+      "models": [
+        {
+          "text": "300 Serie"
+        },
+        {
+          "text": "400 Serie"
+        }
+      ],
+      "model_count": 2
+    },
+    "Renault": {
+      "brand_value": "renault",
+      "brand_text": "Renault",
+      "models": [
+        {
+          "text": "Alaskan"
+        },
+        {
+          "text": "Alpine A110"
+        },
+        {
+          "text": "Alpine A310"
+        },
+        {
+          "text": "Alpine V6"
+        },
+        {
+          "text": "Arkana"
+        },
+        {
+          "text": "Austral"
+        },
+        {
+          "text": "Avantime"
+        },
+        {
+          "text": "Captur"
+        },
+        {
+          "text": "Clio"
+        },
+        {
+          "text": "Coupe"
+        },
+        {
+          "text": "Espace"
+        },
+        {
+          "text": "Express"
+        },
+        {
+          "text": "Fluence"
+        },
+        {
+          "text": "Fuego"
+        },
+        {
+          "text": "Grand Espace"
+        },
+        {
+          "text": "Grand Kangoo"
+        },
+        {
+          "text": "Grand Kangoo E-TECH"
+        },
+        {
+          "text": "Grand Modus"
+        },
+        {
+          "text": "Grand Scenic"
+        },
+        {
+          "text": "Kadjar"
+        },
+        {
+          "text": "Kangoo"
+        },
+        {
+          "text": "Kangoo E-TECH"
+        },
+        {
+          "text": "Koleos"
+        },
+        {
+          "text": "Laguna"
+        },
+        {
+          "text": "Latitude"
+        },
+        {
+          "text": "Mascott"
+        },
+        {
+          "text": "Master"
+        },
+        {
+          "text": "Megane"
+        },
+        {
+          "text": "Megane E-TECH"
+        },
+        {
+          "text": "Modus"
+        },
+        {
+          "text": "P 1400"
+        },
+        {
+          "text": "R 11"
+        },
+        {
+          "text": "R 14"
+        },
+        {
+          "text": "R 18"
+        },
+        {
+          "text": "R 19"
+        },
+        {
+          "text": "R 20"
+        },
+        {
+          "text": "R 21"
+        },
+        {
+          "text": "R 25"
+        },
+        {
+          "text": "R 30"
+        },
+        {
+          "text": "R 4"
+        },
+        {
+          "text": "R 5"
+        },
+        {
+          "text": "R 6"
+        },
+        {
+          "text": "R 9"
+        },
+        {
+          "text": "Rafale"
+        },
+        {
+          "text": "Rapid"
+        },
+        {
+          "text": "Safrane"
+        },
+        {
+          "text": "Scenic"
+        },
+        {
+          "text": "Scenic E-TECH"
+        },
+        {
+          "text": "Spider"
+        },
+        {
+          "text": "Symbioz"
+        },
+        {
+          "text": "Talisman"
+        },
+        {
+          "text": "Trafic"
+        },
+        {
+          "text": "Twingo"
+        },
+        {
+          "text": "Twizy"
+        },
+        {
+          "text": "Vel Satis"
+        },
+        {
+          "text": "Wind"
+        },
+        {
+          "text": "ZOE"
+        }
+      ],
+      "model_count": 57
+    },
+    "Riley": {
+      "brand_value": "riley",
+      "brand_text": "Riley",
+      "models": [],
+      "model_count": 0
+    },
+    "Rolls-Royce": {
+      "brand_value": "rolls-royce",
+      "brand_text": "Rolls-Royce",
+      "models": [
+        {
+          "text": "Corniche"
+        },
+        {
+          "text": "Cullinan"
+        },
+        {
+          "text": "Dawn"
+        },
+        {
+          "text": "Flying Spur"
+        },
+        {
+          "text": "Ghost"
+        },
+        {
+          "text": "Park Ward"
+        },
+        {
+          "text": "Phantom"
+        },
+        {
+          "text": "Silver Cloud"
+        },
+        {
+          "text": "Silver Dawn"
+        },
+        {
+          "text": "Silver Seraph"
+        },
+        {
+          "text": "Silver Shadow"
+        },
+        {
+          "text": "Silver Spirit"
+        },
+        {
+          "text": "Silver Spur"
+        },
+        {
+          "text": "Spectre"
+        },
+        {
+          "text": "Wraith"
+        }
+      ],
+      "model_count": 15
+    },
+    "Rover": {
+      "brand_value": "rover",
+      "brand_text": "Rover",
+      "models": [
+        {
+          "text": "100"
+        },
+        {
+          "text": "111"
+        },
+        {
+          "text": "114"
+        },
+        {
+          "text": "115"
+        },
+        {
+          "text": "200"
+        },
+        {
+          "text": "213"
+        },
+        {
+          "text": "214"
+        },
+        {
+          "text": "216"
+        },
+        {
+          "text": "218"
+        },
+        {
+          "text": "220"
+        },
+        {
+          "text": "25"
+        },
+        {
+          "text": "400"
+        },
+        {
+          "text": "414"
+        },
+        {
+          "text": "416"
+        },
+        {
+          "text": "418"
+        },
+        {
+          "text": "420"
+        },
+        {
+          "text": "45"
+        },
+        {
+          "text": "600"
+        },
+        {
+          "text": "618"
+        },
+        {
+          "text": "620"
+        },
+        {
+          "text": "623"
+        },
+        {
+          "text": "75"
+        },
+        {
+          "text": "800"
+        },
+        {
+          "text": "820"
+        },
+        {
+          "text": "825"
+        },
+        {
+          "text": "827"
+        },
+        {
+          "text": "City Rover"
+        },
+        {
+          "text": "Metro"
+        },
+        {
+          "text": "Montego"
+        },
+        {
+          "text": "SD"
+        },
+        {
+          "text": "Streetwise"
+        }
+      ],
+      "model_count": 31
+    },
+    "Ruf": {
+      "brand_value": "ruf",
+      "brand_text": "Ruf",
+      "models": [],
+      "model_count": 0
+    },
+    "Saab": {
+      "brand_value": "saab",
+      "brand_text": "Saab",
+      "models": [
+        {
+          "text": "9-3"
+        },
+        {
+          "text": "9-4X"
+        },
+        {
+          "text": "9-5"
+        },
+        {
+          "text": "9-7X"
+        },
+        {
+          "text": "90"
+        },
+        {
+          "text": "900"
+        },
+        {
+          "text": "9000"
+        },
+        {
+          "text": "96"
+        },
+        {
+          "text": "99"
+        }
+      ],
+      "model_count": 9
+    },
+    "Santana": {
+      "brand_value": "santana",
+      "brand_text": "Santana",
+      "models": [],
+      "model_count": 0
+    },
+    "Seat": {
+      "brand_value": "seat",
+      "brand_text": "Seat",
+      "models": [
+        {
+          "text": "Alhambra"
+        },
+        {
+          "text": "Altea"
+        },
+        {
+          "text": "Arona"
+        },
+        {
+          "text": "Arosa"
+        },
+        {
+          "text": "Ateca"
+        },
+        {
+          "text": "Cordoba"
+        },
+        {
+          "text": "Exeo"
+        },
+        {
+          "text": "Ibiza"
+        },
+        {
+          "text": "Inca"
+        },
+        {
+          "text": "Leon"
+        },
+        {
+          "text": "Malaga"
+        },
+        {
+          "text": "Marbella"
+        },
+        {
+          "text": "Mii"
+        },
+        {
+          "text": "Tarraco"
+        },
+        {
+          "text": "Terra"
+        },
+        {
+          "text": "Toledo"
+        }
+      ],
+      "model_count": 16
+    },
+    "Seres": {
+      "brand_value": "seres",
+      "brand_text": "Seres",
+      "models": [
+        {
+          "text": "3"
+        },
+        {
+          "text": "5"
+        }
+      ],
+      "model_count": 2
+    },
+    "Silence": {
+      "brand_value": "silence",
+      "brand_text": "Silence",
+      "models": [
+        {
+          "text": "S04"
+        }
+      ],
+      "model_count": 1
+    },
+    "Simca": {
+      "brand_value": "simca",
+      "brand_text": "Simca",
+      "models": [],
+      "model_count": 0
+    },
+    "Skoda": {
+      "brand_value": "skoda",
+      "brand_text": "Skoda",
+      "models": [
+        {
+          "text": "105"
+        },
+        {
+          "text": "120"
+        },
+        {
+          "text": "130"
+        },
+        {
+          "text": "135"
+        },
+        {
+          "text": "Citigo"
+        },
+        {
+          "text": "Elroq"
+        },
+        {
+          "text": "Enyaq"
+        },
+        {
+          "text": "Fabia"
+        },
+        {
+          "text": "Favorit"
+        },
+        {
+          "text": "Felicia"
+        },
+        {
+          "text": "Forman"
+        },
+        {
+          "text": "Kamiq"
+        },
+        {
+          "text": "Karoq"
+        },
+        {
+          "text": "Kodiaq"
+        },
+        {
+          "text": "Octavia"
+        },
+        {
+          "text": "Pick-up"
+        },
+        {
+          "text": "Praktik"
+        },
+        {
+          "text": "Rapid"
+        },
+        {
+          "text": "Roomster"
+        },
+        {
+          "text": "Scala"
+        },
+        {
+          "text": "Superb"
+        },
+        {
+          "text": "Yeti"
+        }
+      ],
+      "model_count": 22
+    },
+    "Smart": {
+      "brand_value": "smart",
+      "brand_text": "Smart",
+      "models": [
+        {
+          "text": "Crossblade"
+        },
+        {
+          "text": "#5"
+        },
+        {
+          "text": "ForFour"
+        },
+        {
+          "text": "ForTwo"
+        },
+        {
+          "text": "#1"
+        },
+        {
+          "text": "Roadster"
+        },
+        {
+          "text": "#3"
+        }
+      ],
+      "model_count": 7
+    },
+    "speedART": {
+      "brand_value": "speedart",
+      "brand_text": "speedART",
+      "models": [],
+      "model_count": 0
+    },
+    "Spyker": {
+      "brand_value": "spyker",
+      "brand_text": "Spyker",
+      "models": [
+        {
+          "text": "C8"
+        },
+        {
+          "text": "C8 AILERON"
+        },
+        {
+          "text": "C8 DOUBLE 12 S"
+        },
+        {
+          "text": "C8 LAVIOLETTE SWB"
+        },
+        {
+          "text": "C8 SPYDER SWB"
+        }
+      ],
+      "model_count": 5
+    },
+    "Ssangyong": {
+      "brand_value": "ssangyong",
+      "brand_text": "Ssangyong",
+      "models": [
+        {
+          "text": "Actyon"
+        },
+        {
+          "text": "Family"
+        },
+        {
+          "text": "Korando"
+        },
+        {
+          "text": "Kyron"
+        },
+        {
+          "text": "MUSSO"
+        },
+        {
+          "text": "REXTON"
+        },
+        {
+          "text": "Rodius"
+        },
+        {
+          "text": "Tivoli"
+        },
+        {
+          "text": "Torres"
+        },
+        {
+          "text": "XLV"
+        }
+      ],
+      "model_count": 10
+    },
+    "Studebaker": {
+      "brand_value": "studebaker",
+      "brand_text": "Studebaker",
+      "models": [],
+      "model_count": 0
+    },
+    "Subaru": {
+      "brand_value": "subaru",
+      "brand_text": "Subaru",
+      "models": [
+        {
+          "text": "B9 Tribeca"
+        },
+        {
+          "text": "BRZ"
+        },
+        {
+          "text": "Baja"
+        },
+        {
+          "text": "Forester"
+        },
+        {
+          "text": "Impreza"
+        },
+        {
+          "text": "Justy"
+        },
+        {
+          "text": "Legacy"
+        },
+        {
+          "text": "Levorg"
+        },
+        {
+          "text": "Libero"
+        },
+        {
+          "text": "Crosstrek"
+        },
+        {
+          "text": "Outback"
+        },
+        {
+          "text": "SVX"
+        },
+        {
+          "text": "Solterra"
+        },
+        {
+          "text": "Trezia"
+        },
+        {
+          "text": "Tribeca"
+        },
+        {
+          "text": "Vivio"
+        },
+        {
+          "text": "WRX STI"
+        },
+        {
+          "text": "XT"
+        },
+        {
+          "text": "XV"
+        }
+      ],
+      "model_count": 19
+    },
+    "Suzuki": {
+      "brand_value": "suzuki",
+      "brand_text": "Suzuki",
+      "models": [
+        {
+          "text": "Across"
+        },
+        {
+          "text": "Alto"
+        },
+        {
+          "text": "Baleno"
+        },
+        {
+          "text": "Cappuccino"
+        },
+        {
+          "text": "Carry"
+        },
+        {
+          "text": "Celerio"
+        },
+        {
+          "text": "Grand Vitara"
+        },
+        {
+          "text": "Ignis"
+        },
+        {
+          "text": "Jimny"
+        },
+        {
+          "text": "Kizashi"
+        },
+        {
+          "text": "LJ"
+        },
+        {
+          "text": "Liana"
+        },
+        {
+          "text": "SJ Samurai"
+        },
+        {
+          "text": "SX4"
+        },
+        {
+          "text": "(SX4) S-Cross"
+        },
+        {
+          "text": "Splash"
+        },
+        {
+          "text": "Super-Carry"
+        },
+        {
+          "text": "Swace"
+        },
+        {
+          "text": "Swift"
+        },
+        {
+          "text": "Vitara"
+        },
+        {
+          "text": "Wagon R+"
+        },
+        {
+          "text": "X-90"
+        },
+        {
+          "text": "iK-2"
+        }
+      ],
+      "model_count": 23
+    },
+    "SWM": {
+      "brand_value": "swm",
+      "brand_text": "SWM",
+      "models": [
+        {
+          "text": "G01"
+        },
+        {
+          "text": "G03"
+        },
+        {
+          "text": "G05"
+        }
+      ],
+      "model_count": 3
+    },
+    "Talbot": {
+      "brand_value": "talbot",
+      "brand_text": "Talbot",
+      "models": [
+        {
+          "text": "Horizon"
+        },
+        {
+          "text": "Samba"
+        }
+      ],
+      "model_count": 2
+    },
+    "Tata": {
+      "brand_value": "tata",
+      "brand_text": "Tata",
+      "models": [
+        {
+          "text": "Indica"
+        },
+        {
+          "text": "Indigo"
+        },
+        {
+          "text": "Nano"
+        },
+        {
+          "text": "Safari"
+        },
+        {
+          "text": "Sumo"
+        },
+        {
+          "text": "Telcoline"
+        },
+        {
+          "text": "Telcosport"
+        },
+        {
+          "text": "Xenon"
+        }
+      ],
+      "model_count": 8
+    },
+    "TECHART": {
+      "brand_value": "techart",
+      "brand_text": "TECHART",
+      "models": [],
+      "model_count": 0
+    },
+    "Tesla": {
+      "brand_value": "tesla",
+      "brand_text": "Tesla",
+      "models": [
+        {
+          "text": "Model 3"
+        },
+        {
+          "text": "Model S"
+        },
+        {
+          "text": "Model X"
+        },
+        {
+          "text": "Model Y"
+        },
+        {
+          "text": "Roadster"
+        }
+      ],
+      "model_count": 5
+    },
+    "Toyota": {
+      "brand_value": "toyota",
+      "brand_text": "Toyota",
+      "models": [
+        {
+          "text": "4-Runner"
+        },
+        {
+          "text": "Alphard"
+        },
+        {
+          "text": "Auris"
+        },
+        {
+          "text": "Auris Touring Sports"
+        },
+        {
+          "text": "Avalon"
+        },
+        {
+          "text": "Avensis"
+        },
+        {
+          "text": "Avensis Verso"
+        },
+        {
+          "text": "Aygo (X)"
+        },
+        {
+          "text": "C-HR"
+        },
+        {
+          "text": "Camry"
+        },
+        {
+          "text": "Carina"
+        },
+        {
+          "text": "Celica"
+        },
+        {
+          "text": "Corolla"
+        },
+        {
+          "text": "Corolla Cross"
+        },
+        {
+          "text": "Corolla Verso"
+        },
+        {
+          "text": "Cressida"
+        },
+        {
+          "text": "Crown"
+        },
+        {
+          "text": "Dyna"
+        },
+        {
+          "text": "FCV"
+        },
+        {
+          "text": "FJ"
+        },
+        {
+          "text": "Fortuner"
+        },
+        {
+          "text": "GR86"
+        },
+        {
+          "text": "GT86"
+        },
+        {
+          "text": "Hiace"
+        },
+        {
+          "text": "Highlander"
+        },
+        {
+          "text": "Hilux"
+        },
+        {
+          "text": "IQ"
+        },
+        {
+          "text": "Land Cruiser"
+        },
+        {
+          "text": "Lite-Ace"
+        },
+        {
+          "text": "MR 2"
+        },
+        {
+          "text": "Matrix"
+        },
+        {
+          "text": "Mirai"
+        },
+        {
+          "text": "Proace City"
+        },
+        {
+          "text": "Paseo"
+        },
+        {
+          "text": "Picnic"
+        },
+        {
+          "text": "Previa"
+        },
+        {
+          "text": "Prius"
+        },
+        {
+          "text": "Prius+"
+        },
+        {
+          "text": "Proace (Verso)"
+        },
+        {
+          "text": "Proace Max"
+        },
+        {
+          "text": "Proace Verso Electric"
+        },
+        {
+          "text": "RAV 4"
+        },
+        {
+          "text": "Sequoia"
+        },
+        {
+          "text": "Sienna"
+        },
+        {
+          "text": "Starlet"
+        },
+        {
+          "text": "Supra"
+        },
+        {
+          "text": "Tacoma"
+        },
+        {
+          "text": "Tercel"
+        },
+        {
+          "text": "Tundra"
+        },
+        {
+          "text": "Urban Cruiser"
+        },
+        {
+          "text": "Verso"
+        },
+        {
+          "text": "Verso-S"
+        },
+        {
+          "text": "Yaris"
+        },
+        {
+          "text": "Yaris Cross"
+        },
+        {
+          "text": "bZ4X"
+        }
+      ],
+      "model_count": 55
+    },
+    "Trabant": {
+      "brand_value": "trabant",
+      "brand_text": "Trabant",
+      "models": [
+        {
+          "text": "601"
+        }
+      ],
+      "model_count": 1
+    },
+    "Triumph": {
+      "brand_value": "triumph",
+      "brand_text": "Triumph",
+      "models": [
+        {
+          "text": "Dolomite"
+        },
+        {
+          "text": "Moss"
+        },
+        {
+          "text": "Spitfire"
+        },
+        {
+          "text": "TR3"
+        },
+        {
+          "text": "TR4"
+        },
+        {
+          "text": "TR5"
+        },
+        {
+          "text": "TR6"
+        },
+        {
+          "text": "TR7"
+        },
+        {
+          "text": "TR8"
+        }
+      ],
+      "model_count": 9
+    },
+    "TVR": {
+      "brand_value": "tvr",
+      "brand_text": "TVR",
+      "models": [
+        {
+          "text": "Chimaera"
+        },
+        {
+          "text": "Griffith"
+        },
+        {
+          "text": "Tuscan"
+        }
+      ],
+      "model_count": 3
+    },
+    "TYN-e": {
+      "brand_value": "tyn-e",
+      "brand_text": "TYN-e",
+      "models": [],
+      "model_count": 0
+    },
+    "Vincent": {
+      "brand_value": "vincent",
+      "brand_text": "Vincent",
+      "models": [],
+      "model_count": 0
+    },
+    "VinFast": {
+      "brand_value": "vinfast",
+      "brand_text": "VinFast",
+      "models": [
+        {
+          "text": "VF8"
+        },
+        {
+          "text": "VF9"
+        },
+        {
+          "text": "VF6"
+        },
+        {
+          "text": "VF7"
+        }
+      ],
+      "model_count": 4
+    },
+    "Volvo": {
+      "brand_value": "volvo",
+      "brand_text": "Volvo",
+      "models": [
+        {
+          "text": "240"
+        },
+        {
+          "text": "244"
+        },
+        {
+          "text": "245"
+        },
+        {
+          "text": "262"
+        },
+        {
+          "text": "264"
+        },
+        {
+          "text": "340"
+        },
+        {
+          "text": "360"
+        },
+        {
+          "text": "440"
+        },
+        {
+          "text": "460"
+        },
+        {
+          "text": "480"
+        },
+        {
+          "text": "740"
+        },
+        {
+          "text": "744"
+        },
+        {
+          "text": "745"
+        },
+        {
+          "text": "760"
+        },
+        {
+          "text": "780"
+        },
+        {
+          "text": "850"
+        },
+        {
+          "text": "855"
+        },
+        {
+          "text": "940"
+        },
+        {
+          "text": "944"
+        },
+        {
+          "text": "945"
+        },
+        {
+          "text": "960"
+        },
+        {
+          "text": "965"
+        },
+        {
+          "text": "Amazon"
+        },
+        {
+          "text": "C30"
+        },
+        {
+          "text": "C40"
+        },
+        {
+          "text": "C70"
+        },
+        {
+          "text": "EC40"
+        },
+        {
+          "text": "ES90"
+        },
+        {
+          "text": "EX30"
+        },
+        {
+          "text": "EX40"
+        },
+        {
+          "text": "EX90"
+        },
+        {
+          "text": "Polar"
+        },
+        {
+          "text": "S40"
+        },
+        {
+          "text": "S60"
+        },
+        {
+          "text": "S60 Cross Country"
+        },
+        {
+          "text": "S70"
+        },
+        {
+          "text": "S80"
+        },
+        {
+          "text": "S90"
+        },
+        {
+          "text": "V40"
+        },
+        {
+          "text": "V40 Cross Country"
+        },
+        {
+          "text": "V50"
+        },
+        {
+          "text": "V60"
+        },
+        {
+          "text": "V60 Cross Country"
+        },
+        {
+          "text": "V70"
+        },
+        {
+          "text": "V90"
+        },
+        {
+          "text": "V90 Cross Country"
+        },
+        {
+          "text": "XC40"
+        },
+        {
+          "text": "XC60"
+        },
+        {
+          "text": "XC70"
+        },
+        {
+          "text": "XC90"
+        }
+      ],
+      "model_count": 50
+    },
+    "Volkswagen": {
+      "brand_value": "vw",
+      "brand_text": "Volkswagen",
+      "models": [
+        {
+          "text": "181"
+        },
+        {
+          "text": "Amarok"
+        },
+        {
+          "text": "Arteon"
+        },
+        {
+          "text": "Beetle"
+        },
+        {
+          "text": "Bora"
+        },
+        {
+          "text": "Buggy"
+        },
+        {
+          "text": "CC"
+        },
+        {
+          "text": "Caddy"
+        },
+        {
+          "text": "Caddy Maxi"
+        },
+        {
+          "text": "Corrado"
+        },
+        {
+          "text": "Crafter"
+        },
+        {
+          "text": "Eos"
+        },
+        {
+          "text": "Fox"
+        },
+        {
+          "text": "Golf"
+        },
+        {
+          "text": "Golf Plus"
+        },
+        {
+          "text": "Golf Sportsvan"
+        },
+        {
+          "text": "ID.3"
+        },
+        {
+          "text": "ID.4"
+        },
+        {
+          "text": "ID.5"
+        },
+        {
+          "text": "ID.6"
+        },
+        {
+          "text": "ID.7"
+        },
+        {
+          "text": "ID. Buzz"
+        },
+        {
+          "text": "Iltis"
+        },
+        {
+          "text": "Jetta"
+        },
+        {
+          "text": "Karmann Ghia"
+        },
+        {
+          "text": "Käfer"
+        },
+        {
+          "text": "LT"
+        },
+        {
+          "text": "Lupo"
+        },
+        {
+          "text": "New Beetle"
+        },
+        {
+          "text": "Passat"
+        },
+        {
+          "text": "Passat Alltrack"
+        },
+        {
+          "text": "Passat CC"
+        },
+        {
+          "text": "Passat Variant"
+        },
+        {
+          "text": "Phaeton"
+        },
+        {
+          "text": "Polo"
+        },
+        {
+          "text": "Routan"
+        },
+        {
+          "text": "Santana"
+        },
+        {
+          "text": "Scirocco"
+        },
+        {
+          "text": "Sharan"
+        },
+        {
+          "text": "T-Cross"
+        },
+        {
+          "text": "T-Roc"
+        },
+        {
+          "text": "T1"
+        },
+        {
+          "text": "T2"
+        },
+        {
+          "text": "T3 Caravelle"
+        },
+        {
+          "text": "T3 Multivan"
+        },
+        {
+          "text": "T3 Kombi"
+        },
+        {
+          "text": "T4 California"
+        },
+        {
+          "text": "T4 Caravelle"
+        },
+        {
+          "text": "T4 Multivan"
+        },
+        {
+          "text": "T4 Kombi"
+        },
+        {
+          "text": "T5 California"
+        },
+        {
+          "text": "T5 Caravelle"
+        },
+        {
+          "text": "T5 Multivan"
+        },
+        {
+          "text": "T5 Shuttle"
+        },
+        {
+          "text": "T5 Transporter"
+        },
+        {
+          "text": "T5 Kombi"
+        },
+        {
+          "text": "T6 California"
+        },
+        {
+          "text": "T6 Caravelle"
+        },
+        {
+          "text": "T6 Kombi"
+        },
+        {
+          "text": "T6 Multivan"
+        },
+        {
+          "text": "T6 Transporter"
+        },
+        {
+          "text": "T7 California"
+        },
+        {
+          "text": "T7 Caravelle"
+        },
+        {
+          "text": "T7 Kombi"
+        },
+        {
+          "text": "T7 Multivan"
+        },
+        {
+          "text": "T7 Transporter"
+        },
+        {
+          "text": "Taigo"
+        },
+        {
+          "text": "Taro"
+        },
+        {
+          "text": "Tayron"
+        },
+        {
+          "text": "Tiguan"
+        },
+        {
+          "text": "Tiguan Allspace"
+        },
+        {
+          "text": "Touareg"
+        },
+        {
+          "text": "Touran"
+        },
+        {
+          "text": "Vento"
+        },
+        {
+          "text": "XL1"
+        },
+        {
+          "text": "e-up!"
+        },
+        {
+          "text": "up!"
+        },
+        {
+          "text": "T4 other"
+        },
+        {
+          "text": "T7 other"
+        },
+        {
+          "text": "T3 other"
+        },
+        {
+          "text": "T6 other"
+        },
+        {
+          "text": "T5 other"
+        }
+      ],
+      "model_count": 82
+    },
+    "Wartburg": {
+      "brand_value": "wartburg",
+      "brand_text": "Wartburg",
+      "models": [
+        {
+          "text": "311"
+        },
+        {
+          "text": "353"
+        }
+      ],
+      "model_count": 2
+    },
+    "Westfield": {
+      "brand_value": "westfield",
+      "brand_text": "Westfield",
+      "models": [],
+      "model_count": 0
+    },
+    "WEY": {
+      "brand_value": "wey",
+      "brand_text": "WEY",
+      "models": [
+        {
+          "text": "Coffee 01"
+        },
+        {
+          "text": "Coffee 02"
+        }
+      ],
+      "model_count": 2
+    },
+    "Wiesmann": {
+      "brand_value": "wiesmann",
+      "brand_text": "Wiesmann",
+      "models": [
+        {
+          "text": "MF 25"
+        },
+        {
+          "text": "MF 28"
+        },
+        {
+          "text": "MF 3"
+        },
+        {
+          "text": "MF 30"
+        },
+        {
+          "text": "MF 35"
+        },
+        {
+          "text": "MF 4"
+        },
+        {
+          "text": "MF 5"
+        }
+      ],
+      "model_count": 7
+    },
+    "XEV": {
+      "brand_value": "xev",
+      "brand_text": "XEV",
+      "models": [
+        {
+          "text": "YOYO"
+        }
+      ],
+      "model_count": 1
+    },
+    "XPENG": {
+      "brand_value": "xpeng",
+      "brand_text": "XPENG",
+      "models": [
+        {
+          "text": "G6"
+        },
+        {
+          "text": "G9"
+        },
+        {
+          "text": "P7"
+        }
+      ],
+      "model_count": 3
+    },
+    "Zeekr": {
+      "brand_value": "zeekr",
+      "brand_text": "Zeekr",
+      "models": [],
+      "model_count": 0
+    },
+    "Zhidou": {
+      "brand_value": "zhidou",
+      "brand_text": "Zhidou",
+      "models": [],
+      "model_count": 0
+    }
+  }
+}

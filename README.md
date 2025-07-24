@@ -2,12 +2,12 @@
 
 Sistema de scraping otimizado para extrair intervalos de preços de carros do **StandVirtual.com**.
 
-Sistema pronto para produção que retorna apenas JSON minimalista com preços min/max.
+Sistema pronto para produção que retorna JSON completo com dados detalhados dos anúncios.
 
 ## 📋 Características
 
 - **Ultra-rápido**: 3-6x mais rápido que versões anteriores
-- **JSON minimalista**: Retorna apenas `{"min": X, "max": Y}`
+- **JSON otimizado**: Retorna apenas dados básicos extraídos (título, preço, ano, quilometragem, combustível, URL, imagem)
 - **Logs detalhados**: Informações técnicas gravadas em ficheiro
 - **Sem outliers**: Remove preços extremos para estatísticas realistas
 - **Zero interação**: Totalmente automatizado via linha de comando
@@ -44,8 +44,24 @@ python3 main.py --ano_min 2020 --ano_max 2024 --preco_max 30000
 ### Output JSON
 ```json
 {
-  "min": 15000.0,
-  "max": 45000.0
+  "preco_intervalo": {
+    "min": 15000,
+    "max": 45000
+  },
+  "media_aproximada": 28500,
+  "viaturas_consideradas": 12,
+  "anuncios_usados_para_calculo": [
+    {
+      "titulo": "BMW X5 3.0d xDrive",
+      "preco": "35.000 €",
+      "preco_numerico": 35000,
+      "ano": 2020,
+      "quilometragem": "85.000 km",
+      "combustivel": "Gasóleo",
+      "url": "https://standvirtual.com/anuncio/...",
+      "imagem": "https://standvirtual.com/image/..."
+    }
+  ]
 }
 ```
 
@@ -133,7 +149,10 @@ def get_car_prices(marca=None, modelo=None, preco_max=None):
 # Exemplo de uso
 try:
     data = get_car_prices('bmw', 'x3', 40000)
-    print(f"BMW X3: {data['min']:,.0f}€ - {data['max']:,.0f}€")
+    interval = data['preco_intervalo']
+    print(f"BMW X3: {interval['min']:,.0f}€ - {interval['max']:,.0f}€")
+    print(f"Média: {data['media_aproximada']:,.0f}€")
+    print(f"Carros considerados: {data['viaturas_consideradas']}")
 except Exception as e:
     print(f"Erro: {e}")
 ```
@@ -297,24 +316,39 @@ python3 main.py --combustivel hibrido --preco_max 30000
 ### Pesquisa com Resultados
 ```json
 {
-  "min": 15000.0,
-  "max": 45000.0
+  "preco_intervalo": {
+    "min": 15000,
+    "max": 45000
+  },
+  "media_aproximada": 28500,
+  "viaturas_consideradas": 12,
+  "anuncios_usados_para_calculo": [...]
 }
 ```
 
 ### Pesquisa sem Resultados
 ```json
 {
-  "min": null,
-  "max": null
+  "preco_intervalo": {
+    "min": null,
+    "max": null
+  },
+  "media_aproximada": null,
+  "viaturas_consideradas": 0,
+  "anuncios_usados_para_calculo": []
 }
 ```
 
 ### Pesquisa com Erro
 ```json
 {
-  "min": null,
-  "max": null
+  "preco_intervalo": {
+    "min": null,
+    "max": null
+  },
+  "media_aproximada": null,
+  "viaturas_consideradas": 0,
+  "anuncios_usados_para_calculo": []
 }
 ```
 *(Detalhes do erro em `logs/scraping.log`)*
