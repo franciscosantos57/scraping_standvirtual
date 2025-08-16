@@ -417,7 +417,7 @@ class StandVirtualScraper:
                 return cars
             
             # Extrai dados de cada elemento
-            for element in elements[:MAX_RESULTS]:
+            for element in elements:
                 try:
                     car = self._extract_selenium_car_data(element)
                     if car and car.preco_numerico > 0:
@@ -1124,7 +1124,7 @@ class StandVirtualScraper:
         self.logger.debug(f"URL: {search_url}")
         
         page = 1
-        while page <= MAX_PAGES and len(cars) < MAX_RESULTS:
+        while True:  # Sem limite de páginas ou resultados
             # URL da página
             if page > 1:
                 page_url = f"{search_url}&page={page}"
@@ -1168,9 +1168,8 @@ class StandVirtualScraper:
             
             page += 1
             
-            # Delay entre requisições (exceto na última página)
-            if page <= MAX_PAGES:
-                time.sleep(DELAY_BETWEEN_REQUESTS)
+            # Delay entre requisições
+            time.sleep(DELAY_BETWEEN_REQUESTS)
         
         return cars
     
@@ -1223,10 +1222,31 @@ class StandVirtualScraper:
         
         return valid_cars
     
-    def __del__(self):
-        """Destructor para limpar recursos"""
+    def close(self):
+        """Fecha explicitamente o driver e limpa recursos"""
         if hasattr(self, 'driver') and self.driver:
             try:
+                self.logger.debug("Fechando WebDriver...")
                 self.driver.quit()
-            except:
-                pass 
+                self.driver = None
+                self.logger.debug("WebDriver fechado com sucesso")
+            except Exception as e:
+                self.logger.warning(f"Erro ao fechar WebDriver: {e}")
+        
+        if hasattr(self, 'session') and self.session:
+            try:
+                self.session.close()
+            except Exception as e:
+                self.logger.warning(f"Erro ao fechar sessão: {e}")
+    
+    def __del__(self):
+        """Destructor para limpar recursos"""
+        self.close()
+        
+    def __enter__(self):
+        """Context manager entry"""
+        return self
+        
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        """Context manager exit - garante limpeza"""
+        self.close() 

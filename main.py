@@ -114,37 +114,36 @@ def main():
                 print(json.dumps(output, ensure_ascii=False, indent=2))
                 sys.exit(1)
         
-        # Criar o scraper
-        scraper = StandVirtualScraper()
-        
-        # Fazer a pesquisa
-        logger.info("Iniciando pesquisa de carros...")
-        results = scraper.search_cars(search_params)
-        
-        if not results:
-            logger.warning("Nenhum carro encontrado com os critérios especificados")
-            output = {
-                "preco_intervalo": {
-                    "min": None,
-                    "max": None
-                },
-                "media_aproximada": None,
-                "viaturas_consideradas": 0,
-                "anuncios_usados_para_calculo": []
-            }
-        else:
-            logger.info(f"Encontrados {len(results)} carros")
+        # Criar o scraper com context manager para garantir limpeza
+        with StandVirtualScraper() as scraper:
+            # Fazer a pesquisa
+            logger.info("Iniciando pesquisa de carros...")
+            results = scraper.search_cars(search_params)
             
-            # Calcular dados completos (sem outliers)
-            output = calculate_price_interval(results)
-            
-            # Log detalhado das estatísticas
-            logger.info(f"Total de carros: {len(results)}")
-            logger.info(f"Carros considerados: {output['viaturas_consideradas']}")
-            logger.info(f"Média aproximada: {output['media_aproximada']}€")
-            
-            if output['preco_intervalo']['min'] and output['preco_intervalo']['max']:
-                logger.info(f"Intervalo de preços: {output['preco_intervalo']['min']}€ - {output['preco_intervalo']['max']}€")
+            if not results:
+                logger.warning("Nenhum carro encontrado com os critérios especificados")
+                output = {
+                    "preco_intervalo": {
+                        "min": None,
+                        "max": None
+                    },
+                    "media_aproximada": None,
+                    "viaturas_consideradas": 0,
+                    "anuncios_usados_para_calculo": []
+                }
+            else:
+                logger.info(f"Encontrados {len(results)} carros")
+                
+                # Calcular dados completos (sem outliers)
+                output = calculate_price_interval(results)
+                
+                # Log detalhado das estatísticas
+                logger.info(f"Total de carros: {len(results)}")
+                logger.info(f"Carros considerados: {output['viaturas_consideradas']}")
+                logger.info(f"Média aproximada: {output['media_aproximada']}€")
+                
+                if output['preco_intervalo']['min'] and output['preco_intervalo']['max']:
+                    logger.info(f"Intervalo de preços: {output['preco_intervalo']['min']}€ - {output['preco_intervalo']['max']}€")
         
         logger.info("Scraping concluído com sucesso")
         

@@ -1,6 +1,13 @@
-# Environment files with API keys
-config_mapping.env
-*.env
+# Logs
+logs/
+*.log
+
+# Data files
+data/html/
+data/json/
+
+# Results
+results/
 
 # Python
 __pycache__/
@@ -23,14 +30,12 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
-# Logs
-logs/
-*.log
-
-# Data files (optional - remove if you want to track them)
-data/json/*.json
-data/html/
+# Virtual environments
+venv/
+env/
+ENV/
 
 # IDE
 .vscode/
@@ -42,6 +47,9 @@ data/html/
 .DS_Store
 Thumbs.db
 
-# Temporary files
-*.tmp
-*.temp 
+# Environment variables
+.env
+config_mapping.env
+
+# Deploy files (não enviar para servidor)
+deploy_files/ 

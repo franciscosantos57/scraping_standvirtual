@@ -23,9 +23,9 @@ DEFAULT_HEADERS = {
 }
 
 # Configurações de scraping
-MAX_PAGES = int(os.getenv('MAX_PAGES', 5))  # Máximo de páginas a processar
+MAX_PAGES = int(os.getenv('MAX_PAGES', 999))  # Máximo de páginas a processar (sem limite prático)
 DELAY_BETWEEN_REQUESTS = float(os.getenv('DELAY_BETWEEN_REQUESTS', 1.0))  # Delay em segundos
-MAX_RESULTS = int(os.getenv('MAX_RESULTS', 50))  # Máximo de resultados a retornar
+MAX_RESULTS = int(os.getenv('MAX_RESULTS', 9999))  # Máximo de resultados a retornar (sem limite prático)
 
 # Configurações do Selenium (se necessário)
 SELENIUM_TIMEOUT = int(os.getenv('SELENIUM_TIMEOUT', 10))
